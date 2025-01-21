@@ -1,0 +1,124 @@
+version: '3'
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - ./docker/radarr:/config
+      - ./downloads:/downloads
+      - ./movies:/movies
+    ports:
+      - "7878:7878"
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - ./docker/sonarr:/config
+      - ./downloads:/downloads
+      - ./tv:/tv
+    ports:
+      - "8989:8989"
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - ./docker/lidarr:/config
+      - ./downloads:/downloads
+      - ./music:/music
+    ports:
+      - "8686:8686"
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - ./docker/prowlarr:/config
+    ports:
+      - "9696:9696"
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - ./docker/bazarr:/config
+      - ./movies:/movies
+      - ./tv:/tv
+    ports:
+      - "6767:6767"
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - ./docker/readarr:/config
+      - ./downloads:/downloads
+      - ./books:/books
+    ports:
+      - "8787:8787"
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - WEBUI_PORT=8080
+    volumes:
+      - ./docker/qbittorrent:/config
+      - ./downloads:/downloads
+    ports:
+      - "8080:8080"
+      - "6881:6881"
+      - "6881:6881/udp"
+    restart: unless-stopped
+    networks:
+      - arr-network
+
+networks:
+  arr-network:
+    driver: bridge 

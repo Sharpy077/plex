@@ -1,0 +1,56 @@
+---
+server:
+  address: tcp://0.0.0.0:9091
+
+log:
+  level: info
+  format: text
+  file_path: /config/authelia.log
+
+authentication_backend:
+  file:
+    path: /config/users_database.yml
+    password:
+      algorithm: argon2id
+      iterations: 1
+      salt_length: 16
+      parallelism: 8
+      memory: 64
+
+access_control:
+  default_policy: one_factor
+  rules:
+    - domain: "auth.local"
+      policy: bypass
+    - domain: "*.local"
+      policy: two_factor
+      subject:
+        - "group:admins"
+    - domain: "*.local"
+      policy: one_factor
+      subject:
+        - "group:users"
+
+session:
+  secret: generate_another_secure_secret
+  expiration: 3600
+  inactivity: 300
+  remember_me: 1M
+  domain: auth.local
+
+regulation:
+  max_retries: 3
+  find_time: 120
+  ban_time: 300
+
+storage:
+  encryption_key: generate_a_secure_encryption_key
+  local:
+    path: /config/db.sqlite3
+
+notifier:
+  smtp:
+    address: smtp.gmail.com:587
+    username: admin@yourdomain.com
+    password: your-app-specific-password
+    sender: admin@yourdomain.com 

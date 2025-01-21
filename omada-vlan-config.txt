@@ -1,0 +1,33 @@
+# Omada VLAN Configuration
+
+## VLAN Setup
+1. Media Services VLAN (ID: 10)
+   - Network: 192.168.10.0/24
+   - Purpose: Main *arr services and Traefik
+   - DHCP Range: 192.168.10.100-192.168.10.200
+   - Gateway: 192.168.10.1
+
+2. Downloads VLAN (ID: 20)
+   - Network: 192.168.20.0/24
+   - Purpose: qBittorrent and download traffic
+   - DHCP Range: 192.168.20.100-192.168.20.200
+   - Gateway: 192.168.20.1
+
+3. Storage VLAN (ID: 30)
+   - Network: 192.168.30.0/24
+   - Purpose: Media storage and file systems
+   - DHCP Range: 192.168.30.100-192.168.30.200
+   - Gateway: 192.168.30.1
+
+## IP Assignments
+- Radarr: 192.168.10.10
+- Sonarr: 192.168.10.11
+- Lidarr: 192.168.10.12
+- Prowlarr: 192.168.10.13
+- Bazarr: 192.168.10.14
+- Readarr: 192.168.10.15
+- Traefik: 192.168.10.16
+- qBittorrent: 192.168.20.10
+
+## DHCP Reservations
+Create DHCP reservations for each service using their MAC addresses 

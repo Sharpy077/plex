@@ -1,0 +1,62 @@
+# Omada External Access Configuration
+
+## Domain Setup
+1. Register domain (if not already done)
+2. Configure DNS:
+   - media.yourdomain.com -> Your public IP
+   - *.media.yourdomain.com -> Your public IP
+
+## Port Forwarding Rules
+1. HTTPS (443) -> Traefik
+   - External Port: 443
+   - Internal IP: 192.168.10.16
+   - Internal Port: 443
+   - Protocol: TCP
+   - Description: "Traefik HTTPS"
+
+2. VPN (51820) -> WireGuard
+   - External Port: 51820
+   - Internal IP: 192.168.10.30
+   - Internal Port: 51820
+   - Protocol: UDP
+   - Description: "WireGuard VPN"
+
+## Security Rules
+1. Geo-blocking:
+   - Block all countries except your own
+   - Enable logging for blocked attempts
+
+2. Rate Limiting:
+   - Max 10 requests per second per IP
+   - Block IP after 3 failed authentication attempts
+   - Unblock after 1 hour
+
+3. WAF Rules:
+   - Enable SQL injection protection
+   - Enable XSS protection
+   - Block common attack patterns
+   - Log all blocked requests
+
+## Service Access
+1. Primary Access (VPN):
+   - All services accessible via internal DNS
+   - Full access to all features
+   - No port forwarding needed for services
+
+2. Fallback Access (Direct):
+   - Limited to specific services
+   - Requires strong authentication
+   - Rate limited
+   - Geo-blocked
+
+## Authentication
+1. VPN Access:
+   - WireGuard client configs per device
+   - Certificate-based authentication
+   - Auto-disconnect on suspicious activity
+
+2. Direct Access:
+   - OAuth2 authentication
+   - 2FA required
+   - Session timeout: 4 hours
+   - Max 2 concurrent sessions per user 

@@ -1,0 +1,11 @@
+# DNS Entries for Arr Services
+# Add these to your Omada Controller DNS settings
+
+192.168.0.100 radarr.local
+192.168.0.100 sonarr.local
+192.168.0.100 lidarr.local
+192.168.0.100 prowlarr.local
+192.168.0.100 bazarr.local
+192.168.0.100 readarr.local
+192.168.0.100 qbit.local
+192.168.0.100 traefik.local 

@@ -1,0 +1,118 @@
+---
+# Service Access Rules Configuration
+
+roles:
+  admin:
+    description: "Full access to all services"
+    permissions:
+      - "*:*"
+    networks:
+      - 192.168.10.0/24
+      - 10.13.13.0/24
+
+  power_user:
+    description: "Access to media services, no system management"
+    permissions:
+      - "radarr:*"
+      - "sonarr:*"
+      - "lidarr:*"
+      - "readarr:*"
+      - "bazarr:*"
+      - "prowlarr:read"
+    networks:
+      - 192.168.10.0/24
+      - 10.13.13.0/24
+
+  user:
+    description: "Basic media access"
+    permissions:
+      - "radarr:read"
+      - "sonarr:read"
+      - "lidarr:read"
+      - "readarr:read"
+    networks:
+      - 192.168.10.0/24
+      - 10.13.13.0/24
+
+services:
+  radarr:
+    access_level: protected
+    auth_required: true
+    allowed_networks:
+      - 192.168.10.0/24
+      - 10.13.13.0/24
+    rate_limit:
+      requests_per_minute: 60
+      burst: 10
+
+  sonarr:
+    access_level: protected
+    auth_required: true
+    allowed_networks:
+      - 192.168.10.0/24
+      - 10.13.13.0/24
+    rate_limit:
+      requests_per_minute: 60
+      burst: 10
+
+  lidarr:
+    access_level: protected
+    auth_required: true
+    allowed_networks:
+      - 192.168.10.0/24
+      - 10.13.13.0/24
+    rate_limit:
+      requests_per_minute: 60
+      burst: 10
+
+  prowlarr:
+    access_level: admin_only
+    auth_required: true
+    allowed_networks:
+      - 192.168.10.0/24
+    rate_limit:
+      requests_per_minute: 30
+      burst: 5
+
+  qbittorrent:
+    access_level: admin_only
+    auth_required: true
+    allowed_networks:
+      - 192.168.20.0/24
+    rate_limit:
+      requests_per_minute: 30
+      burst: 5
+
+  traefik:
+    access_level: admin_only
+    auth_required: true
+    allowed_networks:
+      - 192.168.10.0/24
+    rate_limit:
+      requests_per_minute: 30
+      burst: 5
+
+security_policies:
+  password:
+    min_length: 12
+    require_special: true
+    require_numbers: true
+    require_uppercase: true
+    max_age_days: 90
+
+  session:
+    timeout_minutes: 240
+    max_concurrent: 2
+    require_2fa: true
+
+  network:
+    trusted_proxies:
+      - 192.168.10.16  # Traefik
+    blocked_countries:
+      - CN
+      - RU
+      - KP
+    allowed_countries:
+      - US
+      - CA
+      - GB 

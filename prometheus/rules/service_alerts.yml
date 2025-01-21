@@ -1,0 +1,37 @@
+groups:
+- name: service_alerts
+  rules:
+  - alert: ServiceDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Service {{ $labels.job }} is down"
+      description: "Service {{ $labels.job }} has been down for more than 1 minute."
+
+  - alert: HighMemoryUsage
+    expr: (container_memory_usage_bytes / container_spec_memory_limit_bytes * 100) > 85
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High memory usage on {{ $labels.container_name }}"
+      description: "Container {{ $labels.container_name }} memory usage is above 85%"
+
+  - alert: DiskSpaceLow
+    expr: node_filesystem_avail_bytes{mountpoint="/mnt/storage"} / node_filesystem_size_bytes{mountpoint="/mnt/storage"} * 100 < 10
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Low disk space on storage"
+      description: "Storage space is below 10% free"
+
+  - alert: ContainerRestarting
+    expr: changes(container_start_time_seconds[15m]) > 2
+    labels:
+      severity: warning
+    annotations:
+      summary: "Container {{ $labels.container_name }} restarting frequently"
+      description: "Container has restarted more than 2 times in 15 minutes" 

@@ -1,0 +1,67 @@
+email:
+  smtp:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com  # Update this
+    password: your-app-password     # Update this
+    encryption: tls
+    from: your-email@gmail.com      # Update this
+
+notifications:
+  # Service status notifications
+  service_down:
+    enabled: true
+    recipients:
+      - admin@yourdomain.com
+    subject: "[ALERT] Service {service} is down"
+    
+  # Security notifications
+  security_alert:
+    enabled: true
+    recipients:
+      - admin@yourdomain.com
+    subject: "[SECURITY] {alert_type} detected"
+    
+  # Backup notifications
+  backup_status:
+    enabled: true
+    recipients:
+      - admin@yourdomain.com
+    subject: "[BACKUP] {status} - {timestamp}"
+    
+  # System notifications
+  system_alert:
+    enabled: true
+    recipients:
+      - admin@yourdomain.com
+    subject: "[SYSTEM] {alert_type} - {message}"
+
+templates:
+  service_down: |
+    Service {service} is currently down.
+    Time: {timestamp}
+    Last Status: {last_status}
+    Additional Info: {message}
+    
+  security_alert: |
+    Security Alert Detected
+    Type: {alert_type}
+    Source IP: {source_ip}
+    Time: {timestamp}
+    Details: {message}
+    
+  backup_status: |
+    Backup Status Report
+    Status: {status}
+    Time: {timestamp}
+    Size: {backup_size}
+    Location: {backup_location}
+    Details: {message}
+    
+  system_alert: |
+    System Alert
+    Type: {alert_type}
+    Time: {timestamp}
+    Component: {component}
+    Message: {message}
+    Action Required: {action_required} 

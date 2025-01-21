@@ -1,0 +1,47 @@
+# SSL Configuration Guide
+
+## Let's Encrypt SSL Setup
+1. Create SSL directory:
+   mkdir -p ./letsencrypt
+
+2. Update Traefik configuration:
+   - Enable HTTPS endpoint
+   - Configure ACME (Let's Encrypt) challenge
+   - Set up certificate resolver
+
+3. Domain Configuration:
+   - Configure local domain in Omada DNS
+   - Set up split-horizon DNS if needed
+   - Configure external domain for remote access
+
+## SSL Security Settings
+1. Configure SSL Ciphers:
+   - TLS 1.2 and 1.3 only
+   - Strong cipher suites
+   - Perfect forward secrecy
+
+2. HSTS Configuration:
+   - Enable HSTS
+   - Set max-age to 63072000 (2 years)
+   - Include subdomains
+
+3. Certificate Automation:
+   - Automatic renewal enabled
+   - Health checks for certificate expiry
+   - Notification on renewal events
+
+## Implementation Steps
+1. In Omada Controller:
+   - Create DNS entries for all services
+   - Configure port forwarding for HTTPS
+   - Set up ACLs for certificate management
+
+2. In Traefik:
+   - Enable certificate resolver
+   - Configure TLS options
+   - Set up HTTP to HTTPS redirect
+
+3. For Each Service:
+   - Enable TLS in service configuration
+   - Configure secure headers
+   - Test SSL connection 

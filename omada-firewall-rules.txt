@@ -1,0 +1,81 @@
+# Omada Firewall Rules Configuration
+
+## Inbound Rules (Priority Order)
+
+1. Allow Management Access (Priority: 1)
+   - Name: Allow_Management
+   - Source: Management VLAN
+   - Destination: All Media VLANs
+   - Protocol: TCP
+   - Ports: 80,443,8081
+   - Action: Accept
+
+2. Block WAN Access to Services (Priority: 2)
+   - Name: Block_WAN_Services
+   - Source: WAN
+   - Destination: Media VLANs
+   - Protocol: Any
+   - Action: Drop
+
+3. Allow Inter-Service Communication (Priority: 3)
+   - Name: Allow_Service_Comms
+   - Source: Media Services VLAN
+   - Destination: Media Services VLAN
+   - Protocol: TCP
+   - Ports: All
+   - Action: Accept
+
+4. Allow Download Traffic (Priority: 4)
+   - Name: Allow_Downloads
+   - Source: Downloads VLAN
+   - Destination: Any
+   - Protocol: TCP/UDP
+   - Ports: 6881,51413
+   - Action: Accept
+
+5. Allow Storage Access (Priority: 5)
+   - Name: Allow_Storage
+   - Source: Media Services VLAN
+   - Destination: Storage VLAN
+   - Protocol: TCP
+   - Ports: 445,2049
+   - Action: Accept
+
+## Outbound Rules
+
+1. Allow Media Services Internet (Priority: 1)
+   - Name: Allow_Services_Internet
+   - Source: Media Services VLAN
+   - Destination: WAN
+   - Protocol: TCP
+   - Ports: 80,443
+   - Action: Accept
+
+2. Allow Download Traffic (Priority: 2)
+   - Name: Allow_Download_Internet
+   - Source: Downloads VLAN
+   - Destination: WAN
+   - Protocol: Any
+   - Action: Accept
+
+3. Default Deny (Priority: Last)
+   - Name: Default_Deny
+   - Source: Any
+   - Destination: Any
+   - Protocol: Any
+   - Action: Drop
+
+## ACL Rules
+
+1. Management Access
+   - Allow admin access from specific IP ranges
+   - Require authentication for all management interfaces
+
+2. Service Access
+   - Allow authenticated users access to media services
+   - Restrict qBittorrent access to admins only
+
+3. Guest Access
+   - No access to management interfaces
+   - No access to download services
+   - Optional: Read-only access to media services 
