@@ -18,7 +18,7 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.letsencrypt.acme.email=admin@yourdomain.com"
+      - "--certificatesresolvers.letsencrypt.acme.email=support@sharphorizons.tech"
       - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
       - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
     networks:
@@ -26,17 +26,16 @@ services:
 
   traefik-forward-auth:
     image: thomseddon/traefik-forward-auth:latest
+    platform: linux/amd64
     container_name: traefik-forward-auth
     restart: unless-stopped
     environment:
-      - DEFAULT_PROVIDER=github
       - PROVIDERS_GITHUB_CLIENT_ID=Iv23lirtGSxbaPFc7ju5
       - PROVIDERS_GITHUB_CLIENT_SECRET=79b264d49bd3c60136a94e11d388a2fb9dd681f1
-      - SECRET=a-very-secure-secret
-      - WHITELIST=Sharpy077
-      - AUTH_HOST=auth.sharphorizons.tech
+      - SECRET=kj4h5kj4h5kj4h5kj4h5kj4h5kj4h5k6
       - COOKIE_DOMAIN=sharphorizons.tech
-      - INSECURE_COOKIE=false
+      - AUTH_HOST=auth.sharphorizons.tech
+      - WHITELIST=Sharpy077
     networks:
       - proxy
     labels:
