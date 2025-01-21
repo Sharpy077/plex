@@ -24,22 +24,29 @@ services:
     networks:
       - proxy
 
-  authelia:
-    image: authelia/authelia:latest
-    container_name: authelia
+  traefik-forward-auth:
+    image: thomseddon/traefik-forward-auth:latest
+    container_name: traefik-forward-auth
     restart: unless-stopped
-    volumes:
-      - ./authelia:/config
+    environment:
+      - DEFAULT_PROVIDER=github
+      - PROVIDERS_GITHUB_CLIENT_ID=Iv23lirtGSxbaPFc7ju5
+      - PROVIDERS_GITHUB_CLIENT_SECRET=79b264d49bd3c60136a94e11d388a2fb9dd681f1
+      - SECRET=a-very-secure-secret
+      - WHITELIST=Sharpy077
+      - AUTH_HOST=auth.sharphorizons.tech
+      - COOKIE_DOMAIN=sharphorizons.tech
+      - INSECURE_COOKIE=false
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.authelia.rule=Host(`auth.local`)"
-      - "traefik.http.routers.authelia.entrypoints=websecure"
-      - "traefik.http.routers.authelia.tls=true"
-      - "traefik.http.middlewares.authelia.forwardauth.address=http://authelia:9091/api/verify?rd=https://auth.local"
-      - "traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true"
-      - "traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email"
+      - "traefik.http.routers.auth.rule=Host(`auth.sharphorizons.tech`)"
+      - "traefik.http.routers.auth.entrypoints=websecure"
+      - "traefik.http.routers.auth.tls=true"
+      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.address=http://traefik-forward-auth:4181"
+      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=X-Forwarded-User"
+      - "traefik.http.services.auth.loadbalancer.server.port=4181"
 
   radarr:
     image: linuxserver/radarr:latest
@@ -53,10 +60,10 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.radarr.rule=Host(`radarr.local`)"
+      - "traefik.http.routers.radarr.rule=Host(`radarr.sharphorizons.tech`)"
       - "traefik.http.routers.radarr.entrypoints=websecure"
       - "traefik.http.routers.radarr.tls=true"
-      - "traefik.http.routers.radarr.middlewares=authelia@docker"
+      - "traefik.http.routers.radarr.middlewares=traefik-forward-auth@docker"
 
   sonarr:
     image: linuxserver/sonarr:latest
@@ -70,10 +77,10 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.sonarr.rule=Host(`sonarr.local`)"
+      - "traefik.http.routers.sonarr.rule=Host(`sonarr.sharphorizons.tech`)"
       - "traefik.http.routers.sonarr.entrypoints=websecure"
       - "traefik.http.routers.sonarr.tls=true"
-      - "traefik.http.routers.sonarr.middlewares=authelia@docker"
+      - "traefik.http.routers.sonarr.middlewares=traefik-forward-auth@docker"
 
   lidarr:
     image: linuxserver/lidarr:latest
@@ -87,10 +94,10 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.lidarr.rule=Host(`lidarr.local`)"
+      - "traefik.http.routers.lidarr.rule=Host(`lidarr.sharphorizons.tech`)"
       - "traefik.http.routers.lidarr.entrypoints=websecure"
       - "traefik.http.routers.lidarr.tls=true"
-      - "traefik.http.routers.lidarr.middlewares=authelia@docker"
+      - "traefik.http.routers.lidarr.middlewares=traefik-forward-auth@docker"
 
   prowlarr:
     image: linuxserver/prowlarr:latest
@@ -102,10 +109,10 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.local`)"
+      - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.sharphorizons.tech`)"
       - "traefik.http.routers.prowlarr.entrypoints=websecure"
       - "traefik.http.routers.prowlarr.tls=true"
-      - "traefik.http.routers.prowlarr.middlewares=authelia@docker"
+      - "traefik.http.routers.prowlarr.middlewares=traefik-forward-auth@docker"
 
   bazarr:
     image: linuxserver/bazarr:latest
@@ -119,10 +126,10 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.bazarr.rule=Host(`bazarr.local`)"
+      - "traefik.http.routers.bazarr.rule=Host(`bazarr.sharphorizons.tech`)"
       - "traefik.http.routers.bazarr.entrypoints=websecure"
       - "traefik.http.routers.bazarr.tls=true"
-      - "traefik.http.routers.bazarr.middlewares=authelia@docker"
+      - "traefik.http.routers.bazarr.middlewares=traefik-forward-auth@docker"
 
   readarr:
     image: linuxserver/readarr:develop
@@ -136,10 +143,10 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.readarr.rule=Host(`readarr.local`)"
+      - "traefik.http.routers.readarr.rule=Host(`readarr.sharphorizons.tech`)"
       - "traefik.http.routers.readarr.entrypoints=websecure"
       - "traefik.http.routers.readarr.tls=true"
-      - "traefik.http.routers.readarr.middlewares=authelia@docker"
+      - "traefik.http.routers.readarr.middlewares=traefik-forward-auth@docker"
 
   qbittorrent:
     image: linuxserver/qbittorrent:latest
@@ -152,10 +159,10 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.qbit.rule=Host(`qbit.local`)"
+      - "traefik.http.routers.qbit.rule=Host(`qbit.sharphorizons.tech`)"
       - "traefik.http.routers.qbit.entrypoints=websecure"
       - "traefik.http.routers.qbit.tls=true"
-      - "traefik.http.routers.qbit.middlewares=authelia@docker"
+      - "traefik.http.routers.qbit.middlewares=traefik-forward-auth@docker"
 
   wireguard:
     image: linuxserver/wireguard:latest
@@ -185,5 +192,5 @@ services:
 
 networks:
   proxy:
-    driver: bridge
+    external: false
  
