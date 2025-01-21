@@ -14,4 +14,18 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
-*.swo 
+*.swo
+
+# Database files
+*.db-shm
+*.db-wal
+
+# Log files
+logs/*.txt
+logs/*.log
+
+# Temporary files
+**/ipc-socket
+
+# Other runtime files
+*.pid 
