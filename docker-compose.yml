@@ -30,6 +30,7 @@ services:
     container_name: traefik-forward-auth
     restart: unless-stopped
     environment:
+      - PROVIDERS_PROVIDER=github
       - PROVIDERS_GITHUB_CLIENT_ID=Iv23lirtGSxbaPFc7ju5
       - PROVIDERS_GITHUB_CLIENT_SECRET=79b264d49bd3c60136a94e11d388a2fb9dd681f1
       - SECRET=kj4h5kj4h5kj4h5kj4h5kj4h5kj4h5k6
