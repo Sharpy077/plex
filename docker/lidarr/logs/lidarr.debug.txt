@@ -870,3 +870,117 @@
 2025-01-21 11:24:29.9|Info|DownloadDecisionMaker|No results found
 2025-01-21 11:24:29.9|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
 2025-01-21 11:24:29.9|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-21 11:27:59.9|Error|CommandExecutor|Error occurred while executing task ProcessMonitoredDownloads
+
+[v2.8.2.4493] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Lidarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Lidarr.Core/Datastore/BasicRepository.cs:line 335
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 115
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:29:29.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v2.8.2.4493] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Lidarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Lidarr.Core/Datastore/BasicRepository.cs:line 151
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Lidarr.Core/Messaging/Commands/CommandQueueManager.cs:line 140
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Refresh() in ./Lidarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 78
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Execute(RefreshMonitoredDownloadsCommand message) in ./Lidarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 155
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 115
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:30:29.9|Error|CommandExecutor|Error occurred while executing task MessagingCleanup
+
+[v2.8.2.4493] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Lidarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Lidarr.Core/Datastore/BasicRepository.cs:line 335
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Lidarr.Core/Messaging/Commands/CommandQueueManager.cs:line 259
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete(CommandModel command, String message) in ./Lidarr.Core/Messaging/Commands/CommandQueueManager.cs:line 207
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 115
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:30:59.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v2.8.2.4493] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Lidarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Lidarr.Core/Datastore/BasicRepository.cs:line 151
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Lidarr.Core/Messaging/Commands/CommandQueueManager.cs:line 140
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Refresh() in ./Lidarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 78
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Execute(RefreshMonitoredDownloadsCommand message) in ./Lidarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 155
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 115
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:31:29.9|Error|CommandExecutor|Error occurred while executing task ImportListSync
+
+[v2.8.2.4493] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Lidarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Lidarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Lidarr.Core/Datastore/BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetBlockedProviders() in ./Lidarr.Core/ThingiProvider/Status/ProviderStatusServiceBase.cs:line 45
+   at NzbDrone.Core.ImportLists.ImportListFactory.FilterBlockedImportLists(IEnumerable`1 importLists)+MoveNext() in ./Lidarr.Core/ImportLists/ImportListFactory.cs:line 60
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at NzbDrone.Core.ImportLists.ImportListFactory.AutomaticAddEnabled(Boolean filterBlockedImportLists) in ./Lidarr.Core/ImportLists/ImportListFactory.cs:line 52
+   at NzbDrone.Core.ImportLists.ImportListSyncService.SyncAll() in ./Lidarr.Core/ImportLists/ImportListSyncService.cs:line 62
+   at NzbDrone.Core.ImportLists.ImportListSyncService.Execute(ImportListSyncCommand message) in ./Lidarr.Core/ImportLists/ImportListSyncService.cs:line 344
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 115
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Lidarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:36:30.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-21 11:39:30.0|Info|RssSyncService|Starting RSS Sync
+2025-01-21 11:39:30.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-21 11:39:30.1|Info|DownloadDecisionMaker|No results found
+2025-01-21 11:39:30.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-21 11:39:30.1|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-21 11:41:30.1|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-21 11:47:00.1|Debug|ImportListSyncService|No import lists with automatic add enabled

@@ -2146,3 +2146,1589 @@
 2025-01-21 11:24:59.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
 2025-01-21 11:24:59.7|Info|DownloadDecisionMaker|No results found
 2025-01-21 11:24:59.7|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-21 11:28:29.7|Error|CommandExecutor|Error occurred while executing task ProcessMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:29:59.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Refresh() in ./Readarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 78
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Execute(RefreshMonitoredDownloadsCommand message) in ./Readarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 155
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:30:29.7|Error|CommandExecutor|Error occurred while executing task ImportListSync
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetBlockedProviders() in ./Readarr.Core/ThingiProvider/Status/ProviderStatusServiceBase.cs:line 45
+   at NzbDrone.Core.ImportLists.ImportListFactory.FilterBlockedImportLists(IEnumerable`1 importLists)+MoveNext() in ./Readarr.Core/ImportLists/ImportListFactory.cs:line 60
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at NzbDrone.Core.ImportLists.ImportListFactory.AutomaticAddEnabled(Boolean filterBlockedImportLists) in ./Readarr.Core/ImportLists/ImportListFactory.cs:line 52
+   at NzbDrone.Core.ImportLists.ImportListSyncService.SyncAll() in ./Readarr.Core/ImportLists/ImportListSyncService.cs:line 70
+   at NzbDrone.Core.ImportLists.ImportListSyncService.Execute(ImportListSyncCommand message) in ./Readarr.Core/ImportLists/ImportListSyncService.cs:line 438
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:31:29.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:31:29.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:31:59.7|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:32:29.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:32:29.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:32:59.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:32:59.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:33:29.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:33:29.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:33:59.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:33:59.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:34:29.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:34:29.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:34:59.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:34:59.7|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:35:29.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:35:29.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:35:29.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:35:29.8|Error|CommandExecutor|Error occurred while executing task ImportListSync
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetBlockedProviders() in ./Readarr.Core/ThingiProvider/Status/ProviderStatusServiceBase.cs:line 45
+   at NzbDrone.Core.ImportLists.ImportListFactory.FilterBlockedImportLists(IEnumerable`1 importLists)+MoveNext() in ./Readarr.Core/ImportLists/ImportListFactory.cs:line 60
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at NzbDrone.Core.ImportLists.ImportListFactory.AutomaticAddEnabled(Boolean filterBlockedImportLists) in ./Readarr.Core/ImportLists/ImportListFactory.cs:line 52
+   at NzbDrone.Core.ImportLists.ImportListSyncService.SyncAll() in ./Readarr.Core/ImportLists/ImportListSyncService.cs:line 70
+   at NzbDrone.Core.ImportLists.ImportListSyncService.Execute(ImportListSyncCommand message) in ./Readarr.Core/ImportLists/ImportListSyncService.cs:line 438
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:35:59.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:35:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:35:59.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:35:59.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:35:59.8|Error|CommandExecutor|Error occurred while executing task ImportListSync
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete(CommandModel command, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 206
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:36:29.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:36:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:36:29.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:36:29.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:36:29.8|Error|CommandExecutor|Error occurred while executing task ImportListSync
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete(CommandModel command, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 206
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:36:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:37:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:37:29.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:37:29.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:37:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:38:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:38:29.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:38:29.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:38:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:39:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:39:29.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Jobs.ScheduledTaskRepository.SetLastExecutionTime(Int32 id, DateTime executionTime, DateTime startTime) in ./Readarr.Core/Jobs/ScheduledTaskRepository.cs:line 28
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:39:29.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:39:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:40:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:40:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:40:59.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:40:59.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:40:59.8|Error|CommandExecutor|Error occurred while executing task ProcessMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:40:59.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete(CommandModel command, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 206
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:41:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:41:29.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Jobs.ScheduledTaskRepository.SetLastExecutionTime(Int32 id, DateTime executionTime, DateTime startTime) in ./Readarr.Core/Jobs/ScheduledTaskRepository.cs:line 28
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:41:29.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:41:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:42:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:42:59.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:42:59.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Jobs.ScheduledTaskRepository.SetLastExecutionTime(Int32 id, DateTime executionTime, DateTime startTime) in ./Readarr.Core/Jobs/ScheduledTaskRepository.cs:line 28
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:42:59.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:43:29.8|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:43:59.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:44:29.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:44:29.9|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Jobs.ScheduledTaskRepository.SetLastExecutionTime(Int32 id, DateTime executionTime, DateTime startTime) in ./Readarr.Core/Jobs/ScheduledTaskRepository.cs:line 28
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:44:29.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:44:59.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:45:29.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:45:59.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:45:59.9|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Jobs.ScheduledTaskRepository.SetLastExecutionTime(Int32 id, DateTime executionTime, DateTime startTime) in ./Readarr.Core/Jobs/ScheduledTaskRepository.cs:line 28
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:45:59.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:46:29.9|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:46:29.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:46:29.9|Info|RssSyncService|Starting RSS Sync
+2025-01-21 11:46:29.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:46:29.9|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Readarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/Datastore/BasicRepository.cs:line 73
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:46:29.9|Error|CommandExecutor|Error occurred while executing task RssSync
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.ThingiProvider.ProviderRepository`1.Query(SqlBuilder builder) in ./Readarr.Core/ThingiProvider/ProviderRepository.cs:line 44
+   at NzbDrone.Core.ThingiProvider.ProviderFactory`2.Active() in ./Readarr.Core/ThingiProvider/ProviderFactory.cs:line 185
+   at NzbDrone.Core.Indexers.IndexerFactory.Active() in ./Readarr.Core/Indexers/IndexerFactory.cs:line 37
+   at NzbDrone.Core.ThingiProvider.ProviderFactory`2.GetAvailableProviders() in ./Readarr.Core/ThingiProvider/ProviderFactory.cs:line 91
+   at NzbDrone.Core.Indexers.IndexerFactory.RssEnabled(Boolean filterBlockedIndexers) in ./Readarr.Core/Indexers/IndexerFactory.cs:line 51
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.Fetch() in ./Readarr.Core/Indexers/FetchAndParseRssService.cs:line 27
+   at NzbDrone.Core.Indexers.RssSyncService.Sync() in ./Readarr.Core/Indexers/RssSyncService.cs:line 47
+   at NzbDrone.Core.Indexers.RssSyncService.Execute(RssSyncCommand message) in ./Readarr.Core/Indexers/RssSyncService.cs:line 68
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:46:59.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:47:29.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:47:29.9|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Jobs.ScheduledTaskRepository.SetLastExecutionTime(Int32 id, DateTime executionTime, DateTime startTime) in ./Readarr.Core/Jobs/ScheduledTaskRepository.cs:line 28
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+
+
+2025-01-21 11:47:29.9|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Readarr.Core/Datastore/BasicRepository.cs:line 347
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 258
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 213
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 111
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Readarr.Core/Messaging/Commands/CommandExecutor.cs:line 42
+
+
+2025-01-21 11:47:59.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2025-01-21 11:48:29.9|Error|TaskExtensions|Task Error
+
+[v0.4.9.2730] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Readarr.Core/Datastore/DbFactory.cs:line 112
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in ./Readarr.Core/Datastore/BasicRepository.cs:line 152
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 138
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in ./Readarr.Core/Messaging/Commands/CommandQueueManager.cs:line 142
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in ./Readarr.Core/Jobs/Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+

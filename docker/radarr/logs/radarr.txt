@@ -4148,3 +4148,102 @@
 2025-01-21 11:09:29.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
 2025-01-21 11:09:29.6|Info|DownloadDecisionMaker|No results found
 2025-01-21 11:09:29.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-21 11:30:59.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v5.17.2.9580] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Radarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in ./Radarr.Core/Datastore/BasicRepository.cs:line 335
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in ./Radarr.Core/Messaging/Commands/CommandQueueManager.cs:line 259
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete(CommandModel command, String message) in ./Radarr.Core/Messaging/Commands/CommandQueueManager.cs:line 207
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 113
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 44
+
+
+2025-01-21 11:32:29.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v5.17.2.9580] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Radarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.ThingiProvider.ProviderRepository`1.Query(SqlBuilder builder) in ./Radarr.Core/ThingiProvider/ProviderRepository.cs:line 43
+   at NzbDrone.Core.ThingiProvider.ProviderFactory`2.Active() in ./Radarr.Core/ThingiProvider/ProviderFactory.cs:line 185
+   at NzbDrone.Core.Download.DownloadClientFactory.Active() in ./Radarr.Core/Download/DownloadClientFactory.cs:line 35
+   at NzbDrone.Core.ThingiProvider.ProviderFactory`2.GetAvailableProviders() in ./Radarr.Core/ThingiProvider/ProviderFactory.cs:line 91
+   at NzbDrone.Core.Download.DownloadClientFactory.DownloadHandlingEnabled(Boolean filterBlockedClients) in ./Radarr.Core/Download/DownloadClientFactory.cs:line 47
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Refresh() in ./Radarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 66
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Execute(RefreshMonitoredDownloadsCommand message) in ./Radarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 159
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 113
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 44
+
+
+2025-01-21 11:33:59.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v5.17.2.9580] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Radarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Radarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Radarr.Core/Datastore/BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetBlockedProviders() in ./Radarr.Core/ThingiProvider/Status/ProviderStatusServiceBase.cs:line 45
+   at NzbDrone.Core.Download.DownloadClientFactory.FilterBlockedClients(IEnumerable`1 clients)+MoveNext() in ./Radarr.Core/Download/DownloadClientFactory.cs:line 59
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at NzbDrone.Core.Download.DownloadClientFactory.DownloadHandlingEnabled(Boolean filterBlockedClients) in ./Radarr.Core/Download/DownloadClientFactory.cs:line 51
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Refresh() in ./Radarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 66
+   at NzbDrone.Core.Download.TrackedDownloads.DownloadMonitoringService.Execute(RefreshMonitoredDownloadsCommand message) in ./Radarr.Core/Download/TrackedDownloads/DownloadMonitoringService.cs:line 159
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 113
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 44
+
+
+2025-01-21 11:34:59.8|Error|CommandExecutor|Error occurred while executing task ImportListSync
+
+[v5.17.2.9580] code = IoErr (10), message = System.Data.SQLite.SQLiteException (0x800007FF): disk I/O error
+disk I/O error
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteConnection.Open()
+   at NzbDrone.Core.Datastore.DbFactory.<>c__DisplayClass9_0.<Create>b__0() in ./Radarr.Core/Datastore/DbFactory.cs:line 105
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in ./Radarr.Core/Datastore/Extensions/SqlMapperExtensions.cs:line 12
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in ./Radarr.Core/Datastore/BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetBlockedProviders() in ./Radarr.Core/ThingiProvider/Status/ProviderStatusServiceBase.cs:line 45
+   at NzbDrone.Core.ImportLists.ImportListFactory.FilterBlockedImportLists(IEnumerable`1 importLists)+MoveNext() in ./Radarr.Core/ImportLists/ImportListFactory.cs:line 68
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at NzbDrone.Core.ImportLists.ImportListFactory.Enabled(Boolean filterBlockedImportLists) in ./Radarr.Core/ImportLists/ImportListFactory.cs:line 53
+   at NzbDrone.Core.ImportLists.ImportListSyncService.SyncAll() in ./Radarr.Core/ImportLists/ImportListSyncService.cs:line 46
+   at NzbDrone.Core.ImportLists.ImportListSyncService.Execute(ImportListSyncCommand message) in ./Radarr.Core/ImportLists/ImportListSyncService.cs:line 179
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 113
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in ./Radarr.Core/Messaging/Commands/CommandExecutor.cs:line 44
+
+
+2025-01-21 11:39:29.9|Info|RssSyncService|Starting RSS Sync
+2025-01-21 11:39:29.9|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-21 11:39:29.9|Info|DownloadDecisionMaker|No results found
+2025-01-21 11:39:29.9|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
