@@ -1,0 +1,85 @@
+groups:
+  - name: service_alerts
+    rules:
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.job }} is down"
+          description: "Service {{ $labels.job }} has been down for more than 1 minute"
+
+      - alert: HighMemoryUsage
+        expr: (container_memory_usage_bytes / container_spec_memory_limit_bytes * 100) > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage on {{ $labels.container_name }}"
+          description: "Container {{ $labels.container_name }} memory usage is above 85% for 5 minutes"
+
+      - alert: ContainerRestarting
+        expr: changes(container_start_time_seconds[15m]) > 2
+        labels:
+          severity: warning
+        annotations:
+          summary: "Container {{ $labels.container_name }} restarting frequently"
+          description: "Container has restarted more than 2 times in 15 minutes"
+
+      - alert: DiskSpaceRunningLow
+        expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Disk space running low on {{ $labels.mountpoint }}"
+          description: "Disk space usage is above 85% for 5 minutes"
+
+      - alert: MediaStorageSpaceLow
+        expr: |
+          (
+            sum(node_filesystem_size_bytes{mountpoint=~"/media.*"})
+            - sum(node_filesystem_free_bytes{mountpoint=~"/media.*"})
+          ) / sum(node_filesystem_size_bytes{mountpoint=~"/media.*"}) * 100 > 90
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Media storage space running low"
+          description: "Media storage space usage is above 90% for 10 minutes"
+
+      - alert: HighNetworkTraffic
+        expr: |
+          sum(rate(container_network_receive_bytes_total[5m])) > 100000000
+          or
+          sum(rate(container_network_transmit_bytes_total[5m])) > 100000000
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High network traffic detected"
+          description: "Network traffic exceeds 100MB/s for 5 minutes"
+
+      - alert: FailedLoginAttempts
+        expr: |
+          increase(traefik_entrypoint_requests_total{code=~"4.*"}[5m]) > 10
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Multiple failed login attempts detected"
+          description: "More than 10 failed requests in 5 minutes"
+
+      - alert: AbnormalNetworkActivity
+        expr: |
+          abs(
+            rate(container_network_receive_bytes_total[5m])
+            - avg_over_time(container_network_receive_bytes_total[1h] offset 1h)
+          ) > 50000000
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Abnormal network activity detected"
+          description: "Network traffic pattern deviates significantly from baseline" 

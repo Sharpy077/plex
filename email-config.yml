@@ -1,39 +1,39 @@
 email:
   smtp:
-    host: smtp.gmail.com
-    port: 587
-    username: your-email@gmail.com  # Update this
-    password: your-app-password     # Update this
+    host: ${SMTP_HOST}
+    port: ${SMTP_PORT}
+    username: ${SMTP_USERNAME}
+    password: ${SMTP_PASSWORD}
     encryption: tls
-    from: your-email@gmail.com      # Update this
+    from: ${FROM_ADDRESS}
 
 notifications:
   # Service status notifications
   service_down:
     enabled: true
     recipients:
-      - admin@yourdomain.com
+      - ${ADMIN_EMAIL}
     subject: "[ALERT] Service {service} is down"
     
   # Security notifications
   security_alert:
     enabled: true
     recipients:
-      - admin@yourdomain.com
+      - ${ADMIN_EMAIL}
     subject: "[SECURITY] {alert_type} detected"
     
   # Backup notifications
   backup_status:
     enabled: true
     recipients:
-      - admin@yourdomain.com
+      - ${ADMIN_EMAIL}
     subject: "[BACKUP] {status} - {timestamp}"
     
   # System notifications
   system_alert:
     enabled: true
     recipients:
-      - admin@yourdomain.com
+      - ${ADMIN_EMAIL}
     subject: "[SYSTEM] {alert_type} - {message}"
 
 templates:

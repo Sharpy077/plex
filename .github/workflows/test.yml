@@ -1,0 +1,77 @@
+name: Test Configuration
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Create test secrets.json
+      run: |
+        $secrets = @{
+          github = @{
+            client_id = "test-client-id"
+            client_secret = "test-client-secret"
+          }
+          auth = @{
+            secret = "test-secret"
+            cookie_domain = "test.com"
+            auth_host = "auth.test.com"
+            whitelist = @("testuser")
+          }
+          email = @{
+            smtp_host = "smtp.test.com"
+            smtp_port = 587
+            smtp_username = "test@test.com"
+            smtp_password = "test-password"
+            from_address = "test@test.com"
+          }
+          notifications = @{
+            admin_email = "admin@test.com"
+          }
+        }
+        $secrets | ConvertTo-Json -Depth 10 | Set-Content secrets.json
+      shell: pwsh
+
+    - name: Run setup tests
+      run: |
+        ./test-setup.ps1
+      shell: pwsh
+
+    - name: Validate Docker Compose
+      run: |
+        docker-compose config
+      shell: pwsh
+
+    - name: Check PowerShell scripts
+      run: |
+        $scripts = Get-ChildItem -Filter "*.ps1"
+        foreach ($script in $scripts) {
+          Write-Host "Checking $($script.Name)..."
+          $result = Invoke-ScriptAnalyzer -Path $script.FullName
+          if ($result) {
+            Write-Host "Issues found in $($script.Name):"
+            $result | Format-Table -AutoSize
+            exit 1
+          }
+        }
+      shell: pwsh
+
+    - name: Validate Prometheus config
+      run: |
+        docker run --rm -v ${PWD}/prometheus:/etc/prometheus prom/prometheus:latest --config.file=/etc/prometheus/prometheus.yml --check-config
+      shell: pwsh
+
+    - name: Upload test logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-logs
+        path: logs/ 

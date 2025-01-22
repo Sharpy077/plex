@@ -8,21 +8,56 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8080:8080"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./letsencrypt:/letsencrypt
+      - ./traefik/dynamic-conf.yml:/etc/traefik/dynamic-conf.yml:ro
     command:
       - "--api.insecure=false"
+      - "--api.dashboard=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
+      - "--providers.file.filename=/etc/traefik/dynamic-conf.yml"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.letsencrypt.acme.email=support@sharphorizons.tech"
+      - "--certificatesresolvers.letsencrypt.acme.email=${ADMIN_EMAIL}"
       - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
       - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+      - "--metrics.prometheus=true"
+      - "--metrics.prometheus.buckets=0.1,0.3,1.2,5.0"
+      - "--accesslog=true"
+      - "--accesslog.filepath=/var/log/traefik/access.log"
+      - "--accesslog.bufferingsize=100"
+      - "--log.level=INFO"
     networks:
       - proxy
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8080/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.${COOKIE_DOMAIN}`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.entrypoints=websecure"
+      - "traefik.http.routers.dashboard.tls=true"
+      - "traefik.http.routers.dashboard.middlewares=chain-secure@file"
+      - "traefik.http.routers.metrics.rule=Host(`metrics.${COOKIE_DOMAIN}`)"
+      - "traefik.http.routers.metrics.service=prometheus@internal"
+      - "traefik.http.routers.metrics.entrypoints=websecure"
+      - "traefik.http.routers.metrics.tls=true"
+      - "traefik.http.routers.metrics.middlewares=chain-secure@file"
 
   traefik-forward-auth:
     image: thomseddon/traefik-forward-auth:latest
@@ -31,22 +66,35 @@ services:
     restart: unless-stopped
     environment:
       - DEFAULT_PROVIDER=github
-      - PROVIDERS_GITHUB_CLIENT_ID=Iv23lirtGSxbaPFc7ju5
-      - PROVIDERS_GITHUB_CLIENT_SECRET=79b264d49bd3c60136a94e11d388a2fb9dd681f1
-      - SECRET=kj4h5kj4h5kj4h5kj4h5kj4h5kj4h5k6
-      - COOKIE_DOMAIN=sharphorizons.tech
-      - AUTH_HOST=auth.sharphorizons.tech
-      - WHITELIST=Sharpy077
+      - PROVIDERS_GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - PROVIDERS_GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+      - SECRET=${AUTH_SECRET}
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
+      - AUTH_HOST=${AUTH_HOST}
+      - WHITELIST=${AUTH_WHITELIST}
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.auth.rule=Host(`auth.sharphorizons.tech`)"
+      - "traefik.http.routers.auth.rule=Host(`${AUTH_HOST}`)"
       - "traefik.http.routers.auth.entrypoints=websecure"
       - "traefik.http.routers.auth.tls=true"
       - "traefik.http.middlewares.traefik-forward-auth.forwardauth.address=http://traefik-forward-auth:4181"
       - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=X-Forwarded-User"
       - "traefik.http.services.auth.loadbalancer.server.port=4181"
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:4181/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   radarr:
     image: linuxserver/radarr:latest
@@ -60,15 +108,30 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.radarr.rule=Host(`radarr.sharphorizons.tech`)"
+      - "traefik.http.routers.radarr.rule=Host(`${RADARR_HOST}`)"
       - "traefik.http.routers.radarr.entrypoints=websecure"
       - "traefik.http.routers.radarr.tls=true"
       - "traefik.http.routers.radarr.middlewares=traefik-forward-auth@docker"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7878/api/v3/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   sonarr:
     image: linuxserver/sonarr:latest
     container_name: sonarr
     restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ./docker/sonarr:/config
       - ./media/tv:/tv
@@ -77,15 +140,30 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.sonarr.rule=Host(`sonarr.sharphorizons.tech`)"
+      - "traefik.http.routers.sonarr.rule=Host(`${SONARR_HOST}`)"
       - "traefik.http.routers.sonarr.entrypoints=websecure"
       - "traefik.http.routers.sonarr.tls=true"
-      - "traefik.http.routers.sonarr.middlewares=traefik-forward-auth@docker"
+      - "traefik.http.routers.sonarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8989/api/v3/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   lidarr:
     image: linuxserver/lidarr:latest
     container_name: lidarr
     restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ./docker/lidarr:/config
       - ./media/music:/music
@@ -94,30 +172,60 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.lidarr.rule=Host(`lidarr.sharphorizons.tech`)"
+      - "traefik.http.routers.lidarr.rule=Host(`${LIDARR_HOST}`)"
       - "traefik.http.routers.lidarr.entrypoints=websecure"
       - "traefik.http.routers.lidarr.tls=true"
-      - "traefik.http.routers.lidarr.middlewares=traefik-forward-auth@docker"
+      - "traefik.http.routers.lidarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8686/api/v1/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   prowlarr:
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
     restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ./docker/prowlarr:/config
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.sharphorizons.tech`)"
+      - "traefik.http.routers.prowlarr.rule=Host(`${PROWLARR_HOST}`)"
       - "traefik.http.routers.prowlarr.entrypoints=websecure"
       - "traefik.http.routers.prowlarr.tls=true"
-      - "traefik.http.routers.prowlarr.middlewares=traefik-forward-auth@docker"
+      - "traefik.http.routers.prowlarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9696/api/v1/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   bazarr:
     image: linuxserver/bazarr:latest
     container_name: bazarr
     restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ./docker/bazarr:/config
       - ./media/movies:/movies
@@ -126,15 +234,30 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.bazarr.rule=Host(`bazarr.sharphorizons.tech`)"
+      - "traefik.http.routers.bazarr.rule=Host(`${BAZARR_HOST}`)"
       - "traefik.http.routers.bazarr.entrypoints=websecure"
       - "traefik.http.routers.bazarr.tls=true"
-      - "traefik.http.routers.bazarr.middlewares=traefik-forward-auth@docker"
+      - "traefik.http.routers.bazarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6767/api/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   readarr:
     image: linuxserver/readarr:develop
     container_name: readarr
     restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ./docker/readarr:/config
       - ./media/books:/books
@@ -143,15 +266,31 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.readarr.rule=Host(`readarr.sharphorizons.tech`)"
+      - "traefik.http.routers.readarr.rule=Host(`${READARR_HOST}`)"
       - "traefik.http.routers.readarr.entrypoints=websecure"
       - "traefik.http.routers.readarr.tls=true"
-      - "traefik.http.routers.readarr.middlewares=traefik-forward-auth@docker"
+      - "traefik.http.routers.readarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8787/api/v1/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
     restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - WEBUI_PORT=8080
     volumes:
       - ./docker/qbittorrent:/config
       - ./media/downloads:/downloads
@@ -159,10 +298,23 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.qbit.rule=Host(`qbit.sharphorizons.tech`)"
+      - "traefik.http.routers.qbit.rule=Host(`${QBIT_HOST}`)"
       - "traefik.http.routers.qbit.entrypoints=websecure"
       - "traefik.http.routers.qbit.tls=true"
-      - "traefik.http.routers.qbit.middlewares=traefik-forward-auth@docker"
+      - "traefik.http.routers.qbit.middlewares=traefik-forward-auth@docker,secure-headers@file"
+      - "traefik.http.services.qbit.loadbalancer.server.port=8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '2'
+        reservations:
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   wireguard:
     image: linuxserver/wireguard:latest
@@ -171,14 +323,15 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
       - SERVERURL=auto
       - SERVERPORT=51820
       - PEERS=1
       - PEERDNS=auto
       - INTERNAL_SUBNET=10.13.13.0
+      - ALLOWEDIPS=0.0.0.0/0
     volumes:
       - ./docker/wireguard:/config
       - /lib/modules:/lib/modules
@@ -186,11 +339,190 @@ services:
       - "51820:51820/udp"
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.ip_forward=1
     restart: unless-stopped
     networks:
       - proxy
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '1'
+        reservations:
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "ping", "-c", "1", "10.13.13.1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wireguard.rule=Host(`vpn.${COOKIE_DOMAIN}`)"
+      - "traefik.http.routers.wireguard.entrypoints=websecure"
+      - "traefik.http.routers.wireguard.tls=true"
+      - "traefik.http.routers.wireguard.middlewares=chain-secure@file"
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    networks:
+      - monitoring
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:9100/metrics"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    restart: unless-stopped
+    privileged: true
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    networks:
+      - monitoring
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8080/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - monitoring
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1'
+        reservations:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.prometheus.rule=Host(`prometheus.${COOKIE_DOMAIN}`)"
+      - "traefik.http.routers.prometheus.entrypoints=websecure"
+      - "traefik.http.routers.prometheus.tls=true"
+      - "traefik.http.routers.prometheus.middlewares=chain-secure@file"
+      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: alertmanager
+    restart: unless-stopped
+    volumes:
+      - ./alertmanager:/etc/alertmanager
+      - alertmanager_data:/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+    networks:
+      - monitoring
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:9093/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alertmanager.rule=Host(`alerts.${COOKIE_DOMAIN}`)"
+      - "traefik.http.routers.alertmanager.entrypoints=websecure"
+      - "traefik.http.routers.alertmanager.tls=true"
+      - "traefik.http.routers.alertmanager.middlewares=chain-secure@file"
+      - "traefik.http.services.alertmanager.loadbalancer.server.port=9093"
+
+volumes:
+  prometheus_data:
+  alertmanager_data:
 
 networks:
   proxy:
-    external: false
+    name: proxy
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1
+  
+  media:
+    name: media
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+          gateway: 172.19.0.1
+
+  downloads:
+    name: downloads
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+
+  monitoring:
+    name: monitoring
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+          gateway: 172.21.0.1
  

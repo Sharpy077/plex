@@ -1,14 +1,39 @@
+# Sensitive files
+.env
+secrets.json
+*.key
+*.pem
+*.crt
+*.env
+*.password
+acme.json
+
 # Docker volumes and data
 data/
+docker/*/
 *.sqlite3
 *.log
 
-# Environment variables
-.env
+# Media files
+media/
+downloads/
+
+# Backup files
+backups/
+*.bak
+*.backup
+
+# Let's Encrypt
+letsencrypt/
+
+# Prometheus & Alertmanager data
+prometheus_data/
+alertmanager_data/
 
 # System files
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # IDE files
 .idea/
@@ -16,16 +41,21 @@ Thumbs.db
 *.swp
 *.swo
 
+# Temporary files
+*.tmp
+*.temp
+**/ipc-socket
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+
 # Database files
+*.db
 *.db-shm
 *.db-wal
 
-# Log files
-logs/*.txt
-logs/*.log
-
-# Temporary files
-**/ipc-socket
-
-# Other runtime files
-*.pid 
+# Runtime files
+*.pid
+*.sock 
