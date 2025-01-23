@@ -33,6 +33,7 @@ services:
       - "--log.level=INFO"
     networks:
       - proxy
+      - vlan20
     env_file:
       - .env
     deploy:
@@ -60,18 +61,19 @@ services:
       - "traefik.http.routers.metrics.middlewares=chain-secure@file"
 
   traefik-forward-auth:
-    image: thomseddon/traefik-forward-auth:latest
-    platform: linux/amd64
+    image: quay.io/oauth2-proxy/oauth2-proxy:latest
     container_name: traefik-forward-auth
     restart: unless-stopped
     environment:
-      - DEFAULT_PROVIDER=github
-      - PROVIDERS_GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
-      - PROVIDERS_GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
-      - SECRET=${AUTH_SECRET}
-      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
-      - AUTH_HOST=${AUTH_HOST}
-      - WHITELIST=${AUTH_WHITELIST}
+      - OAUTH2_PROXY_PROVIDER=github
+      - OAUTH2_PROXY_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - OAUTH2_PROXY_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+      - OAUTH2_PROXY_COOKIE_SECRET=${AUTH_SECRET}
+      - OAUTH2_PROXY_COOKIE_DOMAIN=${COOKIE_DOMAIN}
+      - OAUTH2_PROXY_EMAIL_DOMAINS=*
+      - OAUTH2_PROXY_GITHUB_USERS=${AUTH_WHITELIST}
+      - OAUTH2_PROXY_HTTP_ADDRESS=:4181
+      - OAUTH2_PROXY_UPSTREAMS=http://127.0.0.1:4181
     networks:
       - proxy
     labels:
@@ -106,6 +108,9 @@ services:
       - ./media/downloads:/downloads
     networks:
       - proxy
+      - vlan20
+      - media
+      - downloads
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.radarr.rule=Host(`${RADARR_HOST}`)"
@@ -138,6 +143,9 @@ services:
       - ./media/downloads:/downloads
     networks:
       - proxy
+      - vlan20
+      - media
+      - downloads
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.sonarr.rule=Host(`${SONARR_HOST}`)"
@@ -170,6 +178,9 @@ services:
       - ./media/downloads:/downloads
     networks:
       - proxy
+      - vlan20
+      - media
+      - downloads
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.lidarr.rule=Host(`${LIDARR_HOST}`)"
@@ -200,6 +211,8 @@ services:
       - ./docker/prowlarr:/config
     networks:
       - proxy
+      - vlan20
+      - downloads
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.prowlarr.rule=Host(`${PROWLARR_HOST}`)"
@@ -232,6 +245,8 @@ services:
       - ./media/tv:/tv
     networks:
       - proxy
+      - vlan20
+      - media
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.bazarr.rule=Host(`${BAZARR_HOST}`)"
@@ -492,37 +507,14 @@ volumes:
 
 networks:
   proxy:
-    name: proxy
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.18.0.0/16
-          gateway: 172.18.0.1
-  
+  vlan20:
+    external: true
+    name: vlan20
   media:
-    name: media
     driver: bridge
-    internal: true
-    ipam:
-      config:
-        - subnet: 172.19.0.0/16
-          gateway: 172.19.0.1
-
   downloads:
-    name: downloads
     driver: bridge
-    internal: true
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
-          gateway: 172.20.0.1
-
   monitoring:
-    name: monitoring
     driver: bridge
-    internal: true
-    ipam:
-      config:
-        - subnet: 172.21.0.0/16
-          gateway: 172.21.0.1
  

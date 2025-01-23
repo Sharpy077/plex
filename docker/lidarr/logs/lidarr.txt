@@ -3104,3 +3104,1031 @@ disk I/O error
 2025-01-21 11:39:30.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
 2025-01-21 11:39:30.1|Info|DownloadDecisionMaker|No results found
 2025-01-21 11:39:30.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-21 19:54:28.9|Info|Bootstrap|Starting Lidarr - /app/lidarr/bin/Lidarr - Version 2.8.2.4493
+2025-01-21 19:54:29.0|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-21 19:54:29.0|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-21 19:54:29.3|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-21 19:54:29.6|Info|MigrationController|*** Migrating data source=/config/lidarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-21 19:54:29.7|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-21 19:54:29.7|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-21 19:54:29.7|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-21 19:54:29.9|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-21 19:54:29.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1744641s
+2025-01-21 19:54:29.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-21 19:54:29.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.2007644s
+2025-01-21 19:54:30.0|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-21 19:54:30.0|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-21 19:54:30.1|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-21 19:54:30.1|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-21 19:54:30.1|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-21 19:54:30.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0708041s
+2025-01-21 19:54:30.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-21 19:54:30.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.094542s
+2025-01-21 19:54:30.6|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8686
+2025-01-21 19:54:31.1|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-21 19:54:31.1|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-21 19:54:31.1|Info|Microsoft.Hosting.Lifetime|Content root path: /app/lidarr/bin
+2025-01-21 19:54:31.2|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-21 19:54:58.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:55:01.2|Info|RssSyncService|Starting RSS Sync
+2025-01-21 19:55:01.2|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-21 19:55:01.2|Info|DownloadDecisionMaker|No results found
+2025-01-21 19:55:01.2|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-21 19:55:28.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:56:00.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:56:32.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:57:03.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:57:33.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:58:04.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:58:36.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:59:05.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 19:59:35.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:00:05.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:00:38.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:01:18.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:01:59.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:02:37.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:03:16.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:03:55.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:04:31.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-21 20:05:08.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:53:45.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:54:05.7|Info|RssSyncService|Starting RSS Sync
+2025-01-22 01:54:05.8|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 01:54:05.8|Info|DownloadDecisionMaker|No results found
+2025-01-22 01:54:05.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 01:54:15.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:54:45.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:55:15.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:55:45.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:56:15.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:56:45.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:57:15.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:57:45.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:58:15.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:58:45.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:59:15.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 01:59:45.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:00:15.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:00:45.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:01:15.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:01:45.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:02:15.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:02:45.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:03:15.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:03:45.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:04:16.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:04:46.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:05:16.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:05:46.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:06:16.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:06:46.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:07:16.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:07:46.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:08:16.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:08:46.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:09:16.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:09:35.8|Info|RssSyncService|Starting RSS Sync
+2025-01-22 02:09:35.8|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 02:09:35.8|Info|DownloadDecisionMaker|No results found
+2025-01-22 02:09:35.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 02:09:46.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:10:16.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:10:46.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:11:16.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:11:46.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:12:16.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:12:46.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:13:16.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:13:46.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:14:16.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:14:47.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:15:17.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:15:47.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:16:17.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:16:47.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:17:17.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:17:47.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:18:17.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:18:47.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:19:17.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:19:47.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:20:17.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:20:47.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:21:17.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:21:47.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:22:17.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:22:47.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:23:17.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:23:47.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:24:17.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:24:35.9|Info|RssSyncService|Starting RSS Sync
+2025-01-22 02:24:35.9|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 02:24:35.9|Info|DownloadDecisionMaker|No results found
+2025-01-22 02:24:35.9|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 02:24:47.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:25:17.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:25:47.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:26:17.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:26:47.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:27:18.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:27:48.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:28:18.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:28:48.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:29:18.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:29:48.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:30:18.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:30:48.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:31:18.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:31:48.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:32:18.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:32:48.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:33:18.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:33:48.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:34:18.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:34:48.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:35:18.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:35:48.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:36:19.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:36:49.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:37:19.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:37:49.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:38:19.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:38:49.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:39:19.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:39:36.1|Info|RssSyncService|Starting RSS Sync
+2025-01-22 02:39:36.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 02:39:36.1|Info|DownloadDecisionMaker|No results found
+2025-01-22 02:39:36.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 02:39:49.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:40:19.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:40:49.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:41:19.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:41:49.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:42:19.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:42:49.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:43:19.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:43:49.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:44:19.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:44:49.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:45:19.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:45:49.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:46:19.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:46:49.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:47:20.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:47:50.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:48:20.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:48:50.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:49:20.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:49:50.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:50:20.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:50:50.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:51:20.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:51:50.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:52:20.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:52:50.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:53:20.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:53:50.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:54:20.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:54:36.2|Info|RssSyncService|Starting RSS Sync
+2025-01-22 02:54:36.2|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 02:54:36.2|Info|DownloadDecisionMaker|No results found
+2025-01-22 02:54:36.2|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 02:54:50.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:55:20.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:55:50.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:56:20.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:56:50.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:57:20.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:57:50.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:58:21.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:58:51.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:59:21.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 02:59:51.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:00:21.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:00:51.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:01:21.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:01:51.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:02:21.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:02:51.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:03:21.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:03:51.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:04:21.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:04:51.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:05:21.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:05:51.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:06:21.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:06:51.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:07:21.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:07:51.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:08:21.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:08:51.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:09:22.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:09:36.3|Info|RssSyncService|Starting RSS Sync
+2025-01-22 03:09:36.3|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 03:09:36.3|Info|DownloadDecisionMaker|No results found
+2025-01-22 03:09:36.3|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 03:09:52.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:10:22.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:10:52.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:11:22.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:11:52.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:12:22.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:12:52.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:13:22.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:13:52.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:14:22.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:14:52.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:15:22.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:15:52.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:16:22.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:16:52.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:17:22.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:17:52.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:18:22.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:18:52.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:19:22.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:19:52.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:20:22.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:20:53.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:21:23.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:21:53.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:22:23.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:22:53.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:23:23.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:23:53.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:24:23.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:24:36.4|Info|RssSyncService|Starting RSS Sync
+2025-01-22 03:24:36.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 03:24:36.4|Info|DownloadDecisionMaker|No results found
+2025-01-22 03:24:36.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 03:24:53.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:25:23.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:25:53.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:26:23.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:26:53.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:27:23.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:27:53.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:28:23.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:28:53.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:29:23.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:29:53.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:30:23.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:30:53.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:31:23.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:31:53.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:32:24.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:32:54.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:33:24.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:33:54.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:34:24.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:34:54.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:35:24.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:35:54.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:36:24.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:36:54.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:37:24.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:37:54.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:38:24.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:38:54.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:39:24.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:39:36.5|Info|RssSyncService|Starting RSS Sync
+2025-01-22 03:39:36.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 03:39:36.6|Info|DownloadDecisionMaker|No results found
+2025-01-22 03:39:36.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 03:39:54.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:40:24.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:40:54.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:41:24.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:41:54.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:42:24.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:42:54.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:43:24.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:43:55.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:44:25.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:44:55.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:45:25.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:45:55.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:46:25.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:46:55.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:47:25.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:47:55.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:48:25.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:48:55.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:49:25.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:49:55.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:50:25.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:50:55.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:51:25.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:51:55.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:52:25.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:52:55.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:53:25.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:53:55.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:54:25.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:54:36.7|Info|RssSyncService|Starting RSS Sync
+2025-01-22 03:54:36.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 03:54:36.7|Info|DownloadDecisionMaker|No results found
+2025-01-22 03:54:36.7|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 03:54:55.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:55:26.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:55:56.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:56:26.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:56:56.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:57:26.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:57:56.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:58:26.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:58:56.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:59:26.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 03:59:56.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:00:26.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:00:56.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:01:26.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:01:56.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:02:26.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:02:56.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:03:26.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:03:56.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:04:26.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:04:56.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:05:26.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:05:57.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:06:27.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:06:57.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:07:27.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:07:57.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:08:27.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:08:57.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:09:27.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:09:36.9|Info|RssSyncService|Starting RSS Sync
+2025-01-22 04:09:36.9|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 04:09:36.9|Info|DownloadDecisionMaker|No results found
+2025-01-22 04:09:36.9|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 04:09:57.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:10:27.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:10:57.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:11:27.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:11:57.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:12:27.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:12:57.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:13:27.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:13:57.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:14:27.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:14:57.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:15:27.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:15:57.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:16:27.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:16:57.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:17:28.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:17:58.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:18:28.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:18:58.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:19:28.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:19:58.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:20:28.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:20:58.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:21:28.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:21:58.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:22:28.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:22:58.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:23:28.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:23:58.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:24:28.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:24:37.0|Info|RssSyncService|Starting RSS Sync
+2025-01-22 04:24:37.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 04:24:37.0|Info|DownloadDecisionMaker|No results found
+2025-01-22 04:24:37.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 04:24:58.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:25:28.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:25:58.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:26:28.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:26:58.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:27:28.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:27:58.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:28:28.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:28:59.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:29:29.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:29:59.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:30:29.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:30:59.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:31:29.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:31:59.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:32:29.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:32:59.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:33:29.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:33:59.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:34:29.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:34:59.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:35:29.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:35:59.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:36:29.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:36:59.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:37:29.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:37:59.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:38:29.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:38:59.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:39:07.2|Info|HousekeepingService|Running housecleaning tasks
+2025-01-22 04:39:07.2|Info|TrackGroupingService|Grouping 0 tracks
+2025-01-22 04:39:07.3|Info|ImportApprovedTracks|Importing 0 tracks
+2025-01-22 04:39:07.5|Info|Database|Vacuuming Log database
+2025-01-22 04:39:07.5|Info|Database|Log database compressed
+2025-01-22 04:39:07.6|Info|Database|Vacuuming Main database
+2025-01-22 04:39:07.6|Info|Database|Main database compressed
+2025-01-22 04:39:29.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:39:37.2|Info|RssSyncService|Starting RSS Sync
+2025-01-22 04:39:37.2|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 04:39:37.2|Info|DownloadDecisionMaker|No results found
+2025-01-22 04:39:37.2|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 04:40:00.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:40:30.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:41:00.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:41:30.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:42:00.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:42:30.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:43:00.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:43:30.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:44:00.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:44:30.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:45:00.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:45:30.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:46:00.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:46:30.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:47:00.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:47:30.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:48:00.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:48:30.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:49:00.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:49:30.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:50:00.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:50:30.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:51:01.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:51:31.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:52:01.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:52:31.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:53:01.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:53:31.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:54:01.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:54:31.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:54:37.3|Info|RssSyncService|Starting RSS Sync
+2025-01-22 04:54:37.3|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 04:54:37.3|Info|DownloadDecisionMaker|No results found
+2025-01-22 04:54:37.3|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 04:55:01.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:55:31.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:56:01.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:56:31.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:57:01.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:57:31.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:58:01.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:58:31.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:59:01.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 04:59:31.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:00:01.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:00:31.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:01:01.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:01:31.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:02:01.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:02:31.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:03:02.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:03:32.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:04:02.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:04:32.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:05:02.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:05:32.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:06:02.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:06:32.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:07:02.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:07:32.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:08:02.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:08:32.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:09:02.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:09:32.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:09:37.4|Info|RssSyncService|Starting RSS Sync
+2025-01-22 05:09:37.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 05:09:37.4|Info|DownloadDecisionMaker|No results found
+2025-01-22 05:09:37.4|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 05:10:02.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:10:32.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:11:02.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:11:32.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:12:02.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:12:32.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:13:02.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:13:32.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:14:02.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:14:33.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:15:03.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:15:33.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:16:03.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:16:33.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:17:03.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:17:33.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:18:03.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:18:33.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:19:03.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:19:33.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:20:03.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:20:33.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:21:03.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:21:33.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:22:03.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:22:33.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:23:03.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:23:33.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:24:03.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:24:33.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:24:37.5|Info|RssSyncService|Starting RSS Sync
+2025-01-22 05:24:37.5|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 05:24:37.5|Info|DownloadDecisionMaker|No results found
+2025-01-22 05:24:37.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 05:25:03.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:25:33.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:26:03.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:26:34.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:27:04.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:27:34.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:28:04.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:28:34.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:29:04.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:29:34.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:30:04.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:30:34.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:31:04.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:31:34.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:32:04.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:32:34.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:33:04.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:33:34.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:34:04.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:34:34.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:35:04.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:35:34.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:36:04.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:36:34.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:37:04.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:37:34.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:38:04.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:38:35.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:39:05.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:39:35.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:39:37.6|Info|RssSyncService|Starting RSS Sync
+2025-01-22 05:39:37.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 05:39:37.6|Info|DownloadDecisionMaker|No results found
+2025-01-22 05:39:37.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 05:40:05.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:40:35.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:41:05.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:41:35.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:42:05.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:42:35.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:43:05.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:43:35.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:44:05.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:44:35.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:45:05.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:45:35.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:46:05.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:46:35.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:47:05.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:47:35.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:48:05.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:48:36.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:49:06.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:49:36.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:50:06.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:50:36.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:51:06.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:51:36.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:52:06.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:52:36.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:53:06.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:53:36.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:54:06.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:54:36.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:54:37.8|Info|RssSyncService|Starting RSS Sync
+2025-01-22 05:54:37.8|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 05:54:37.8|Info|DownloadDecisionMaker|No results found
+2025-01-22 05:54:37.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 05:55:06.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:55:36.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:56:06.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:56:36.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:57:06.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:57:36.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:58:06.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:58:36.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:59:06.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 05:59:37.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:00:07.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:00:37.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:01:07.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:01:37.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:02:07.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:02:37.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:03:07.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:03:37.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:04:07.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:04:37.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:05:07.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:05:37.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:06:07.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:06:37.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:07:07.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:07:37.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:08:08.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:08:38.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:09:08.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:09:38.0|Info|RssSyncService|Starting RSS Sync
+2025-01-22 06:09:38.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 06:09:38.0|Info|DownloadDecisionMaker|No results found
+2025-01-22 06:09:38.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 06:09:38.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:10:08.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:10:38.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:11:08.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:11:38.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:12:08.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:12:38.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:13:08.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:13:38.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:14:08.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:14:38.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:15:08.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:15:39.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:16:09.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:16:39.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:17:09.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:17:39.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:18:09.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:18:39.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:19:09.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:19:39.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:20:09.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:20:39.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:21:09.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:21:39.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:22:09.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:22:39.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:23:09.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:23:39.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:24:09.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:24:38.1|Info|RssSyncService|Starting RSS Sync
+2025-01-22 06:24:38.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 06:24:38.1|Info|DownloadDecisionMaker|No results found
+2025-01-22 06:24:38.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 06:24:40.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:25:10.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 06:25:40.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 12:40:09.6|Info|Bootstrap|Starting Lidarr - /app/lidarr/bin/Lidarr - Version 2.8.2.4493
+2025-01-22 12:40:09.7|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-22 12:40:09.8|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-22 12:40:10.5|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-22 12:40:10.9|Info|MigrationController|*** Migrating data source=/config/lidarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-22 12:40:11.0|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-22 12:40:11.0|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-22 12:40:11.0|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-22 12:40:11.4|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-22 12:40:11.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.3657948s
+2025-01-22 12:40:11.4|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-22 12:40:11.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.3865756s
+2025-01-22 12:40:11.5|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-22 12:40:11.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-22 12:40:11.5|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-22 12:40:11.6|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-22 12:40:11.7|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-22 12:40:11.7|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0987495s
+2025-01-22 12:40:11.7|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-22 12:40:11.7|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1235757s
+2025-01-22 12:40:12.1|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8686
+2025-01-22 12:40:12.7|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-22 12:40:12.7|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-22 12:40:12.8|Info|Microsoft.Hosting.Lifetime|Content root path: /app/lidarr/bin
+2025-01-22 12:40:12.9|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-22 12:40:38.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 12:40:42.7|Info|RssSyncService|Starting RSS Sync
+2025-01-22 12:40:42.8|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 12:40:42.8|Info|DownloadDecisionMaker|No results found
+2025-01-22 12:40:42.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 12:41:08.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 12:41:38.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 14:04:18.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 14:04:21.7|Info|RssSyncService|Starting RSS Sync
+2025-01-22 14:04:22.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-22 14:04:23.0|Info|DownloadDecisionMaker|No results found
+2025-01-22 14:04:23.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-22 14:04:53.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 14:05:23.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 14:05:54.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 14:06:24.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 14:06:55.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-22 14:07:25.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:53:22.7|Info|Bootstrap|Starting Lidarr - /app/lidarr/bin/Lidarr - Version 2.8.2.4493
+2025-01-23 00:53:22.8|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 00:53:22.8|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 00:53:23.5|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 00:53:24.1|Info|MigrationController|*** Migrating data source=/config/lidarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 00:53:24.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 00:53:24.3|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 00:53:24.3|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 00:53:24.5|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 00:53:24.5|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1901251s
+2025-01-23 00:53:24.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 00:53:24.5|Info|FluentMigrator.Runner.MigrationRunner|=> 0.216494s
+2025-01-23 00:53:24.7|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 00:53:24.7|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 00:53:24.8|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 00:53:24.9|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 00:53:25.0|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 00:53:25.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1210983s
+2025-01-23 00:53:25.0|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 00:53:25.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.140358s
+2025-01-23 00:53:25.4|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8686
+2025-01-23 00:53:26.3|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 00:53:26.3|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 00:53:26.3|Info|Microsoft.Hosting.Lifetime|Content root path: /app/lidarr/bin
+2025-01-23 00:53:26.6|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 00:53:52.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:53:56.3|Info|RssSyncService|Starting RSS Sync
+2025-01-23 00:53:56.3|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 00:53:56.4|Info|DownloadDecisionMaker|No results found
+2025-01-23 00:53:56.4|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 00:54:22.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:54:52.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:55:22.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:55:52.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:56:22.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:56:52.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:57:22.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:57:52.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:58:22.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:58:52.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:59:22.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 00:59:52.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:00:22.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:00:52.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:01:22.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:01:52.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:02:23.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:02:53.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:03:23.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:03:53.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:04:23.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:04:53.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:05:23.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:05:53.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:06:23.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:06:53.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:07:23.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:07:53.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:08:23.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:08:53.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:09:23.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:09:26.4|Info|RssSyncService|Starting RSS Sync
+2025-01-23 01:09:26.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 01:09:26.4|Info|DownloadDecisionMaker|No results found
+2025-01-23 01:09:26.4|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 01:09:53.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:10:23.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:10:54.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:11:24.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:11:54.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:12:24.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:12:54.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:13:24.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:13:54.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:14:24.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:14:54.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:15:24.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:15:54.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:16:24.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:16:54.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:17:24.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:17:54.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:18:24.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:18:54.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:19:24.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:19:54.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:20:24.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:20:54.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:21:25.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:21:55.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:22:25.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:22:55.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:23:25.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:23:55.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:24:25.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:24:55.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:24:56.5|Info|RssSyncService|Starting RSS Sync
+2025-01-23 01:24:56.5|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 01:24:56.5|Info|DownloadDecisionMaker|No results found
+2025-01-23 01:24:56.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 01:25:25.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:25:55.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:26:25.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:26:55.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:27:25.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:27:55.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:28:25.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:28:55.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:29:25.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:29:55.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:30:25.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:30:55.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:31:25.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:31:56.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:32:26.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:32:56.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:33:26.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:33:56.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:34:26.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:34:56.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:35:26.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:35:56.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:36:26.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:36:56.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:37:26.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:37:56.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:38:26.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:38:56.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:39:26.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:39:56.6|Info|RssSyncService|Starting RSS Sync
+2025-01-23 01:39:56.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 01:39:56.6|Info|DownloadDecisionMaker|No results found
+2025-01-23 01:39:56.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 01:39:56.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:40:26.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:40:56.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:41:26.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:41:57.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:42:27.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:42:57.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:43:27.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:43:57.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:44:27.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:44:57.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:45:27.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:45:57.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:46:27.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:46:57.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:47:27.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:47:57.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:48:27.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:48:57.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:49:27.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:49:57.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:50:27.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:50:57.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:51:27.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:51:58.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:52:28.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:52:58.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:53:28.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:53:58.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:54:28.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:54:56.7|Info|RssSyncService|Starting RSS Sync
+2025-01-23 01:54:56.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 01:54:56.7|Info|DownloadDecisionMaker|No results found
+2025-01-23 01:54:56.7|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 01:54:58.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:55:28.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:55:58.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:56:28.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:56:58.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:57:28.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:57:58.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:58:28.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:58:58.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:59:28.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 01:59:58.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:00:28.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:00:58.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:01:28.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:01:58.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:02:00.0|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 02:02:00.3|Info|ConsoleApp|Exiting main.
+2025-01-23 02:02:14.4|Info|Bootstrap|Starting Lidarr - /app/lidarr/bin/Lidarr - Version 2.8.2.4493
+2025-01-23 02:02:14.5|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 02:02:14.5|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 02:02:14.8|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 02:02:15.0|Info|MigrationController|*** Migrating data source=/config/lidarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 02:02:15.1|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 02:02:15.1|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 02:02:15.1|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 02:02:15.2|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 02:02:15.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0769753s
+2025-01-23 02:02:15.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 02:02:15.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.099447s
+2025-01-23 02:02:15.3|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 02:02:15.3|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 02:02:15.3|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 02:02:15.3|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 02:02:15.4|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 02:02:15.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0523118s
+2025-01-23 02:02:15.4|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 02:02:15.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0617336s
+2025-01-23 02:02:15.7|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8686
+2025-01-23 02:02:16.1|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 02:02:16.1|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 02:02:16.2|Info|Microsoft.Hosting.Lifetime|Content root path: /app/lidarr/bin
+2025-01-23 02:02:16.2|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 02:02:43.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:03:13.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:03:44.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:04:14.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:04:44.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:05:14.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:05:44.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:06:14.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:06:44.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:07:14.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:07:44.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:08:14.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:08:44.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:09:14.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:09:44.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:10:14.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:10:16.2|Info|RssSyncService|Starting RSS Sync
+2025-01-23 02:10:16.2|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 02:10:16.2|Info|DownloadDecisionMaker|No results found
+2025-01-23 02:10:16.2|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 02:10:44.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:11:14.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:11:44.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:12:14.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:12:44.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:13:14.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:13:44.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:14:15.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:14:45.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:15:15.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:15:45.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:15:59.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:16:15.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:16:45.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:17:15.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:17:45.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:18:15.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:18:45.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:19:15.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:19:45.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:20:15.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:20:45.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:21:15.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:21:45.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:22:15.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:22:45.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:23:15.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:23:45.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:24:15.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:24:45.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:25:15.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:25:46.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:25:46.2|Info|RssSyncService|Starting RSS Sync
+2025-01-23 02:25:46.3|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 02:25:46.3|Info|DownloadDecisionMaker|No results found
+2025-01-23 02:25:46.3|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 02:26:16.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:26:46.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:27:16.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:27:46.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:28:16.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:28:46.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:29:16.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:29:46.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:30:16.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:30:46.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:31:16.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:31:46.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:32:17.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:32:47.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:33:17.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:33:47.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:34:17.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:34:47.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:35:17.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:35:48.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:36:18.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:36:48.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:37:18.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:37:48.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:38:18.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:38:48.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:39:18.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:39:48.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:40:18.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:40:46.5|Info|RssSyncService|Starting RSS Sync
+2025-01-23 02:40:46.5|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 02:40:46.5|Info|DownloadDecisionMaker|No results found
+2025-01-23 02:40:46.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 02:40:48.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:41:18.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:41:48.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:42:18.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:42:48.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:43:18.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:43:48.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:44:18.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:44:48.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:45:18.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:45:48.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:46:18.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
