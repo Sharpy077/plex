@@ -1,5 +1,43 @@
-# Sensitive files
+# Environment files
 .env
+.env.*
+!.env.example
+
+# Docker runtime files
+docker/**/logs/
+docker/**/*.db*
+docker/**/*.pid
+docker/**/config.xml
+docker/**/app/config/config.xml
+
+# Certificates
+letsencrypt/
+
+# IDE files
+.idea/
+.vscode/
+.cursorrules
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+docker/*/
+media/*/
+backups/
+prometheus/
+alertmanager/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Sensitive files
 secrets.json
 *.key
 *.pem
@@ -10,45 +48,31 @@ acme.json
 
 # Docker volumes and data
 data/
-docker/*/
 *.sqlite3
-*.log
 
 # Media files
-media/
 downloads/
 
 # Backup files
-backups/
 *.bak
 *.backup
-
-# Let's Encrypt
-letsencrypt/
 
 # Prometheus & Alertmanager data
 prometheus_data/
 alertmanager_data/
 
-# System files
-.DS_Store
-Thumbs.db
+# Desktop files
 desktop.ini
 
 # IDE files
-.idea/
-.vscode/
 *.swp
 *.swo
 
 # Temporary files
-*.tmp
-*.temp
 **/ipc-socket
 
 # Log files
 logs/
-*.log
 npm-debug.log*
 
 # Database files
@@ -58,4 +82,8 @@ npm-debug.log*
 
 # Runtime files
 *.pid
-*.sock 
+*.sock
+
+# Prometheus and Alertmanager configuration files
+prometheus/config.xml
+alertmanager/config.xml 

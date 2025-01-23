@@ -1,0 +1,36 @@
+http:
+  middlewares:
+    auth-github:
+      forwardAuth:
+        address: "http://oauth2-proxy:4180"
+        trustForwardHeader: true
+        authResponseHeaders:
+          - "X-Auth-Request-User"
+          - "X-Auth-Request-Email"
+          - "Authorization"
+
+    secure-headers:
+      headers:
+        browserXssFilter: true
+        contentTypeNosniff: true
+        frameDeny: true
+        sslRedirect: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        customFrameOptionsValue: "SAMEORIGIN"
+        customRequestHeaders:
+          X-Forwarded-Proto: "https"
+
+    rate-limit:
+      rateLimit:
+        average: 100
+        burst: 50
+        period: 1s
+
+    chain-auth:
+      chain:
+        middlewares:
+          - auth-github
+          - secure-headers
+          - rate-limit 

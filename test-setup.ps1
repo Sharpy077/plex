@@ -1,160 +1,209 @@
-# Test script for verifying setup and configuration
-param (
-    [string]$LogFile = ".\logs\test-setup.log"
+# Test script for Docker media server setup
+param(
+    [switch]$Verbose
 )
 
-function Write-Log {
-    param($Message)
-    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    "$timestamp - $Message" | Tee-Object -FilePath $LogFile -Append
-}
+$ErrorActionPreference = "Stop"
+$VerbosePreference = if ($Verbose) { "Continue" } else { "SilentlyContinue" }
 
-function Test-Port {
-    param($HostName, $Port)
-    try {
-        $tcp = New-Object System.Net.Sockets.TcpClient
-        $tcp.ConnectAsync($HostName, $Port).Wait(1000) | Out-Null
-        $tcp.Close()
-        return $true
-    }
-    catch {
-        return $false
-    }
-}
-
-# Ensure log directory exists
-New-Item -ItemType Directory -Force -Path (Split-Path $LogFile) | Out-Null
-Write-Log "Starting setup verification..."
-
-# Check required files
-$requiredFiles = @(
-    "docker-compose.yml",
-    "secrets.json",
-    "generate-env.ps1",
-    "schedule-tasks.ps1",
-    "backup-script.ps1",
-    "monitor-certs.ps1"
-)
-
-$missingFiles = @()
-foreach ($file in $requiredFiles) {
-    if (-not (Test-Path $file)) {
-        $missingFiles += $file
-        Write-Log "ERROR: Missing required file: $file"
-    }
-}
-
-if ($missingFiles.Count -gt 0) {
-    Write-Log "ERROR: Missing required files. Please ensure all files are present."
-    exit 1
-}
-
-# Verify secrets.json structure
-try {
-    $secrets = Get-Content -Path "secrets.json" | ConvertFrom-Json
-    $requiredFields = @(
-        @{Path="github.client_id"; Name="GitHub Client ID"},
-        @{Path="github.client_secret"; Name="GitHub Client Secret"},
-        @{Path="auth.secret"; Name="Auth Secret"},
-        @{Path="auth.cookie_domain"; Name="Cookie Domain"},
-        @{Path="auth.auth_host"; Name="Auth Host"},
-        @{Path="auth.whitelist"; Name="Auth Whitelist"},
-        @{Path="email.smtp_host"; Name="SMTP Host"},
-        @{Path="email.smtp_port"; Name="SMTP Port"},
-        @{Path="email.smtp_username"; Name="SMTP Username"},
-        @{Path="email.smtp_password"; Name="SMTP Password"},
-        @{Path="notifications.admin_email"; Name="Admin Email"}
-    )
-
-    foreach ($field in $requiredFields) {
-        $value = Invoke-Expression "`$secrets.$($field.Path)"
-        if ([string]::IsNullOrEmpty($value)) {
-            Write-Log "ERROR: Missing or empty $($field.Name) in secrets.json"
-            exit 1
+function Test-NetworkSetup {
+    Write-Verbose "Testing Docker networks..."
+    
+    $networks = docker network ls --format "{{.Name}}"
+    $requiredNetworks = @("proxy", "media", "downloads", "monitoring", "vlan20")
+    
+    foreach ($network in $requiredNetworks) {
+        if ($networks -notcontains $network) {
+            Write-Error "Required network '$network' not found"
+            return $false
         }
     }
-    Write-Log "Verified secrets.json structure"
-}
-catch {
-    Write-Log "ERROR: Failed to parse secrets.json: $_"
-    exit 1
+    Write-Host "✅ Network setup verified" -ForegroundColor Green
+    return $true
 }
 
-# Check Docker and Docker Compose
-try {
-    $dockerVersion = docker --version
-    $composeVersion = docker-compose --version
-    Write-Log "Docker version: $dockerVersion"
-    Write-Log "Docker Compose version: $composeVersion"
-}
-catch {
-    Write-Log "ERROR: Docker or Docker Compose not installed"
-    exit 1
+function Test-ContainerHealth {
+    Write-Verbose "Testing container health..."
+    
+    $containers = docker ps --format "{{.Names}}"
+    $requiredContainers = @(
+        "traefik",
+        "plex",
+        "sonarr",
+        "radarr",
+        "lidarr",
+        "readarr",
+        "bazarr",
+        "prowlarr",
+        "qbittorrent",
+        "prometheus",
+        "alertmanager",
+        "node-exporter",
+        "cadvisor"
+    )
+    
+    $allHealthy = $true
+    foreach ($container in $requiredContainers) {
+        $status = docker inspect --format "{{.State.Status}}" $container 2>$null
+        $health = docker inspect --format "{{.State.Health.Status}}" $container 2>$null
+        
+        if ($status -ne "running") {
+            Write-Error "Container '$container' is not running (Status: $status)"
+            $allHealthy = $false
+            continue
+        }
+        
+        if ($health -and $health -ne "healthy") {
+            Write-Error "Container '$container' is not healthy (Health: $health)"
+            $allHealthy = $false
+            continue
+        }
+        
+        Write-Verbose "Container '$container' is healthy"
+    }
+    
+    if ($allHealthy) {
+        Write-Host "✅ All containers are running and healthy" -ForegroundColor Green
+    }
+    return $allHealthy
 }
 
-# Check required ports
-$ports = @(
-    @{Port=80; Service="HTTP"},
-    @{Port=443; Service="HTTPS"},
-    @{Port=51820; Service="WireGuard"}
+function Test-TraefikConfig {
+    Write-Verbose "Testing Traefik configuration..."
+    
+    # Check if Traefik config files exist
+    $configFiles = @(
+        "./traefik/traefik.yml",
+        "./traefik/config/middleware.yml"
+    )
+    
+    foreach ($file in $configFiles) {
+        if (-not (Test-Path $file)) {
+            Write-Error "Traefik config file '$file' not found"
+            return $false
+        }
+    }
+    
+    # Check if SSL certificates are being generated
+    if (-not (Test-Path "./letsencrypt/acme.json")) {
+        Write-Error "SSL certificate file not found"
+        return $false
+    }
+    
+    Write-Host "✅ Traefik configuration verified" -ForegroundColor Green
+    return $true
+}
+
+function Test-MonitoringSetup {
+    Write-Verbose "Testing monitoring setup..."
+    
+    # Check Prometheus config
+    if (-not (Test-Path "./prometheus/prometheus.yml")) {
+        Write-Error "Prometheus config file not found"
+        return $false
+    }
+    
+    # Check Alertmanager config
+    if (-not (Test-Path "./alertmanager/config.yml")) {
+        Write-Error "Alertmanager config file not found"
+        return $false
+    }
+    
+    # Verify Prometheus configuration
+    $promCheck = docker exec prometheus promtool check config /etc/prometheus/prometheus.yml
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "Prometheus configuration check failed"
+        return $false
+    }
+    
+    Write-Host "✅ Monitoring setup verified" -ForegroundColor Green
+    return $true
+}
+
+function Test-MediaPaths {
+    Write-Verbose "Testing media paths..."
+    
+    $paths = @(
+        "./media/movies",
+        "./media/tv",
+        "./media/music",
+        "./media/books",
+        "./media/downloads",
+        "./docker",
+        "./backups"
+    )
+    
+    foreach ($path in $paths) {
+        if (-not (Test-Path $path)) {
+            Write-Error "Required path '$path' not found"
+            return $false
+        }
+        
+        # Check write permissions
+        try {
+            $testFile = Join-Path $path ".write_test"
+            New-Item -ItemType File -Path $testFile -Force | Out-Null
+            Remove-Item $testFile -Force
+        }
+        catch {
+            Write-Error "No write permission for path '$path'"
+            return $false
+        }
+    }
+    
+    Write-Host "✅ Media paths verified" -ForegroundColor Green
+    return $true
+}
+
+function Test-EnvironmentVariables {
+    Write-Verbose "Testing environment variables..."
+    
+    if (-not (Test-Path ".env")) {
+        Write-Error "Environment file '.env' not found"
+        return $false
+    }
+    
+    $requiredVars = @(
+        "PUID",
+        "PGID",
+        "TZ",
+        "COOKIE_DOMAIN",
+        "ADMIN_EMAIL",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "AUTH_SECRET"
+    )
+    
+    $envContent = Get-Content ".env"
+    foreach ($var in $requiredVars) {
+        if (-not ($envContent -match "^$var=.+")) {
+            Write-Error "Required environment variable '$var' not found or empty"
+            return $false
+        }
+    }
+    
+    Write-Host "✅ Environment variables verified" -ForegroundColor Green
+    return $true
+}
+
+# Run all tests
+Write-Host "Starting system tests..." -ForegroundColor Cyan
+
+$testResults = @(
+    (Test-NetworkSetup),
+    (Test-ContainerHealth),
+    (Test-TraefikConfig),
+    (Test-MonitoringSetup),
+    (Test-MediaPaths),
+    (Test-EnvironmentVariables)
 )
 
-foreach ($portInfo in $ports) {
-    if (Test-Port -HostName "localhost" -Port $portInfo.Port) {
-        Write-Log "WARNING: Port $($portInfo.Port) ($($portInfo.Service)) is already in use"
-    }
-    else {
-        Write-Log "Port $($portInfo.Port) ($($portInfo.Service)) is available"
-    }
-}
+# Summary
+Write-Host "`nTest Summary:" -ForegroundColor Cyan
+$passedTests = ($testResults | Where-Object { $_ -eq $true }).Count
+$totalTests = $testResults.Count
 
-# Check required directories
-$directories = @(
-    @{Path="./docker"; Purpose="Service Configurations"},
-    @{Path="./media"; Purpose="Media Storage"},
-    @{Path="./backups"; Purpose="Backup Storage"},
-    @{Path="./prometheus"; Purpose="Prometheus Configuration"},
-    @{Path="./alertmanager"; Purpose="Alertmanager Configuration"},
-    @{Path="./letsencrypt"; Purpose="SSL Certificates"}
-)
+Write-Host "Passed: $passedTests/$totalTests tests" -ForegroundColor $(if ($passedTests -eq $totalTests) { "Green" } else { "Red" })
 
-foreach ($dir in $directories) {
-    if (-not (Test-Path $dir.Path)) {
-        New-Item -ItemType Directory -Force -Path $dir.Path | Out-Null
-        Write-Log "Created directory: $($dir.Path) for $($dir.Purpose)"
-    }
-    else {
-        Write-Log "Directory exists: $($dir.Path) for $($dir.Purpose)"
-    }
-}
-
-# Generate environment variables
-try {
-    Write-Log "Generating environment variables..."
-    & .\generate-env.ps1
-    if (Test-Path .env) {
-        Write-Log "Successfully generated .env file"
-    }
-    else {
-        Write-Log "ERROR: Failed to generate .env file"
-        exit 1
-    }
-}
-catch {
-    Write-Log "ERROR: Failed to generate environment variables: $_"
-    exit 1
-}
-
-# Verify network configuration
-$networks = docker network ls --format "{{.Name}}"
-$requiredNetworks = @("proxy", "media", "downloads", "monitoring")
-foreach ($network in $requiredNetworks) {
-    if ($networks -notcontains $network) {
-        Write-Log "Network '$network' will be created by docker-compose"
-    }
-    else {
-        Write-Log "Network '$network' already exists"
-    }
-}
-
-Write-Log "Setup verification completed. Please review the log for any warnings or errors." 
+# Exit with appropriate code
+exit $(if ($passedTests -eq $totalTests) { 0 } else { 1 }) 

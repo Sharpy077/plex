@@ -2,45 +2,62 @@ global:
   scrape_interval: 15s
   evaluation_interval: 15s
 
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
+
+rule_files:
+  - /etc/prometheus/rules/*.yml
+
 scrape_configs:
-  - job_name: 'prometheus'
+  - job_name: prometheus
     static_configs:
-      - targets: ['localhost:9090']
+      - targets:
+          - localhost:9090
 
-  - job_name: 'node-exporter'
+  - job_name: node-exporter
     static_configs:
-      - targets: ['node-exporter:9100']
+      - targets:
+          - node-exporter:9100
 
-  - job_name: 'cadvisor'
+  - job_name: cadvisor
     static_configs:
-      - targets: ['cadvisor:8080']
+      - targets:
+          - cadvisor:8080
 
-  - job_name: 'radarr'
+  - job_name: traefik
+    static_configs:
+      - targets:
+          - traefik:8080
+
+  - job_name: radarr
     static_configs:
       - targets: ['radarr:7878']
     metrics_path: '/metrics'
 
-  - job_name: 'sonarr'
+  - job_name: sonarr
     static_configs:
       - targets: ['sonarr:8989']
     metrics_path: '/metrics'
 
-  - job_name: 'lidarr'
+  - job_name: lidarr
     static_configs:
       - targets: ['lidarr:8686']
     metrics_path: '/metrics'
 
-  - job_name: 'readarr'
+  - job_name: readarr
     static_configs:
       - targets: ['readarr:8787']
     metrics_path: '/metrics'
 
-  - job_name: 'prowlarr'
+  - job_name: prowlarr
     static_configs:
       - targets: ['prowlarr:9696']
     metrics_path: '/metrics'
 
-  - job_name: 'qbittorrent'
+  - job_name: qbittorrent
     static_configs:
       - targets: ['qbittorrent:8080']
     metrics_path: '/metrics'

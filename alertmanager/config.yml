@@ -1,9 +1,9 @@
 global:
   resolve_timeout: 5m
-  smtp_from: ${FROM_ADDRESS}
-  smtp_smarthost: ${SMTP_HOST}:${SMTP_PORT}
-  smtp_auth_username: ${SMTP_USERNAME}
-  smtp_auth_password: ${SMTP_PASSWORD}
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: '${ADMIN_EMAIL}'
+  smtp_auth_username: '${ADMIN_EMAIL}'
+  smtp_auth_password: '${SMTP_PASSWORD}'
   smtp_require_tls: true
 
 route:
@@ -12,37 +12,16 @@ route:
   group_interval: 5m
   repeat_interval: 4h
   receiver: 'email-notifications'
-  routes:
-    - match:
-        severity: critical
-      receiver: 'email-notifications'
-      group_wait: 10s
-      repeat_interval: 1h
-    - match:
-        severity: warning
-      receiver: 'email-notifications'
-      group_wait: 30s
-      repeat_interval: 2h
 
 receivers:
   - name: 'email-notifications'
     email_configs:
-      - to: ${ADMIN_EMAIL}
+      - to: '${ADMIN_EMAIL}'
         send_resolved: true
-        html: |
-          {{ range .Alerts }}
-          <h3>{{ .Labels.alertname }}</h3>
-          <p><strong>Severity:</strong> {{ .Labels.severity }}</p>
-          <p><strong>Status:</strong> {{ .Status }}</p>
-          <p><strong>Started:</strong> {{ .StartsAt }}</p>
-          <p><strong>Summary:</strong> {{ .Annotations.summary }}</p>
-          <p><strong>Description:</strong> {{ .Annotations.description }}</p>
-          <hr>
-          {{ end }}
 
 inhibit_rules:
   - source_match:
       severity: 'critical'
     target_match:
       severity: 'warning'
-    equal: ['alertname', 'job'] 
+    equal: ['alertname', 'instance'] 
