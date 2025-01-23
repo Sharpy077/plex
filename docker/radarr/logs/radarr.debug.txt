@@ -4173,3 +4173,24 @@ disk I/O error
 2025-01-23 07:46:18.7|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
 2025-01-23 07:46:18.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 07:46:18.7|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (11 ms)
+2025-01-23 07:46:48.8|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 07:46:48.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:46:48.8|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (13 ms)
+2025-01-23 07:47:18.8|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 07:47:18.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:47:18.8|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (12 ms)
+2025-01-23 07:47:48.8|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 07:47:48.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:47:48.8|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (11 ms)
+2025-01-23 07:48:18.9|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 07:48:18.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:48:18.9|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (10 ms)
+2025-01-23 07:48:48.9|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 07:48:48.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:48:48.9|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (12 ms)
+2025-01-23 07:49:18.9|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 07:49:19.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:49:19.0|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (11 ms)
+2025-01-23 07:49:49.0|Debug|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 07:49:49.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:49:49.0|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (8 ms)

@@ -3839,3 +3839,25 @@ disk I/O error
 2025-01-23 02:46:18.9|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
 2025-01-23 02:46:18.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 02:46:18.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (10 ms)
+2025-01-23 02:46:48.9|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:46:48.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:46:48.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (11 ms)
+2025-01-23 02:47:19.0|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:47:19.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:47:19.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (12 ms)
+2025-01-23 02:47:49.0|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:47:49.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:47:49.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (11 ms)
+2025-01-23 02:48:16.6|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-23 02:48:19.0|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:48:19.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:48:19.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (21 ms)
+2025-01-23 02:48:49.1|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:48:49.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:48:49.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (13 ms)
+2025-01-23 02:49:19.1|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:49:19.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:49:19.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (12 ms)
+2025-01-23 02:49:49.2|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:49:49.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:49:49.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (14 ms)
