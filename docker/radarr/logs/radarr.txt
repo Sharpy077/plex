@@ -5241,3 +5241,129 @@ disk I/O error
 2025-01-23 07:48:48.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 07:49:19.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 07:49:49.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:50:19.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:50:49.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:51:19.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:51:49.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:52:19.2|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:52:49.2|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:53:19.3|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:53:49.3|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:54:16.4|Info|RssSyncService|Starting RSS Sync
+2025-01-23 07:54:16.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 07:54:16.4|Info|DownloadDecisionMaker|No results found
+2025-01-23 07:54:16.4|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 07:54:19.3|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:54:49.4|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:55:19.4|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:55:49.5|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:56:19.5|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:56:49.5|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:57:19.6|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:57:49.6|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:58:19.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:58:49.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:59:19.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 07:59:49.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:00:19.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:00:49.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:01:19.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:01:50.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:02:20.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:02:50.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:03:20.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:03:50.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:04:20.2|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:04:50.2|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:05:20.3|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:05:50.3|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:06:20.3|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:06:50.4|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:07:16.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 08:07:17.3|Info|ConsoleApp|Exiting main.
+2025-01-23 08:17:31.0|Info|Bootstrap|Starting Radarr - /app/radarr/bin/Radarr - Version 5.17.2.9580
+2025-01-23 08:17:31.0|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 08:17:31.1|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 08:17:31.4|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 08:17:31.7|Info|MigrationController|*** Migrating data source=/config/radarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 08:17:31.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 08:17:31.8|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 08:17:31.8|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 08:17:31.9|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 08:17:31.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1142117s
+2025-01-23 08:17:31.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 08:17:32.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1320735s
+2025-01-23 08:17:32.0|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 08:17:32.1|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 08:17:32.1|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 08:17:32.1|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 08:17:32.1|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 08:17:32.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0519526s
+2025-01-23 08:17:32.1|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 08:17:32.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0650177s
+2025-01-23 08:17:32.5|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:7878
+2025-01-23 08:17:32.9|Info|CommandExecutor|Starting 2 threads for tasks.
+2025-01-23 08:17:33.0|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 08:17:33.0|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 08:17:33.0|Info|Microsoft.Hosting.Lifetime|Content root path: /app/radarr/bin
+2025-01-23 08:17:33.1|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 08:18:00.4|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:18:30.4|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:19:00.5|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:19:30.6|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:20:00.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:20:30.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:21:00.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:21:31.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:22:04.4|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:22:34.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:23:04.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:23:35.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:23:58.0|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 08:23:58.1|Info|ConsoleApp|Exiting main.
+2025-01-23 08:24:06.7|Info|Bootstrap|Starting Radarr - /app/radarr/bin/Radarr - Version 5.17.2.9580
+2025-01-23 08:24:06.8|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 08:24:06.8|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 08:24:07.0|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 08:24:07.3|Info|MigrationController|*** Migrating data source=/config/radarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 08:24:07.3|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 08:24:07.3|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 08:24:07.4|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 08:24:07.4|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 08:24:07.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0851559s
+2025-01-23 08:24:07.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 08:24:07.5|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0980162s
+2025-01-23 08:24:07.5|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 08:24:07.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 08:24:07.5|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 08:24:07.5|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 08:24:07.6|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 08:24:07.6|Info|FluentMigrator.Runner.MigrationRunner|=> 0.035177s
+2025-01-23 08:24:07.6|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 08:24:07.6|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0425136s
+2025-01-23 08:24:07.9|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:7878
+2025-01-23 08:24:08.2|Info|CommandExecutor|Starting 2 threads for tasks.
+2025-01-23 08:24:08.4|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 08:24:08.4|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 08:24:08.4|Info|Microsoft.Hosting.Lifetime|Content root path: /app/radarr/bin
+2025-01-23 08:24:08.5|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 08:24:36.3|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:24:38.4|Info|RssSyncService|Starting RSS Sync
+2025-01-23 08:24:38.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 08:24:38.4|Info|DownloadDecisionMaker|No results found
+2025-01-23 08:24:38.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 08:25:06.4|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:25:36.5|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:26:06.6|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:26:36.6|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:27:06.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:27:36.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:28:06.7|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:28:36.8|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:29:06.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:29:36.9|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:30:07.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:30:37.0|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:31:07.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:31:37.1|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 08:32:07.2|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.

@@ -4139,3 +4139,131 @@ disk I/O error
 2025-01-23 02:48:49.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 02:49:19.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 02:49:49.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:50:19.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:50:49.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:19.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:22.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:22.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:23.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:23.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:49.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:52:19.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:52:49.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:53:19.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:53:49.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:54:19.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:54:49.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:55:19.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:55:46.6|Info|RssSyncService|Starting RSS Sync
+2025-01-23 02:55:46.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 02:55:46.6|Info|DownloadDecisionMaker|No results found
+2025-01-23 02:55:46.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 02:55:49.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:56:19.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:56:49.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:57:20.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:57:50.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:58:20.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:58:50.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:59:20.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:59:50.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:00:20.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:00:50.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:01:20.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:01:50.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:02:20.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:02:50.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:03:20.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:03:50.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:04:20.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:04:50.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:05:20.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:05:50.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:06:20.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:06:50.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:07:17.0|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 03:07:17.3|Info|ConsoleApp|Exiting main.
+2025-01-23 03:17:30.8|Info|Bootstrap|Starting Lidarr - /app/lidarr/bin/Lidarr - Version 2.8.2.4493
+2025-01-23 03:17:30.9|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:17:30.9|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:17:31.3|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:17:31.5|Info|MigrationController|*** Migrating data source=/config/lidarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:17:31.6|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:17:31.6|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:17:31.7|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:17:31.7|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:17:31.7|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0910147s
+2025-01-23 03:17:31.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:17:31.8|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1036087s
+2025-01-23 03:17:31.8|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:17:31.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:17:31.9|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:17:31.9|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:17:31.9|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:17:32.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0783126s
+2025-01-23 03:17:32.0|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:17:32.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1029281s
+2025-01-23 03:17:32.3|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8686
+2025-01-23 03:17:32.8|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 03:17:32.8|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 03:17:32.8|Info|Microsoft.Hosting.Lifetime|Content root path: /app/lidarr/bin
+2025-01-23 03:17:32.9|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 03:18:00.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:18:02.8|Info|RssSyncService|Starting RSS Sync
+2025-01-23 03:18:02.9|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 03:18:02.9|Info|DownloadDecisionMaker|No results found
+2025-01-23 03:18:02.9|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 03:18:30.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:19:00.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:19:30.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:20:00.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:20:30.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:21:00.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:21:30.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:22:04.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:22:34.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:05.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:35.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:57.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 03:23:58.0|Info|ConsoleApp|Exiting main.
+2025-01-23 03:24:06.3|Info|Bootstrap|Starting Lidarr - /app/lidarr/bin/Lidarr - Version 2.8.2.4493
+2025-01-23 03:24:06.4|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:24:06.4|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:24:06.7|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:24:07.0|Info|MigrationController|*** Migrating data source=/config/lidarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:24:07.0|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:24:07.0|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:24:07.1|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:24:07.1|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:24:07.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0795469s
+2025-01-23 03:24:07.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:24:07.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0962056s
+2025-01-23 03:24:07.2|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:24:07.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:24:07.2|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:24:07.2|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:24:07.3|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:24:07.3|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0386564s
+2025-01-23 03:24:07.3|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:24:07.3|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0464685s
+2025-01-23 03:24:07.6|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8686
+2025-01-23 03:24:08.1|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 03:24:08.2|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 03:24:08.2|Info|Microsoft.Hosting.Lifetime|Content root path: /app/lidarr/bin
+2025-01-23 03:24:08.2|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 03:24:36.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:25:06.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:25:36.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:26:06.2|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:26:36.3|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:27:06.4|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:27:36.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:28:06.5|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:28:36.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:29:06.6|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:29:36.7|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:30:06.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:30:36.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:31:06.9|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:31:37.0|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:32:07.1|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.

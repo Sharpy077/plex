@@ -116,7 +116,7 @@ services:
       - "traefik.http.routers.radarr.rule=Host(`${RADARR_HOST}`)"
       - "traefik.http.routers.radarr.entrypoints=websecure"
       - "traefik.http.routers.radarr.tls=true"
-      - "traefik.http.routers.radarr.middlewares=traefik-forward-auth@docker"
+      - "traefik.http.routers.radarr.middlewares=traefik-forward-auth@file"
     deploy:
       resources:
         limits:
@@ -151,7 +151,7 @@ services:
       - "traefik.http.routers.sonarr.rule=Host(`${SONARR_HOST}`)"
       - "traefik.http.routers.sonarr.entrypoints=websecure"
       - "traefik.http.routers.sonarr.tls=true"
-      - "traefik.http.routers.sonarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+      - "traefik.http.routers.sonarr.middlewares=traefik-forward-auth@file,secure-headers@file"
     deploy:
       resources:
         limits:
@@ -186,7 +186,7 @@ services:
       - "traefik.http.routers.lidarr.rule=Host(`${LIDARR_HOST}`)"
       - "traefik.http.routers.lidarr.entrypoints=websecure"
       - "traefik.http.routers.lidarr.tls=true"
-      - "traefik.http.routers.lidarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+      - "traefik.http.routers.lidarr.middlewares=traefik-forward-auth@file,secure-headers@file"
     deploy:
       resources:
         limits:
@@ -218,7 +218,7 @@ services:
       - "traefik.http.routers.prowlarr.rule=Host(`${PROWLARR_HOST}`)"
       - "traefik.http.routers.prowlarr.entrypoints=websecure"
       - "traefik.http.routers.prowlarr.tls=true"
-      - "traefik.http.routers.prowlarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+      - "traefik.http.routers.prowlarr.middlewares=traefik-forward-auth@file,secure-headers@file"
     deploy:
       resources:
         limits:
@@ -252,7 +252,7 @@ services:
       - "traefik.http.routers.bazarr.rule=Host(`${BAZARR_HOST}`)"
       - "traefik.http.routers.bazarr.entrypoints=websecure"
       - "traefik.http.routers.bazarr.tls=true"
-      - "traefik.http.routers.bazarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+      - "traefik.http.routers.bazarr.middlewares=traefik-forward-auth@file,secure-headers@file"
     deploy:
       resources:
         limits:
@@ -284,7 +284,7 @@ services:
       - "traefik.http.routers.readarr.rule=Host(`${READARR_HOST}`)"
       - "traefik.http.routers.readarr.entrypoints=websecure"
       - "traefik.http.routers.readarr.tls=true"
-      - "traefik.http.routers.readarr.middlewares=traefik-forward-auth@docker,secure-headers@file"
+      - "traefik.http.routers.readarr.middlewares=traefik-forward-auth@file,secure-headers@file"
     deploy:
       resources:
         limits:
@@ -316,7 +316,7 @@ services:
       - "traefik.http.routers.qbit.rule=Host(`${QBIT_HOST}`)"
       - "traefik.http.routers.qbit.entrypoints=websecure"
       - "traefik.http.routers.qbit.tls=true"
-      - "traefik.http.routers.qbit.middlewares=traefik-forward-auth@docker,secure-headers@file"
+      - "traefik.http.routers.qbit.middlewares=traefik-forward-auth@file,secure-headers@file"
       - "traefik.http.services.qbit.loadbalancer.server.port=8080"
     deploy:
       resources:

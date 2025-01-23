@@ -1,129 +1,150 @@
-# Plex Media Server Stack
+# Docker Media Server Stack
 
-A comprehensive Docker-based media server stack with monitoring, security, and automation.
-
-## Services
-
-### Media Management
-- Radarr - Movie management
-- Sonarr - TV show management
-- Lidarr - Music management
-- Readarr - Book management
-- Bazarr - Subtitle management
-- Prowlarr - Indexer management
-- qBittorrent - Download client
-
-### Security & Access
-- Traefik - Reverse proxy with SSL
-- WireGuard - VPN server
-- GitHub Authentication
-
-### Monitoring & Metrics
-- Prometheus - Metrics collection
-- Alertmanager - Alert management
-- Node Exporter - System metrics
-- cAdvisor - Container metrics
+A comprehensive media server stack using Docker, featuring Plex and various automation tools for managing your media library.
 
 ## Features
 
-- Automatic SSL certificate management
-- GitHub-based authentication
-- Email notifications for alerts
-- Resource monitoring and alerts
-- Network segmentation
-- Automated backups
-- Rate limiting and security headers
+- **Media Management**
+  - Radarr: Movie collection manager
+  - Sonarr: TV series collection manager
+  - Lidarr: Music collection manager
+  - Readarr: Book collection manager
+  - Bazarr: Subtitle management
+  - Prowlarr: Indexer aggregator
+
+- **Network & Security**
+  - Traefik: Reverse proxy with automatic SSL
+  - OAuth2 authentication via GitHub
+  - WireGuard VPN for secure remote access
+  - VLAN support for network segregation
+
+- **Monitoring**
+  - Prometheus: Metrics collection
+  - Node Exporter: System metrics
+  - cAdvisor: Container metrics
+  - Alertmanager: Alert handling
 
 ## Prerequisites
 
 - Docker and Docker Compose
-- PowerShell 7+
 - Git
-- Domain name with DNS configured
+- A GitHub account (for OAuth authentication)
+- Port 80, 443 available (or configured differently)
+- Sufficient storage for media files
 
-## Setup
+## Quick Start
 
-1. Clone the repository:
-```powershell
-git clone https://github.com/yourusername/plex.git
-cd plex
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/plex.git
+   cd plex
+   ```
+
+2. Create required directories:
+   ```bash
+   mkdir -p docker media/{movies,tv,music,books,downloads} backups prometheus alertmanager letsencrypt
+   ```
+
+3. Copy and configure environment variables:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your settings
+   ```
+
+4. Start the stack:
+   ```bash
+   docker-compose up -d
+   ```
+
+## Configuration
+
+### Environment Variables
+
+Create a `.env` file with the following variables:
+
+```env
+# GitHub OAuth
+GITHUB_CLIENT_ID=your_client_id
+GITHUB_CLIENT_SECRET=your_client_secret
+AUTH_SECRET=random_secret_string
+COOKIE_DOMAIN=your.domain.com
+AUTH_WHITELIST=github_username1,github_username2
+
+# Email Configuration
+ADMIN_EMAIL=your@email.com
+
+# System
+PUID=1000
+PGID=1000
+TZ=Your/Timezone
+
+# Service Hostnames
+RADARR_HOST=radarr.your.domain
+SONARR_HOST=sonarr.your.domain
+LIDARR_HOST=lidarr.your.domain
+READARR_HOST=readarr.your.domain
+PROWLARR_HOST=prowlarr.your.domain
+BAZARR_HOST=bazarr.your.domain
+QBIT_HOST=qbit.your.domain
 ```
 
-2. Create and update secrets.json with your credentials:
-```json
-{
-  "github": {
-    "client_id": "your-github-client-id",
-    "client_secret": "your-github-client-secret"
-  },
-  "auth": {
-    "secret": "random-secret-key",
-    "cookie_domain": "your-domain.com",
-    "auth_host": "auth.your-domain.com",
-    "whitelist": ["your-github-username"]
-  },
-  "email": {
-    "smtp_host": "smtp.gmail.com",
-    "smtp_port": 587,
-    "smtp_username": "your-email@gmail.com",
-    "smtp_password": "your-app-password",
-    "from_address": "your-email@gmail.com"
-  },
-  "notifications": {
-    "admin_email": "your-admin@email.com"
-  }
-}
-```
+### Network Configuration
 
-3. Generate environment variables:
-```powershell
-.\generate-env.ps1
-```
+The stack uses several Docker networks:
+- `proxy`: For Traefik reverse proxy
+- `vlan20`: For container traffic (external network)
+- `media`: For media access
+- `downloads`: For download clients
+- `monitoring`: For metrics collection
 
-4. Start the services:
-```powershell
-docker-compose up -d
-```
+### Security
 
-5. Set up scheduled tasks (requires admin privileges):
-```powershell
-.\schedule-tasks.ps1
-```
+- All web interfaces are protected by GitHub OAuth authentication
+- Services are accessible only through Traefik's secure endpoints
+- Rate limiting and security headers are configured
+- IP whitelisting for internal networks
 
 ## Maintenance
 
-### Backups
-- Daily backups are scheduled at 2 AM
-- Backups are stored in ./backups
-- 7-day retention policy
+### Backup
+
+Regular backups of the following directories are recommended:
+- `./docker/`: Service configurations
+- `./letsencrypt/`: SSL certificates
+- Application-specific databases
 
 ### Monitoring
-- Access Prometheus: https://prometheus.your-domain.com
-- Access Alertmanager: https://alerts.your-domain.com
-- SSL certificate monitoring runs weekly
 
-### Updates
-```powershell
-git pull
-docker-compose pull
-docker-compose up -d
-```
+Access monitoring interfaces at:
+- Traefik Dashboard: `traefik.your.domain`
+- Prometheus: `prometheus.your.domain`
+- Alertmanager: `alerts.your.domain`
 
-## Network Configuration
+## Troubleshooting
 
-- Proxy Network: 172.18.0.0/16
-- Media Network: 172.19.0.0/16
-- Downloads Network: 172.20.0.0/16
-- Monitoring Network: 172.21.0.0/16
+Common issues and solutions:
 
-## Security
+1. **Permission Issues**
+   - Ensure PUID/PGID match your user
+   - Check directory permissions
 
-- All services require authentication
-- Rate limiting enabled
-- Security headers configured
-- Network segmentation implemented
-- Regular security monitoring
+2. **Network Access**
+   - Verify port forwarding
+   - Check VLAN configuration
+   - Confirm DNS resolution
+
+3. **Service Health**
+   ```bash
+   docker-compose ps
+   docker-compose logs [service]
+   ```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
 
 ## License
 
-MIT License 
+This project is licensed under the MIT License - see the LICENSE file for details. 

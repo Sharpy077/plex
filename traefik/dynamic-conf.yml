@@ -27,9 +27,16 @@ http:
           - "172.16.0.0/12"
           - "192.168.0.0/16"
 
+    traefik-forward-auth:
+      forwardAuth:
+        address: "http://traefik-forward-auth:4181"
+        authResponseHeaders:
+          - "X-Forwarded-User"
+
     chain-secure:
       chain:
         middlewares:
           - secure-headers
           - rate-limit
-          - auth-whitelist 
+          - auth-whitelist
+          - traefik-forward-auth 

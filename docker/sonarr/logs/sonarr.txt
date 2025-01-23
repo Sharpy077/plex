@@ -8013,3 +8013,127 @@ disk I/O error
 2025-01-23 02:48:49.3|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 02:49:19.3|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 02:49:49.3|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:50:19.4|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:50:49.4|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:19.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:49.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:52:19.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:52:49.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:53:19.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:53:49.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:54:19.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:54:46.6|Info|RssSyncService|Starting RSS Sync
+2025-01-23 02:54:46.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 02:54:46.6|Info|DownloadDecisionMaker|No results found
+2025-01-23 02:54:46.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 02:54:49.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:55:19.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:55:49.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:56:19.9|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:56:49.9|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:57:20.0|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:57:50.0|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:58:20.1|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:58:50.1|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:59:20.2|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:59:50.2|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:00:20.3|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:00:50.3|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:01:20.4|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:01:50.4|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:02:20.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:02:50.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:03:20.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:03:50.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:04:20.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:04:50.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:05:20.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:05:50.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:06:20.9|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:06:50.9|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:07:16.8|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 03:07:16.9|Info|ConsoleApp|Exiting main.
+2025-01-23 03:17:31.0|Info|Bootstrap|Starting Sonarr - /app/sonarr/bin/Sonarr - Version 4.0.12.2823
+2025-01-23 03:17:31.1|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:17:31.1|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:17:31.5|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:17:31.7|Info|MigrationController|*** Migrating data source=/config/sonarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:17:31.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:17:31.8|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:17:31.8|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:17:32.0|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:17:32.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1417109s
+2025-01-23 03:17:32.0|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:17:32.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1595318s
+2025-01-23 03:17:32.1|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:17:32.1|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:17:32.1|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:17:32.1|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:17:32.2|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:17:32.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0706193s
+2025-01-23 03:17:32.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:17:32.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0816707s
+2025-01-23 03:17:32.6|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8989
+2025-01-23 03:17:33.1|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 03:17:33.1|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 03:17:33.2|Info|Microsoft.Hosting.Lifetime|Content root path: /app/sonarr/bin
+2025-01-23 03:17:33.2|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 03:18:00.3|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:18:03.1|Info|RssSyncService|Starting RSS Sync
+2025-01-23 03:18:03.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-23 03:18:03.1|Info|DownloadDecisionMaker|No results found
+2025-01-23 03:18:03.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-23 03:18:30.4|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:19:00.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:19:30.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:20:00.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:20:30.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:21:00.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:21:31.0|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:22:04.4|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:22:34.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:04.9|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:35.0|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:57.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 03:23:58.0|Info|ConsoleApp|Exiting main.
+2025-01-23 03:24:06.9|Info|Bootstrap|Starting Sonarr - /app/sonarr/bin/Sonarr - Version 4.0.12.2823
+2025-01-23 03:24:07.0|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:24:07.0|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:24:07.3|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-23 03:24:07.5|Info|MigrationController|*** Migrating data source=/config/sonarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:24:07.6|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:24:07.6|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:24:07.6|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:24:07.7|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:24:07.7|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0771988s
+2025-01-23 03:24:07.7|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:24:07.7|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0846123s
+2025-01-23 03:24:07.8|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:24:07.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:24:07.8|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:24:07.8|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:24:07.9|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:24:07.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0531804s
+2025-01-23 03:24:07.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:24:07.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0633061s
+2025-01-23 03:24:08.3|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8989
+2025-01-23 03:24:08.7|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 03:24:08.7|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 03:24:08.7|Info|Microsoft.Hosting.Lifetime|Content root path: /app/sonarr/bin
+2025-01-23 03:24:08.8|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 03:24:36.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:25:06.5|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:25:36.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:26:06.6|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:26:36.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:27:06.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:27:36.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:28:06.8|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:28:36.9|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:29:07.0|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:29:37.0|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:30:07.1|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:30:37.1|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:31:07.1|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:31:37.2|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:32:07.2|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.

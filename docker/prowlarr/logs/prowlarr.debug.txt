@@ -3192,3 +3192,265 @@
 2025-01-23 02:49:49.2|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
 2025-01-23 02:49:49.2|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
 2025-01-23 02:49:49.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (13 ms)
+2025-01-23 02:50:19.2|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:50:19.2|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:50:19.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 02:50:49.3|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:50:49.3|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:50:49.3|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 02:51:19.3|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:51:19.3|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:19.3|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-23 02:51:49.4|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:51:49.4|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:51:49.4|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-23 02:52:19.4|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:52:19.4|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:52:19.4|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (20 ms)
+2025-01-23 02:52:49.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:52:49.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:52:49.5|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (16 ms)
+2025-01-23 02:53:19.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:53:19.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:53:19.5|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (12 ms)
+2025-01-23 02:53:49.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:53:49.6|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:53:49.6|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (24 ms)
+2025-01-23 02:54:19.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:54:19.6|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:54:19.6|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 02:54:49.7|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:54:49.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:54:49.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (23 ms)
+2025-01-23 02:55:19.7|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:55:19.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:55:19.8|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 02:55:49.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:55:49.8|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:55:49.8|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 02:56:19.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:56:19.9|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:56:19.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (21 ms)
+2025-01-23 02:56:49.9|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:56:49.9|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:56:49.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 02:57:20.0|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:57:20.0|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:57:20.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 02:57:50.0|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:57:50.0|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:57:50.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (21 ms)
+2025-01-23 02:58:20.1|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:58:20.1|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:58:20.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 02:58:50.1|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:58:50.1|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:58:50.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 02:59:20.2|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:59:20.2|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:59:20.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (15 ms)
+2025-01-23 02:59:50.2|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 02:59:50.2|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 02:59:50.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 03:00:20.2|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:00:20.2|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:00:20.3|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 03:00:50.3|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:00:50.3|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:00:50.3|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-23 03:01:20.3|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:01:20.3|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:01:20.4|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (16 ms)
+2025-01-23 03:01:50.4|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:01:50.4|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:01:50.4|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (25 ms)
+2025-01-23 03:02:20.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:02:20.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:02:20.5|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (30 ms)
+2025-01-23 03:02:50.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:02:50.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:02:50.6|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 03:03:20.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:03:20.6|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:03:20.6|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (21 ms)
+2025-01-23 03:03:50.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:03:50.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:03:50.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (23 ms)
+2025-01-23 03:04:20.7|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:04:20.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:04:20.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 03:04:50.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:04:50.8|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:04:50.8|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-23 03:05:20.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:05:20.8|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:05:20.8|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 03:05:50.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:05:50.8|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:05:50.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-23 03:06:20.9|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:06:20.9|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:06:20.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 03:06:50.9|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:06:50.9|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:06:51.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (14 ms)
+2025-01-23 03:07:16.8|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 03:07:17.2|Info|ConsoleApp|Exiting main.
+2025-01-23 03:17:32.5|Debug|ProcessProvider|Found 0 processes with the name: Prowlarr.Console
+2025-01-23 03:17:32.5|Debug|ProcessProvider|Found 1 processes with the name: Prowlarr
+2025-01-23 03:17:32.5|Debug|ProcessProvider| - [143] Prowlarr
+2025-01-23 03:17:32.6|Info|MigrationController|*** Migrating data source=/config/prowlarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:17:32.7|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:17:32.7|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:17:32.7|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:17:32.8|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:17:32.8|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0904936s
+2025-01-23 03:17:32.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:17:32.8|Info|FluentMigrator.Runner.MigrationRunner|=> 0.103704s
+2025-01-23 03:17:32.9|Debug|MigrationController|Took: 00:00:00.3104858
+2025-01-23 03:17:32.9|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:17:32.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:17:32.9|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:17:32.9|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:17:33.0|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:17:33.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0487457s
+2025-01-23 03:17:33.0|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:17:33.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.059041s
+2025-01-23 03:17:33.0|Debug|MigrationController|Took: 00:00:00.1298328
+2025-01-23 03:17:33.3|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:9696
+2025-01-23 03:17:33.4|Debug|NotificationFactory|Initializing Providers. Count 20
+2025-01-23 03:17:33.4|Info|CommandExecutor|Starting 3 threads for tasks.
+2025-01-23 03:17:33.6|Debug|HttpClient|Downloading [https://indexers.prowlarr.com/master/11/package.zip] to [/config/Definitions/indexers.zip]
+2025-01-23 03:17:33.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:17:33.9|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 03:17:34.2|Debug|HttpClient|Downloading Completed. took 0s
+2025-01-23 03:17:37.2|Debug|IndexerDefinitionUpdateService|Updated indexer definitions
+2025-01-23 03:17:37.2|Debug|IndexerFactory|Initializing Providers. Count 67
+2025-01-23 03:17:37.2|Debug|IndexerProxyFactory|Initializing Providers. Count 4
+2025-01-23 03:17:37.2|Debug|DownloadClientFactory|Initializing Providers. Count 18
+2025-01-23 03:17:37.2|Debug|ApplicationFactory|Initializing Providers. Count 7
+2025-01-23 03:17:37.2|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 03:17:37.3|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 03:17:37.3|Info|Microsoft.Hosting.Lifetime|Content root path: /app/prowlarr/bin
+2025-01-23 03:18:00.2|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:18:00.2|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:18:00.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (41 ms)
+2025-01-23 03:18:30.3|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:18:30.3|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:18:30.3|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (20 ms)
+2025-01-23 03:19:00.4|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:19:00.4|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:19:00.4|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-23 03:19:30.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:19:30.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:19:30.5|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (17 ms)
+2025-01-23 03:20:00.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:20:00.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:20:00.6|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (33 ms)
+2025-01-23 03:20:30.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:20:30.6|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:20:30.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (65 ms)
+2025-01-23 03:21:00.7|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:21:00.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:21:00.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (36 ms)
+2025-01-23 03:21:31.0|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:21:31.0|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:21:31.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (156 ms)
+2025-01-23 03:22:04.4|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:22:04.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:22:04.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (222 ms)
+2025-01-23 03:22:34.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:22:34.8|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:22:35.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (178 ms)
+2025-01-23 03:23:05.0|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:23:05.0|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:05.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (30 ms)
+2025-01-23 03:23:35.1|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:23:35.1|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:23:35.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (102 ms)
+2025-01-23 03:23:57.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-23 03:23:58.0|Info|ConsoleApp|Exiting main.
+2025-01-23 03:24:08.3|Debug|ProcessProvider|Found 0 processes with the name: Prowlarr.Console
+2025-01-23 03:24:08.3|Debug|ProcessProvider|Found 1 processes with the name: Prowlarr
+2025-01-23 03:24:08.3|Debug|ProcessProvider| - [142] Prowlarr
+2025-01-23 03:24:08.4|Info|MigrationController|*** Migrating data source=/config/prowlarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:24:08.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:24:08.5|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:24:08.5|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:24:08.6|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:24:08.6|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0721338s
+2025-01-23 03:24:08.6|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:24:08.6|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0830549s
+2025-01-23 03:24:08.6|Debug|MigrationController|Took: 00:00:00.2733990
+2025-01-23 03:24:08.6|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-23 03:24:08.7|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-23 03:24:08.7|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-23 03:24:08.7|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-23 03:24:08.7|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-23 03:24:08.7|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0538014s
+2025-01-23 03:24:08.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-23 03:24:08.8|Info|FluentMigrator.Runner.MigrationRunner|=> 0.0637563s
+2025-01-23 03:24:08.8|Debug|MigrationController|Took: 00:00:00.1333871
+2025-01-23 03:24:09.0|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:9696
+2025-01-23 03:24:09.2|Debug|NotificationFactory|Initializing Providers. Count 20
+2025-01-23 03:24:09.2|Info|CommandExecutor|Starting 3 threads for tasks.
+2025-01-23 03:24:09.3|Debug|HttpClient|Downloading [https://indexers.prowlarr.com/master/11/package.zip] to [/config/Definitions/indexers.zip]
+2025-01-23 03:24:09.4|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-23 03:24:09.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:24:09.8|Debug|HttpClient|Downloading Completed. took 0s
+2025-01-23 03:24:12.4|Debug|IndexerDefinitionUpdateService|Updated indexer definitions
+2025-01-23 03:24:12.4|Debug|IndexerFactory|Initializing Providers. Count 67
+2025-01-23 03:24:12.4|Debug|IndexerProxyFactory|Initializing Providers. Count 4
+2025-01-23 03:24:12.4|Debug|DownloadClientFactory|Initializing Providers. Count 18
+2025-01-23 03:24:12.4|Debug|ApplicationFactory|Initializing Providers. Count 7
+2025-01-23 03:24:12.4|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-23 03:24:12.4|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-23 03:24:12.4|Info|Microsoft.Hosting.Lifetime|Content root path: /app/prowlarr/bin
+2025-01-23 03:24:36.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:24:36.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:24:36.5|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (33 ms)
+2025-01-23 03:25:06.5|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:25:06.5|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:25:06.5|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (16 ms)
+2025-01-23 03:25:36.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:25:36.6|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:25:36.6|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-23 03:26:06.6|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:26:06.6|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:26:06.6|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (34 ms)
+2025-01-23 03:26:36.7|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:26:36.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:26:36.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (13 ms)
+2025-01-23 03:27:06.7|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:27:06.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:27:06.7|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (19 ms)
+2025-01-23 03:27:36.7|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:27:36.7|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:27:36.8|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (15 ms)
+2025-01-23 03:28:06.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:28:06.8|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:28:06.8|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (22 ms)
+2025-01-23 03:28:36.8|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:28:36.9|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:28:36.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (42 ms)
+2025-01-23 03:29:06.9|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:29:06.9|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:29:06.9|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (29 ms)
+2025-01-23 03:29:37.0|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:29:37.0|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:29:37.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (15 ms)
+2025-01-23 03:30:07.0|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:30:07.0|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:30:07.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (31 ms)
+2025-01-23 03:30:37.1|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:30:37.1|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:30:37.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (11 ms)
+2025-01-23 03:31:07.1|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:31:07.1|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:31:07.1|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (13 ms)
+2025-01-23 03:31:37.1|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:31:37.1|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:31:37.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (12 ms)
+2025-01-23 03:32:07.2|Debug|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-23 03:32:07.2|Info|Prowlarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-23 03:32:07.2|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (21 ms)

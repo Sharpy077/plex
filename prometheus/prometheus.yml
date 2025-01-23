@@ -2,36 +2,45 @@ global:
   scrape_interval: 15s
   evaluation_interval: 15s
 
-alerting:
-  alertmanagers:
-    - static_configs:
-        - targets:
-            - alertmanager:9093
-
-rule_files:
-  - "rules/*.yml"
-
 scrape_configs:
-  - job_name: 'traefik'
+  - job_name: 'prometheus'
     static_configs:
-      - targets: ['traefik:8080']
-
-  - job_name: 'docker'
-    static_configs:
-      - targets: ['localhost:9323']
+      - targets: ['localhost:9090']
 
   - job_name: 'node-exporter'
     static_configs:
       - targets: ['node-exporter:9100']
 
-  - job_name: 'containers'
-    docker_sd_configs:
-      - host: unix:///var/run/docker.sock
-        refresh_interval: 15s
-    relabel_configs:
-      - source_labels: [__meta_docker_container_name]
-        regex: '/(.*)'
-        target_label: container_name
-        replacement: $1
-      - source_labels: [__meta_docker_container_label_com_docker_compose_service]
-        target_label: service 
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  - job_name: 'radarr'
+    static_configs:
+      - targets: ['radarr:7878']
+    metrics_path: '/metrics'
+
+  - job_name: 'sonarr'
+    static_configs:
+      - targets: ['sonarr:8989']
+    metrics_path: '/metrics'
+
+  - job_name: 'lidarr'
+    static_configs:
+      - targets: ['lidarr:8686']
+    metrics_path: '/metrics'
+
+  - job_name: 'readarr'
+    static_configs:
+      - targets: ['readarr:8787']
+    metrics_path: '/metrics'
+
+  - job_name: 'prowlarr'
+    static_configs:
+      - targets: ['prowlarr:9696']
+    metrics_path: '/metrics'
+
+  - job_name: 'qbittorrent'
+    static_configs:
+      - targets: ['qbittorrent:8080']
+    metrics_path: '/metrics'
