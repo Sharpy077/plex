@@ -7299,3 +7299,199 @@ disk I/O error
 2025-01-24 04:39:38.4|Info|Database|Vacuuming Main database
 2025-01-24 04:39:38.5|Info|Database|Main database compressed
 2025-01-24 04:39:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:39:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:37.9|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:42:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:43.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:58.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:13.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:28.7|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:38.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:47:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:38.0|Info|RssSyncService|Starting RSS Sync
+2025-01-24 04:50:38.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 04:50:38.1|Info|DownloadDecisionMaker|No results found
+2025-01-24 04:50:38.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 04:50:38.1|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 04:50:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:38.1|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:52:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:38.2|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:57:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:38.4|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:02:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:38.4|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:05:38.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:05:38.5|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:05:38.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:05:38.6|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:05:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:43.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:58.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:13.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:28.6|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:37.8|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-24 05:07:37.8|Info|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-24 05:07:37.8|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-24 05:07:38.5|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:07:43.5|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:58.5|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:13.5|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:28.5|Debug|Lidarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:30.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:08:31.3|Info|ConsoleApp|Exiting main.
+2025-01-24 05:08:39.5|Debug|ProcessProvider|Found 0 processes with the name: Lidarr.Console
+2025-01-24 05:08:39.5|Debug|ProcessProvider|Found 1 processes with the name: Lidarr
+2025-01-24 05:08:39.5|Debug|ProcessProvider| - [143] Lidarr
+2025-01-24 05:08:39.6|Info|MigrationController|*** Migrating data source=/config/lidarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:39.7|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:39.8|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:39.8|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:40.0|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:40.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.2671941s
+2025-01-24 05:08:40.1|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:40.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.3064275s
+2025-01-24 05:08:40.3|Debug|MigrationController|Took: 00:00:00.7417992
+2025-01-24 05:08:40.3|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:40.4|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:40.5|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:40.6|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:40.7|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:40.7|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1639374s
+2025-01-24 05:08:40.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:40.8|Info|FluentMigrator.Runner.MigrationRunner|=> 0.2141043s
+2025-01-24 05:08:40.9|Debug|MigrationController|Took: 00:00:00.5410249
+2025-01-24 05:08:41.0|Debug|FingerprintingService|fpcalc version: 1.5.1
+2025-01-24 05:08:41.2|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8686
+2025-01-24 05:08:41.4|Debug|QualityDefinitionService|Setting up default quality config
+2025-01-24 05:08:41.8|Debug|NotificationFactory|Initializing Providers. Count 25
+2025-01-24 05:08:42.0|Debug|Lidarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-24 05:08:42.2|Debug|IndexerFactory|Initializing Providers. Count 10
+2025-01-24 05:08:42.2|Debug|ImportListFactory|Initializing Providers. Count 10
+2025-01-24 05:08:42.2|Debug|MetadataFactory|Initializing Providers. Count 3
+2025-01-24 05:08:42.3|Debug|DownloadClientFactory|Initializing Providers. Count 18
+2025-01-24 05:08:42.3|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-24 05:08:42.4|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-24 05:08:42.4|Info|Microsoft.Hosting.Lifetime|Content root path: /app/lidarr/bin
+2025-01-24 05:08:42.8|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-24 05:12:42.3|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:18:12.3|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:20:42.4|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:20:42.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:20:42.5|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:20:42.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:20:42.6|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:23:12.5|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:28:12.6|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:33:42.6|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:36:12.7|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:36:12.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:36:12.7|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:36:12.7|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:36:12.7|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:38:42.7|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:44:12.8|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:49:12.9|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:51:12.9|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:51:13.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:51:13.0|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:51:13.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:51:13.0|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:54:13.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:59:30.5|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:59:30.9|Info|ConsoleApp|Exiting main.

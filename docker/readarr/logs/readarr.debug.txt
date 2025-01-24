@@ -8063,3 +8063,189 @@ disk I/O error
 2025-01-24 04:39:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
 2025-01-24 04:39:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
 2025-01-24 04:39:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:08.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:42:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:08.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:47:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:31.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:46.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:01.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:16.5|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:38.1|Info|RssSyncService|Starting RSS Sync
+2025-01-24 04:50:38.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 04:50:38.1|Info|DownloadDecisionMaker|No results found
+2025-01-24 04:50:38.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 04:50:38.2|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 04:50:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:38.1|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:52:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:38.2|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:57:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:38.3|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:02:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:38.4|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:05:38.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:05:38.4|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:05:38.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:05:38.5|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:05:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:31.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:37.9|Debug|Readarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-24 05:07:37.9|Info|Readarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-24 05:07:38.0|Debug|Api|[GET] /api/v1/system/status: 401.Unauthorized (18 ms)
+2025-01-24 05:07:38.4|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:07:46.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:01.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:16.4|Debug|Readarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:30.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:08:31.2|Info|ConsoleApp|Exiting main.
+2025-01-24 05:08:40.8|Debug|ProcessProvider|Found 0 processes with the name: Readarr.Console
+2025-01-24 05:08:40.8|Debug|ProcessProvider|Found 1 processes with the name: Readarr
+2025-01-24 05:08:40.8|Debug|ProcessProvider| - [144] Readarr
+2025-01-24 05:08:40.9|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:40.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:41.0|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:41.0|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:41.1|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:41.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1367166s
+2025-01-24 05:08:41.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:41.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1865923s
+2025-01-24 05:08:41.2|Debug|MigrationController|Took: 00:00:00.3765529
+2025-01-24 05:08:41.4|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8787
+2025-01-24 05:08:41.7|Debug|QualityDefinitionService|Setting up default quality config
+2025-01-24 05:08:41.9|Debug|NotificationFactory|Initializing Providers. Count 25
+2025-01-24 05:08:42.1|Debug|Readarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-24 05:08:42.1|Debug|IndexerFactory|Initializing Providers. Count 8
+2025-01-24 05:08:42.2|Debug|ImportListFactory|Initializing Providers. Count 6
+2025-01-24 05:08:42.2|Debug|MetadataFactory|Initializing Providers. Count 0
+2025-01-24 05:08:42.3|Debug|DownloadClientFactory|Initializing Providers. Count 17
+2025-01-24 05:08:42.3|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-24 05:08:42.3|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-24 05:08:42.3|Info|Microsoft.Hosting.Lifetime|Content root path: /app/readarr/bin
+2025-01-24 05:08:42.6|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-24 05:12:42.2|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:17:42.3|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:20:42.4|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:20:42.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:20:42.4|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:20:42.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:20:42.5|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:22:42.5|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:27:42.6|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:32:42.7|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:35:42.7|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:35:42.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:35:42.7|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:35:42.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:35:42.8|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:37:42.7|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:42:42.8|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:47:42.9|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:50:42.9|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:50:42.9|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:50:43.0|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:50:43.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:50:43.0|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:52:43.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:58:13.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:59:30.5|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:59:30.7|Info|ConsoleApp|Exiting main.

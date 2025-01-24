@@ -1,336 +1,317 @@
-version: '3.8'
+version: "3.8"
 
 secrets:
-  github_client_id:
+  github_client_id.secret:
     file: ./docker/secrets/github_client_id.secret
-  github_client_secret:
+  github_client_secret.secret:
     file: ./docker/secrets/github_client_secret.secret
-  auth_secret:
+  cookie_secret.secret:
+    file: ./docker/secrets/cookie_secret.secret
+  auth_secret.secret:
     file: ./docker/secrets/auth_secret.secret
-  smtp_password:
-    file: ./docker/secrets/smtp_password.secret
-  sonarr_api_key:
-    file: ./docker/secrets/sonarr_api_key.secret
-  radarr_api_key:
-    file: ./docker/secrets/radarr_api_key.secret
-  lidarr_api_key:
-    file: ./docker/secrets/lidarr_api_key.secret
-  readarr_api_key:
-    file: ./docker/secrets/readarr_api_key.secret
-  prowlarr_api_key:
+  prowlarr_api_key.secret:
     file: ./docker/secrets/prowlarr_api_key.secret
-  prometheus_password:
+  radarr_api_key.secret:
+    file: ./docker/secrets/radarr_api_key.secret
+  sonarr_api_key.secret:
+    file: ./docker/secrets/sonarr_api_key.secret
+  lidarr_api_key.secret:
+    file: ./docker/secrets/lidarr_api_key.secret
+  readarr_api_key.secret:
+    file: ./docker/secrets/readarr_api_key.secret
+  prometheus_password.secret:
     file: ./docker/secrets/prometheus_password.secret
-  alertmanager_password:
+  alertmanager_password.secret:
     file: ./docker/secrets/alertmanager_password.secret
-  grafana_admin_password:
-    file: ./docker/secrets/grafana_admin_password.secret
 
 services:
   traefik:
-    image: traefik:v2.10
+    image: traefik:latest
     container_name: traefik
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
-    networks:
-      - proxy
     ports:
       - "80:80"
       - "443:443"
-    environment:
-      - TZ=${TZ}
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik/traefik.yml:/traefik.yml:ro
-      - ./traefik/config:/config
+      - ./traefik/config:/config:ro
       - ./letsencrypt:/letsencrypt
-    command:
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--providers.file.directory=/config"
-      - "--providers.file.watch=true"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
-      - "--certificatesresolvers.letsencrypt.acme.email=${ADMIN_EMAIL}"
-      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
-      - "--api.dashboard=true"
-      - "--api.debug=true"
-      - "--log.level=DEBUG"
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.traefik.entrypoints=websecure"
-      - "traefik.http.routers.traefik.rule=Host(`traefik.${COOKIE_DOMAIN}`)"
-      - "traefik.http.routers.traefik.service=api@internal"
-      - "traefik.http.routers.traefik.middlewares=chain-secure@file"
-      - "traefik.http.routers.traefik.tls=true"
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.sharphorizons.tech`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.entrypoints=websecure"
+      - "traefik.http.routers.dashboard.tls=true"
+      - "traefik.http.routers.dashboard.middlewares=chain-secure"
+
+  oauth2-proxy:
+    image: quay.io/oauth2-proxy/oauth2-proxy:latest
+    container_name: oauth2-proxy
+    restart: unless-stopped
+    environment:
+      - OAUTH2_PROXY_PROVIDER=github
+      - OAUTH2_PROXY_CLIENT_ID_FILE=/run/secrets/github_client_id.secret
+      - OAUTH2_PROXY_CLIENT_SECRET_FILE=/run/secrets/github_client_secret.secret
+      - OAUTH2_PROXY_COOKIE_SECRET_FILE=/run/secrets/cookie_secret.secret
+      - OAUTH2_PROXY_EMAIL_DOMAINS=*
+      - OAUTH2_PROXY_COOKIE_SECURE=true
+      - OAUTH2_PROXY_UPSTREAMS=http://localhost:8080
+      - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
+      - OAUTH2_PROXY_REDIRECT_URL=https://auth.sharphorizons.tech/oauth2/callback
+    secrets:
+      - github_client_id.secret
+      - github_client_secret.secret
+      - cookie_secret.secret
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.oauth.rule=Host(`auth.sharphorizons.tech`)"
+      - "traefik.http.routers.oauth.entrypoints=websecure"
+      - "traefik.http.routers.oauth.tls=true"
+      - "traefik.http.services.oauth.loadbalancer.server.port=4180"
 
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
     restart: unless-stopped
-    networks:
-      - proxy
-      - media
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
       - VERSION=docker
     volumes:
-      - ./docker/plex:/config
-      - ./media/tv:/tv
-      - ./media/movies:/movies
-      - ./media/music:/music
+      - ./config/plex:/config
+      - ./tv:/tv
+      - ./movies:/movies
+      - ./music:/music
+    networks:
+      - proxy
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.plex.rule=Host(`plex.sharphorizons.tech`)"
       - "traefik.http.routers.plex.entrypoints=websecure"
-      - "traefik.http.routers.plex.rule=Host(`plex.${COOKIE_DOMAIN}`)"
+      - "traefik.http.routers.plex.tls=true"
       - "traefik.http.services.plex.loadbalancer.server.port=32400"
-
-  sonarr:
-    image: lscr.io/linuxserver/sonarr:latest
-    container_name: sonarr
-    restart: unless-stopped
-    networks:
-      - proxy
-      - media
-      - downloads
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - API_KEY_FILE=/run/secrets/sonarr_api_key
-    volumes:
-      - ./docker/sonarr:/config
-      - ./media/tv:/tv
-      - ./media/downloads:/downloads
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.sonarr.entrypoints=websecure"
-      - "traefik.http.routers.sonarr.rule=Host(`${SONARR_HOST}`)"
-      - "traefik.http.routers.sonarr.middlewares=chain-secure@file"
-      - "traefik.http.routers.sonarr.tls=true"
-      - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
-      - "traefik.http.middlewares.sonarr-headers.headers.customRequestHeaders.X-Forwarded-Proto=https"
-      - "traefik.http.middlewares.sonarr-headers.headers.customRequestHeaders.X-Forwarded-Host=${SONARR_HOST}"
-      - "traefik.http.routers.sonarr.middlewares=chain-secure@file,sonarr-headers"
-    secrets:
-      - sonarr_api_key
-
-  radarr:
-    image: lscr.io/linuxserver/radarr:latest
-    container_name: radarr
-    restart: unless-stopped
-    networks:
-      - proxy
-      - media
-      - downloads
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - API_KEY_FILE=/run/secrets/radarr_api_key
-    volumes:
-      - ./docker/radarr:/config
-      - ./media/movies:/movies
-      - ./media/downloads:/downloads
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.radarr.entrypoints=websecure"
-      - "traefik.http.routers.radarr.rule=Host(`${RADARR_HOST}`)"
-      - "traefik.http.routers.radarr.middlewares=chain-secure@file"
-      - "traefik.http.routers.radarr.tls=true"
-      - "traefik.http.services.radarr.loadbalancer.server.port=7878"
-    secrets:
-      - radarr_api_key
-
-  lidarr:
-    image: lscr.io/linuxserver/lidarr:latest
-    container_name: lidarr
-    restart: unless-stopped
-    networks:
-      - proxy
-      - media
-      - downloads
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - API_KEY_FILE=/run/secrets/lidarr_api_key
-    volumes:
-      - ./docker/lidarr:/config
-      - ./media/music:/music
-      - ./media/downloads:/downloads
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.lidarr.entrypoints=websecure"
-      - "traefik.http.routers.lidarr.rule=Host(`${LIDARR_HOST}`)"
-      - "traefik.http.routers.lidarr.middlewares=chain-secure@file"
-      - "traefik.http.routers.lidarr.tls=true"
-      - "traefik.http.services.lidarr.loadbalancer.server.port=8686"
-    secrets:
-      - lidarr_api_key
-
-  readarr:
-    image: lscr.io/linuxserver/readarr:develop
-    container_name: readarr
-    restart: unless-stopped
-    networks:
-      - proxy
-      - media
-      - downloads
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - API_KEY_FILE=/run/secrets/readarr_api_key
-    volumes:
-      - ./docker/readarr:/config
-      - ./media/books:/books
-      - ./media/downloads:/downloads
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.readarr.entrypoints=websecure"
-      - "traefik.http.routers.readarr.rule=Host(`${READARR_HOST}`)"
-      - "traefik.http.routers.readarr.middlewares=chain-secure@file"
-      - "traefik.http.routers.readarr.tls=true"
-      - "traefik.http.services.readarr.loadbalancer.server.port=8787"
-    secrets:
-      - readarr_api_key
-
-  bazarr:
-    image: lscr.io/linuxserver/bazarr:latest
-    container_name: bazarr
-    restart: unless-stopped
-    networks:
-      - proxy
-      - media
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    volumes:
-      - ./docker/bazarr:/config
-      - ./media/movies:/movies
-      - ./media/tv:/tv
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.bazarr.entrypoints=websecure"
-      - "traefik.http.routers.bazarr.rule=Host(`${BAZARR_HOST}`)"
-      - "traefik.http.routers.bazarr.middlewares=chain-secure@file"
-      - "traefik.http.routers.bazarr.tls=true"
-      - "traefik.http.services.bazarr.loadbalancer.server.port=6767"
-
-  prowlarr:
-    image: lscr.io/linuxserver/prowlarr:latest
-    container_name: prowlarr
-    restart: unless-stopped
-    networks:
-      - proxy
-      - downloads
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - API_KEY_FILE=/run/secrets/prowlarr_api_key
-    volumes:
-      - ./docker/prowlarr:/config
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.prowlarr.entrypoints=websecure"
-      - "traefik.http.routers.prowlarr.rule=Host(`${PROWLARR_HOST}`)"
-      - "traefik.http.routers.prowlarr.middlewares=chain-secure@file"
-      - "traefik.http.routers.prowlarr.tls=true"
-      - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"
-    secrets:
-      - prowlarr_api_key
 
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
     restart: unless-stopped
-    networks:
-      - proxy
-      - downloads
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
       - WEBUI_PORT=8080
     volumes:
-      - ./docker/qbittorrent:/config
-      - ./media/downloads:/downloads
+      - ./config/qbittorrent:/config
+      - ./downloads:/downloads
+    networks:
+      - proxy
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.qbit.rule=Host(`qbit.sharphorizons.tech`)"
       - "traefik.http.routers.qbit.entrypoints=websecure"
-      - "traefik.http.routers.qbit.rule=Host(`${QBIT_HOST}`)"
-      - "traefik.http.routers.qbit.middlewares=chain-secure@file"
       - "traefik.http.routers.qbit.tls=true"
+      - "traefik.http.routers.qbit.middlewares=chain-secure"
       - "traefik.http.services.qbit.loadbalancer.server.port=8080"
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - ./config/prowlarr:/config
+    networks:
+      - proxy
+    secrets:
+      - prowlarr_api_key.secret
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.sharphorizons.tech`)"
+      - "traefik.http.routers.prowlarr.entrypoints=websecure"
+      - "traefik.http.routers.prowlarr.tls=true"
+      - "traefik.http.routers.prowlarr.middlewares=chain-secure"
+      - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - ./config/radarr:/config
+      - ./downloads:/downloads
+      - ./movies:/movies
+    networks:
+      - proxy
+    secrets:
+      - radarr_api_key.secret
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.radarr.rule=Host(`radarr.sharphorizons.tech`)"
+      - "traefik.http.routers.radarr.entrypoints=websecure"
+      - "traefik.http.routers.radarr.tls=true"
+      - "traefik.http.routers.radarr.middlewares=chain-secure"
+      - "traefik.http.services.radarr.loadbalancer.server.port=7878"
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - ./config/sonarr:/config
+      - ./downloads:/downloads
+      - ./tv:/tv
+    networks:
+      - proxy
+    secrets:
+      - sonarr_api_key.secret
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sonarr.rule=Host(`sonarr.sharphorizons.tech`)"
+      - "traefik.http.routers.sonarr.entrypoints=websecure"
+      - "traefik.http.routers.sonarr.tls=true"
+      - "traefik.http.routers.sonarr.middlewares=chain-secure"
+      - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
+
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - ./config/lidarr:/config
+      - ./downloads:/downloads
+      - ./music:/music
+    networks:
+      - proxy
+    secrets:
+      - lidarr_api_key.secret
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lidarr.rule=Host(`lidarr.sharphorizons.tech`)"
+      - "traefik.http.routers.lidarr.entrypoints=websecure"
+      - "traefik.http.routers.lidarr.tls=true"
+      - "traefik.http.routers.lidarr.middlewares=chain-secure"
+      - "traefik.http.services.lidarr.loadbalancer.server.port=8686"
+
+  readarr:
+    image: lscr.io/linuxserver/readarr:latest
+    container_name: readarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - ./config/readarr:/config
+      - ./downloads:/downloads
+      - ./books:/books
+    networks:
+      - proxy
+    secrets:
+      - readarr_api_key.secret
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.readarr.rule=Host(`readarr.sharphorizons.tech`)"
+      - "traefik.http.routers.readarr.entrypoints=websecure"
+      - "traefik.http.routers.readarr.tls=true"
+      - "traefik.http.routers.readarr.middlewares=chain-secure"
+      - "traefik.http.services.readarr.loadbalancer.server.port=8787"
+
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - ./config/bazarr:/config
+      - ./movies:/movies
+      - ./tv:/tv
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.bazarr.rule=Host(`bazarr.sharphorizons.tech`)"
+      - "traefik.http.routers.bazarr.entrypoints=websecure"
+      - "traefik.http.routers.bazarr.tls=true"
+      - "traefik.http.routers.bazarr.middlewares=chain-secure"
+      - "traefik.http.services.bazarr.loadbalancer.server.port=6767"
 
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
     restart: unless-stopped
-    networks:
-      - proxy
-      - monitoring
     volumes:
       - ./prometheus:/etc/prometheus
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
-      - '--web.console.templates=/usr/share/prometheus/consoles'
-      - '--web.authentication.enabled=true'
-      - '--web.authentication.type=basic'
-      - '--web.authentication.basic.password.file=/run/secrets/prometheus_password'
+      - '--storage.tsdb.retention.time=15d'
+      - '--web.enable-lifecycle'
+    networks:
+      - proxy
     secrets:
-      - prometheus_password
+      - prometheus_password.secret
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.prometheus.rule=Host(`prometheus.sharphorizons.tech`)"
       - "traefik.http.routers.prometheus.entrypoints=websecure"
-      - "traefik.http.routers.prometheus.rule=Host(`prometheus.${COOKIE_DOMAIN}`)"
-      - "traefik.http.routers.prometheus.middlewares=chain-secure@file"
       - "traefik.http.routers.prometheus.tls=true"
+      - "traefik.http.routers.prometheus.middlewares=chain-secure"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
 
   alertmanager:
     image: prom/alertmanager:latest
     container_name: alertmanager
     restart: unless-stopped
-    networks:
-      - proxy
-      - monitoring
     volumes:
       - ./alertmanager:/etc/alertmanager
       - alertmanager_data:/alertmanager
     command:
-      - '--config.file=/etc/alertmanager/config.yml'
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
       - '--storage.path=/alertmanager'
-      - '--web.authentication.enabled=true'
-      - '--web.authentication.type=basic'
-      - '--web.authentication.basic.password.file=/run/secrets/alertmanager_password'
+    networks:
+      - proxy
     secrets:
-      - alertmanager_password
+      - alertmanager_password.secret
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.alerts.entrypoints=websecure"
-      - "traefik.http.routers.alerts.rule=Host(`alerts.${COOKIE_DOMAIN}`)"
-      - "traefik.http.routers.alerts.middlewares=chain-secure@file"
-      - "traefik.http.routers.alerts.tls=true"
-      - "traefik.http.services.alerts.loadbalancer.server.port=9093"
+      - "traefik.http.routers.alertmanager.rule=Host(`alerts.sharphorizons.tech`)"
+      - "traefik.http.routers.alertmanager.entrypoints=websecure"
+      - "traefik.http.routers.alertmanager.tls=true"
+      - "traefik.http.routers.alertmanager.middlewares=chain-secure"
+      - "traefik.http.services.alertmanager.loadbalancer.server.port=9093"
 
   node-exporter:
     image: prom/node-exporter:latest
     container_name: node-exporter
     restart: unless-stopped
-    networks:
-      - monitoring
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
@@ -340,70 +321,27 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    networks:
+      - proxy
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
     restart: unless-stopped
-    networks:
-      - monitoring
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
-
-  oauth2-proxy:
-    image: quay.io/oauth2-proxy/oauth2-proxy:latest
-    container_name: oauth2-proxy
-    restart: unless-stopped
-    depends_on:
-      - traefik
     networks:
       - proxy
-    environment:
-      - OAUTH2_PROXY_PROVIDER=github
-      - OAUTH2_PROXY_GITHUB_ORG=
-      - OAUTH2_PROXY_EMAIL_DOMAINS=*
-      - OAUTH2_PROXY_COOKIE_SECURE=true
-      - OAUTH2_PROXY_COOKIE_DOMAINS=${COOKIE_DOMAIN}
-      - OAUTH2_PROXY_WHITELIST_DOMAINS=${COOKIE_DOMAIN}
-      - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
-      - OAUTH2_PROXY_REVERSE_PROXY=true
-      - OAUTH2_PROXY_PASS_ACCESS_TOKEN=true
-      - OAUTH2_PROXY_PASS_USER_HEADERS=true
-      - OAUTH2_PROXY_SET_XAUTHREQUEST=true
-      - OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
-      - OAUTH2_PROXY_COOKIE_REFRESH=1h
-      - OAUTH2_PROXY_COOKIE_EXPIRE=168h
-      - OAUTH2_PROXY_CLIENT_ID_FILE=/run/secrets/github_client_id
-      - OAUTH2_PROXY_CLIENT_SECRET_FILE=/run/secrets/github_client_secret
-      - OAUTH2_PROXY_COOKIE_SECRET_FILE=/run/secrets/auth_secret
-    secrets:
-      - github_client_id
-      - github_client_secret
-      - auth_secret
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.oauth.entrypoints=websecure"
-      - "traefik.http.routers.oauth.rule=Host(`auth.${COOKIE_DOMAIN}`)"
-      - "traefik.http.routers.oauth.tls=true"
-      - "traefik.http.services.oauth.loadbalancer.server.port=4180"
-
-networks:
-  proxy:
-    name: proxy
-  media:
-    name: media
-  downloads:
-    name: downloads
-  monitoring:
-    name: monitoring
-  vlan20:
-    external: true
 
 volumes:
   prometheus_data:
   alertmanager_data:
+
+networks:
+  proxy:
+    external: true
  

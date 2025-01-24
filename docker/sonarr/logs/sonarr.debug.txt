@@ -93,3 +93,258 @@
 2025-01-24 04:39:16.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
 2025-01-24 04:39:31.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
 2025-01-24 04:39:46.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:01.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:08.4|Info|RecycleBinProvider|Recycle Bin has not been configured, cannot cleanup.
+2025-01-24 04:40:08.4|Info|HousekeepingService|Running housecleaning tasks
+2025-01-24 04:40:08.4|Debug|HousekeepingService|Starting CleanupAbsolutePathMetadataFiles
+2025-01-24 04:40:08.4|Debug|HousekeepingService|Completed CleanupAbsolutePathMetadataFiles
+2025-01-24 04:40:08.4|Debug|HousekeepingService|Starting CleanupAdditionalNamingSpecs
+2025-01-24 04:40:08.4|Debug|HousekeepingService|Completed CleanupAdditionalNamingSpecs
+2025-01-24 04:40:08.4|Debug|HousekeepingService|Starting CleanupAdditionalUsers
+2025-01-24 04:40:08.4|Debug|HousekeepingService|Completed CleanupAdditionalUsers
+2025-01-24 04:40:08.4|Debug|HousekeepingService|Starting CleanupCommandQueue
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupCommandQueue
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupDownloadClientUnavailablePendingReleases
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupDownloadClientUnavailablePendingReleases
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupDuplicateMetadataFiles
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupDuplicateMetadataFiles
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedBlocklist
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedBlocklist
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedDownloadClientStatus
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedDownloadClientStatus
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedEpisodeFiles
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedEpisodeFiles
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedEpisodes
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedEpisodes
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedHistoryItems
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedHistoryItems
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedImportListStatus
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedImportListStatus
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedIndexerStatus
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedIndexerStatus
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Starting CleanupOrphanedMetadataFiles
+2025-01-24 04:40:08.5|Debug|HousekeepingService|Completed CleanupOrphanedMetadataFiles
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting CleanupOrphanedNotificationStatus
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed CleanupOrphanedNotificationStatus
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting CleanupOrphanedPendingReleases
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed CleanupOrphanedPendingReleases
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting CleanupQualityProfileFormatItems
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed CleanupQualityProfileFormatItems
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting CleanupTemporaryUpdateFiles
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed CleanupTemporaryUpdateFiles
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting CleanupUnusedTags
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed CleanupUnusedTags
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting DeleteBadMediaCovers
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed DeleteBadMediaCovers
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting FixFutureDownloadClientStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed FixFutureDownloadClientStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting FixFutureImportListStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed FixFutureImportListStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting FixFutureIndexerStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed FixFutureIndexerStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting FixFutureNotificationStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Completed FixFutureNotificationStatusTimes
+2025-01-24 04:40:08.6|Debug|HousekeepingService|Starting FixFutureRunScheduledTasks
+2025-01-24 04:40:08.7|Debug|HousekeepingService|Completed FixFutureRunScheduledTasks
+2025-01-24 04:40:08.7|Debug|HousekeepingService|Starting TrimLogDatabase
+2025-01-24 04:40:08.7|Info|Database|Vacuuming Log database
+2025-01-24 04:40:08.7|Info|Database|Log database compressed
+2025-01-24 04:40:08.7|Debug|HousekeepingService|Completed TrimLogDatabase
+2025-01-24 04:40:08.7|Debug|HousekeepingService|Starting UpdateCleanTitleForSeries
+2025-01-24 04:40:08.7|Debug|HousekeepingService|Completed UpdateCleanTitleForSeries
+2025-01-24 04:40:08.8|Debug|HousekeepingService|Compressing main database after housekeeping
+2025-01-24 04:40:08.8|Info|Database|Vacuuming Main database
+2025-01-24 04:40:09.0|Info|Database|Main database compressed
+2025-01-24 04:40:16.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:31.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:40:46.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:01.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:16.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:31.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:41:46.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:01.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:08.5|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:42:16.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:31.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:42:46.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:01.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:16.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:31.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:43:46.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:01.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:16.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:31.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:44:46.5|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:45:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:46:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:08.6|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:47:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:47:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:48:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:49:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:50:38.6|Info|RssSyncService|Starting RSS Sync
+2025-01-24 04:50:38.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 04:50:38.6|Info|DownloadDecisionMaker|No results found
+2025-01-24 04:50:38.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 04:50:38.6|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 04:50:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:51:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:08.7|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:52:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:52:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:53:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:54:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:55:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:56:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:08.8|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 04:57:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:57:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:58:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 04:59:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:00:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:01:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:08.9|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:02:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:02:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:01.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:16.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:31.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:03:46.4|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:01.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:16.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:31.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:04:46.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:01.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:16.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:31.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:05:39.0|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:05:39.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:05:39.0|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:05:39.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:05:39.0|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:05:46.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:01.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:16.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:31.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:06:46.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:01.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:09.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:07:16.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:31.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:07:37.7|Debug|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-24 05:07:37.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-24 05:07:37.7|Debug|Api|[GET] /api/v3/system/status: 401.Unauthorized (16 ms)
+2025-01-24 05:07:46.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:01.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:16.3|Debug|Sonarr.Http.Authentication.NoAuthenticationHandler|AuthenticationScheme: None was successfully authenticated.
+2025-01-24 05:08:30.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:08:31.0|Info|ConsoleApp|Exiting main.
+2025-01-24 05:08:39.6|Debug|ProcessProvider|Found 0 processes with the name: Sonarr.Console
+2025-01-24 05:08:39.7|Debug|ProcessProvider|Found 1 processes with the name: Sonarr
+2025-01-24 05:08:39.7|Debug|ProcessProvider| - [144] Sonarr
+2025-01-24 05:08:39.8|Info|MigrationController|*** Migrating data source=/config/sonarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:39.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:40.0|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:40.1|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:40.4|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:40.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.3832175s
+2025-01-24 05:08:40.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:40.6|Info|FluentMigrator.Runner.MigrationRunner|=> 0.482376s
+2025-01-24 05:08:40.7|Debug|MigrationController|Took: 00:00:00.9409199
+2025-01-24 05:08:40.8|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:40.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:40.9|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:40.9|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:41.0|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:41.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1481119s
+2025-01-24 05:08:41.1|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:41.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.2015607s
+2025-01-24 05:08:41.2|Debug|MigrationController|Took: 00:00:00.4071701
+2025-01-24 05:08:41.7|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8989
+2025-01-24 05:08:41.9|Debug|QualityDefinitionService|Setting up default quality config
+2025-01-24 05:08:42.1|Debug|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was not authenticated.
+2025-01-24 05:08:42.3|Debug|NotificationFactory|Initializing Providers. Count 25
+2025-01-24 05:08:42.5|Debug|IndexerFactory|Initializing Providers. Count 10
+2025-01-24 05:08:42.5|Debug|ImportListFactory|Initializing Providers. Count 11
+2025-01-24 05:08:42.5|Debug|MetadataFactory|Initializing Providers. Count 5
+2025-01-24 05:08:42.5|Debug|DownloadClientFactory|Initializing Providers. Count 18
+2025-01-24 05:08:42.5|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-24 05:08:42.5|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-24 05:08:42.6|Info|Microsoft.Hosting.Lifetime|Content root path: /app/sonarr/bin
+2025-01-24 05:08:42.6|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-24 05:12:12.5|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:17:42.6|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:20:42.7|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:20:42.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:20:42.7|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:20:42.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:20:42.8|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:22:42.7|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:27:42.7|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:33:12.8|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:36:12.8|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:36:12.8|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:36:12.8|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:36:12.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:36:12.8|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:38:12.8|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:43:42.8|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:48:42.9|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:51:13.0|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:51:13.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:51:13.0|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:51:13.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:51:13.0|Debug|PendingReleaseService|Removing failed releases from pending
+2025-01-24 05:54:13.0|Debug|ImportListSyncService|No import lists with automatic add enabled
+2025-01-24 05:59:30.4|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:59:30.5|Info|ConsoleApp|Exiting main.

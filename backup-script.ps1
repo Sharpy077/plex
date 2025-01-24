@@ -12,6 +12,55 @@ function Write-Log {
     "$timestamp - $Message" | Tee-Object -FilePath $LogFile -Append
 }
 
+# Function to get file hashes recursively
+function Get-FileHashes {
+    param([string]$Path)
+    
+    Get-ChildItem $Path -Recurse -File | ForEach-Object {
+        $relativePath = $_.FullName.Substring($Path.Length + 1)
+        $hash = Get-FileHash $_.FullName -Algorithm SHA256
+        [PSCustomObject]@{
+            RelativePath = $relativePath
+            Hash = $hash.Hash
+            Size = $_.Length
+        }
+    }
+}
+
+# Function to verify backup integrity
+function Test-BackupIntegrity {
+    param(
+        [string]$SourceDir,
+        [string]$BackupDir,
+        [string]$Service
+    )
+    
+    $sourceHashes = Get-FileHashes $SourceDir
+    $backupHashes = Get-FileHashes $BackupDir
+    
+    # Compare file counts
+    if ($sourceHashes.Count -ne $backupHashes.Count) {
+        throw ("File count mismatch for " + $Service + ". Source: " + $sourceHashes.Count + ", Backup: " + $backupHashes.Count)
+    }
+    
+    # Compare each file
+    foreach ($sourceFile in $sourceHashes) {
+        $backupFile = $backupHashes | Where-Object { $_.RelativePath -eq $sourceFile.RelativePath }
+        
+        if (-not $backupFile) {
+            throw ("Missing file in backup: " + $sourceFile.RelativePath)
+        }
+        
+        if ($sourceFile.Hash -ne $backupFile.Hash) {
+            throw ("Hash mismatch for file: " + $sourceFile.RelativePath)
+        }
+        
+        if ($sourceFile.Size -ne $backupFile.Size) {
+            throw ("Size mismatch for file: " + $sourceFile.RelativePath)
+        }
+    }
+}
+
 # Create backup directory structure
 $date = Get-Date -Format "yyyy-MM-dd-HHmmss"
 $backupDir = Join-Path $BackupRoot $date
@@ -42,10 +91,8 @@ try {
             # Verify backup
             try {
                 Expand-Archive -Path $archivePath -DestinationPath "$verificationDir\$service" -Force
-                if (Compare-Object -ReferenceObject (Get-ChildItem $sourceDir -Recurse) -DifferenceObject (Get-ChildItem "$verificationDir\$service" -Recurse)) {
-                    throw "Verification failed for $service"
-                }
-                Write-Log "Verified $service backup"
+                Test-BackupIntegrity -SourceDir $sourceDir -BackupDir "$verificationDir\$service" -Service $service
+                Write-Log "Verified $service backup integrity"
             }
             catch {
                 Write-Log "ERROR: Backup verification failed for $service: $_"

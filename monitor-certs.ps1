@@ -11,6 +11,42 @@ function Write-Log {
     "$timestamp - $Message" | Tee-Object -FilePath $LogFile -Append
 }
 
+# Function to get certificate from domain
+function Get-DomainCertificate {
+    param([string]$domain)
+    
+    try {
+        $req = [System.Net.HttpWebRequest]::Create("https://$domain")
+        $req.Timeout = 10000
+        $req.ServerCertificateValidationCallback = {
+            param($sender, $certificate, $chain, $errors)
+            
+            # Store the certificate for later inspection
+            $script:certToAnalyze = $certificate
+            
+            # We're only collecting the cert, actual validation happens later
+            return $true
+        }
+        
+        try {
+            $resp = $req.GetResponse()
+            $resp.Close()
+        }
+        catch [System.Net.WebException] {
+            # If it's a certificate error, we might still have the cert
+            if ($script:certToAnalyze) {
+                return $script:certToAnalyze
+            }
+            throw
+        }
+        
+        return $script:certToAnalyze
+    }
+    finally {
+        $script:certToAnalyze = $null
+    }
+}
+
 # Ensure log directory exists
 New-Item -ItemType Directory -Force -Path (Split-Path $LogFile) | Out-Null
 
@@ -37,32 +73,38 @@ try {
             Write-Log "Checking certificate for $domain"
             
             # Get certificate information
-            $cert = [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
-            $req = [System.Net.HttpWebRequest]::Create("https://$domain")
-            $req.Timeout = 10000
-            try {
-                $resp = $req.GetResponse()
-                $cert = $req.ServicePoint.Certificate
-                $resp.Close()
-            }
-            catch {
-                throw "Failed to connect to $domain"
-            }
-
-            # Check expiration
-            $expirationDate = [DateTime]::Parse($cert.GetExpirationDateString())
-            $daysUntilExpiration = ($expirationDate - (Get-Date)).Days
-
-            if ($daysUntilExpiration -lt $WarningDays) {
-                $expiringSoon += @{
-                    Domain = $domain
-                    ExpirationDate = $expirationDate
-                    DaysLeft = $daysUntilExpiration
+            $cert = Get-DomainCertificate -domain $domain
+            
+            if ($cert) {
+                # Validate certificate chain
+                $chain = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Chain
+                $chain.ChainPolicy.RevocationFlag = [System.Security.Cryptography.X509Certificates.X509RevocationFlag]::EntireChain
+                $chain.ChainPolicy.RevocationMode = [System.Security.Cryptography.X509Certificates.X509RevocationMode]::Online
+                $chain.ChainPolicy.UrlRetrievalTimeout = New-TimeSpan -Seconds 10
+                
+                $chainValid = $chain.Build($cert)
+                if (-not $chainValid) {
+                    throw "Certificate chain validation failed"
                 }
-                Write-Log "WARNING: Certificate for $domain expires in $daysUntilExpiration days"
+                
+                # Check expiration
+                $expirationDate = [DateTime]::Parse($cert.GetExpirationDateString())
+                $daysUntilExpiration = ($expirationDate - (Get-Date)).Days
+
+                if ($daysUntilExpiration -lt $WarningDays) {
+                    $expiringSoon += @{
+                        Domain = $domain
+                        ExpirationDate = $expirationDate
+                        DaysLeft = $daysUntilExpiration
+                    }
+                    Write-Log "WARNING: Certificate for $domain expires in $daysUntilExpiration days"
+                }
+                else {
+                    Write-Log "Certificate for $domain is valid for $daysUntilExpiration days"
+                }
             }
             else {
-                Write-Log "Certificate for $domain is valid for $daysUntilExpiration days"
+                throw "No certificate retrieved"
             }
         }
         catch {

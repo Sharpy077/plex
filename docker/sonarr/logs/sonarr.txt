@@ -344,3 +344,59 @@
 2025-01-24 04:35:38.3|Warn|FetchAndParseRssService|No available indexers. check your configuration.
 2025-01-24 04:35:38.3|Info|DownloadDecisionMaker|No results found
 2025-01-24 04:35:38.4|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 04:40:08.4|Info|RecycleBinProvider|Recycle Bin has not been configured, cannot cleanup.
+2025-01-24 04:40:08.4|Info|HousekeepingService|Running housecleaning tasks
+2025-01-24 04:40:08.7|Info|Database|Vacuuming Log database
+2025-01-24 04:40:08.7|Info|Database|Log database compressed
+2025-01-24 04:40:08.8|Info|Database|Vacuuming Main database
+2025-01-24 04:40:09.0|Info|Database|Main database compressed
+2025-01-24 04:50:38.6|Info|RssSyncService|Starting RSS Sync
+2025-01-24 04:50:38.6|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 04:50:38.6|Info|DownloadDecisionMaker|No results found
+2025-01-24 04:50:38.6|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:05:39.0|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:05:39.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:05:39.0|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:05:39.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:07:37.7|Info|Sonarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-24 05:08:30.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:08:31.0|Info|ConsoleApp|Exiting main.
+2025-01-24 05:08:39.0|Info|Bootstrap|Starting Sonarr - /app/sonarr/bin/Sonarr - Version 4.0.12.2823
+2025-01-24 05:08:39.1|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.1|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.4|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.8|Info|MigrationController|*** Migrating data source=/config/sonarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:39.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:40.0|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:40.1|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:40.4|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:40.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.3832175s
+2025-01-24 05:08:40.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:40.6|Info|FluentMigrator.Runner.MigrationRunner|=> 0.482376s
+2025-01-24 05:08:40.8|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:40.8|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:40.9|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:40.9|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:41.0|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:41.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1481119s
+2025-01-24 05:08:41.1|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:41.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.2015607s
+2025-01-24 05:08:41.7|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8989
+2025-01-24 05:08:42.5|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-24 05:08:42.5|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-24 05:08:42.6|Info|Microsoft.Hosting.Lifetime|Content root path: /app/sonarr/bin
+2025-01-24 05:08:42.6|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-24 05:20:42.7|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:20:42.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:20:42.7|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:20:42.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:36:12.8|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:36:12.8|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:36:12.8|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:36:12.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:51:13.0|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:51:13.0|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:51:13.0|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:51:13.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:59:30.4|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:59:30.5|Info|ConsoleApp|Exiting main.

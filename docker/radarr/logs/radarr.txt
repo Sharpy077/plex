@@ -6442,3 +6442,46 @@ container.With(rules => rules.WithCaptureContainerDisposeStackTrace())"
 2025-01-24 04:39:39.0|Info|Database|Log database compressed
 2025-01-24 04:39:39.0|Info|Database|Vacuuming Main database
 2025-01-24 04:39:39.2|Info|Database|Main database compressed
+2025-01-24 04:50:38.7|Info|RssSyncService|Starting RSS Sync
+2025-01-24 04:50:38.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 04:50:38.7|Info|DownloadDecisionMaker|No results found
+2025-01-24 04:50:38.7|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:07:37.6|Info|Radarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-24 05:08:30.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:08:31.3|Info|ConsoleApp|Exiting main.
+2025-01-24 05:08:38.8|Info|Bootstrap|Starting Radarr - /app/radarr/bin/Radarr - Version 5.17.2.9580
+2025-01-24 05:08:38.9|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:38.9|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.3|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.5|Info|MigrationController|*** Migrating data source=/config/radarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:39.6|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:39.6|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:39.6|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:39.9|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:39.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.2215141s
+2025-01-24 05:08:39.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:40.0|Info|FluentMigrator.Runner.MigrationRunner|=> 0.238443s
+2025-01-24 05:08:40.1|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:40.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:40.2|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:40.2|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:40.3|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:40.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1656741s
+2025-01-24 05:08:40.5|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:40.6|Info|FluentMigrator.Runner.MigrationRunner|=> 0.2514582s
+2025-01-24 05:08:41.1|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:7878
+2025-01-24 05:08:41.6|Info|CommandExecutor|Starting 2 threads for tasks.
+2025-01-24 05:08:41.9|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-24 05:08:41.9|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-24 05:08:42.0|Info|Microsoft.Hosting.Lifetime|Content root path: /app/radarr/bin
+2025-01-24 05:08:42.1|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-24 05:20:42.1|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:20:42.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:20:42.1|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:20:42.2|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:50:42.7|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:50:42.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:50:42.8|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:50:42.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:59:30.4|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:59:30.7|Info|ConsoleApp|Exiting main.

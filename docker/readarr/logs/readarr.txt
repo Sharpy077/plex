@@ -6309,3 +6309,61 @@ disk I/O error
 2025-01-24 04:39:08.5|Info|Database|Log database compressed
 2025-01-24 04:39:08.6|Info|Database|Vacuuming Main database
 2025-01-24 04:39:08.6|Info|Database|Main database compressed
+2025-01-24 04:50:38.1|Info|RssSyncService|Starting RSS Sync
+2025-01-24 04:50:38.1|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 04:50:38.1|Info|DownloadDecisionMaker|No results found
+2025-01-24 04:50:38.1|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:05:38.4|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:05:38.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:05:38.4|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:05:38.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:07:37.9|Info|Readarr.Http.Authentication.ApiKeyAuthenticationHandler|AuthenticationScheme: API was challenged.
+2025-01-24 05:08:30.9|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:08:31.2|Info|ConsoleApp|Exiting main.
+2025-01-24 05:08:39.0|Info|Bootstrap|Starting Readarr - /app/readarr/bin/Readarr - Version 0.4.9.2730
+2025-01-24 05:08:39.1|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.1|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.4|Info|AppFolderInfo|Data directory is being overridden to [/config]
+2025-01-24 05:08:39.5|Info|MigrationController|*** Migrating data source=/config/readarr.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:39.6|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:39.7|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:39.7|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:39.9|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:39.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1680478s
+2025-01-24 05:08:39.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:39.9|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1988198s
+2025-01-24 05:08:40.2|Info|MigrationController|*** Migrating data source=/config/cache.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:40.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:40.2|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:40.2|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:40.3|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:40.3|Info|FluentMigrator.Runner.MigrationRunner|=> 0.098856s
+2025-01-24 05:08:40.3|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:40.4|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1072742s
+2025-01-24 05:08:40.9|Info|MigrationController|*** Migrating data source=/config/logs.db;cache size=-20000;datetimekind=Utc;journal mode=Wal;pooling=True;version=3;busytimeout=100 ***
+2025-01-24 05:08:40.9|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrating
+2025-01-24 05:08:41.0|Info|FluentMigrator.Runner.MigrationRunner|PerformDBOperation 
+2025-01-24 05:08:41.0|Info|NzbDrone.Core.Datastore.Migration.Framework.NzbDroneSQLiteProcessor|Performing DB Operation
+2025-01-24 05:08:41.1|Info|DatabaseEngineVersionCheck|SQLite 3.47.1
+2025-01-24 05:08:41.1|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1367166s
+2025-01-24 05:08:41.2|Info|FluentMigrator.Runner.MigrationRunner|DatabaseEngineVersionCheck migrated
+2025-01-24 05:08:41.2|Info|FluentMigrator.Runner.MigrationRunner|=> 0.1865923s
+2025-01-24 05:08:41.4|Info|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:8787
+2025-01-24 05:08:42.3|Info|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-01-24 05:08:42.3|Info|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2025-01-24 05:08:42.3|Info|Microsoft.Hosting.Lifetime|Content root path: /app/readarr/bin
+2025-01-24 05:08:42.6|Info|ManagedHttpDispatcher|IPv4 is available: True, IPv6 will be disabled
+2025-01-24 05:20:42.4|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:20:42.4|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:20:42.4|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:20:42.5|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:35:42.7|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:35:42.7|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:35:42.7|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:35:42.8|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:50:42.9|Info|RssSyncService|Starting RSS Sync
+2025-01-24 05:50:42.9|Warn|FetchAndParseRssService|No available indexers. check your configuration.
+2025-01-24 05:50:43.0|Info|DownloadDecisionMaker|No results found
+2025-01-24 05:50:43.0|Info|RssSyncService|RSS Sync Completed. Reports found: 0, Reports grabbed: 0
+2025-01-24 05:59:30.5|Info|Microsoft.Hosting.Lifetime|Application is shutting down...
+2025-01-24 05:59:30.7|Info|ConsoleApp|Exiting main.

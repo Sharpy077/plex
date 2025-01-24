@@ -1,21 +1,21 @@
 # Generate secure secrets and passwords
 function Generate-SecureSecret {
     $length = 32
-    $nonAlphanumeric = $true
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?'
-    $bytes = New-Object "System.Byte[]" $length
-    $rng = New-Object System.Security.Cryptography.RNGCryptoServiceProvider
+    $bytes = [byte[]]::new($length)
+    $rng = [System.Security.Cryptography.RandomNumberGenerator]::Create()
     $rng.GetBytes($bytes)
     
-    $result = ""
-    for ($i = 0; $i -lt $length; $i++) {
-        $result += $characters[$bytes[$i] % $characters.Length]
+    $result = -join ($bytes | ForEach-Object { 
+        $characters[$_ % $characters.Length] 
+    })
+    
+    # Ensure at least one special character
+    if ($result -notmatch '[^a-zA-Z0-9]') {
+        $result = $result.Substring(0, $result.Length - 1) + "!"
     }
     
-    if ($nonAlphanumeric -and ($result -notmatch '[^a-zA-Z0-9]')) {
-        $result = $result.Remove(0, 1) + "!"
-    }
-    
+    $rng.Dispose()
     return $result
 }
 
@@ -33,6 +33,6 @@ $secrets = @{
     user_password = $user_password
 }
 
-$secrets | ConvertTo-Json | Out-File -FilePath ".\secrets.json"
+$secrets | ConvertTo-Json | Out-File -FilePath ".\secrets.json" -Force
 
 Write-Host "Secrets generated and saved to secrets.json" 

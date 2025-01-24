@@ -1,59 +1,19 @@
 http:
   middlewares:
-    auth-github:
-      forwardAuth:
-        address: "http://oauth2-proxy:4180"
-        trustForwardHeader: true
-        authResponseHeaders:
-          - "X-Auth-Request-User"
-          - "X-Auth-Request-Email"
-          - "Authorization"
-          - "X-Forwarded-User"
-          - "X-Forwarded-Email"
-          - "X-Forwarded-Preferred-Username"
-          - "Cookie"
-          - "Set-Cookie"
-          - "X-Forwarded-Proto"
-          - "X-Forwarded-Host"
-          - "X-Forwarded-Uri"
-          - "X-Forwarded-For"
-          - "X-Auth-Request-Access-Token"
-          - "X-Auth-Request-Redirect"
-
     secure-headers:
       headers:
-        browserXssFilter: true
-        contentTypeNosniff: true
-        frameDeny: true
+        sslRedirect: true
+        forceSTSHeader: true
         stsIncludeSubdomains: true
         stsPreload: true
         stsSeconds: 31536000
         customFrameOptionsValue: "SAMEORIGIN"
-        forceSTSHeader: true
-        contentSecurityPolicy: "default-src 'self'; frame-ancestors 'self'"
-        customRequestHeaders:
-          X-Forwarded-Proto: "https"
-          X-Forwarded-Ssl: "on"
-          X-Forwarded-Port: "443"
-        accessControlAllowMethods:
-          - "GET"
-          - "POST"
-          - "PUT"
-          - "DELETE"
-          - "OPTIONS"
-        accessControlAllowHeaders:
-          - "Authorization"
-          - "Content-Type"
-          - "X-Auth-Request-User"
-          - "X-Auth-Request-Email"
-          - "X-Forwarded-User"
-          - "X-Forwarded-Email"
-          - "X-Forwarded-Proto"
-          - "X-Forwarded-Host"
-          - "X-Auth-Request-Access-Token"
-          - "X-Auth-Request-Redirect"
-        accessControlMaxAge: 3600
-        addVaryHeader: true
+        contentTypeNosniff: true
+        browserXssFilter: true
+        customResponseHeaders:
+          X-Robots-Tag: "none,noarchive,nosnippet,notranslate,noimageindex"
+          server: ""
+        contentSecurityPolicy: "default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'none'"
 
     rate-limit:
       rateLimit:
@@ -61,9 +21,19 @@ http:
         burst: 50
         period: 1s
 
+    auth-github:
+      forwardAuth:
+        address: "http://oauth2-proxy:4180"
+        trustForwardHeader: true
+        authResponseHeaders:
+          - "X-Auth-Request-Access-Token"
+          - "Authorization"
+          - "X-Auth-Request-User"
+          - "X-Auth-Request-Email"
+
     chain-secure:
       chain:
         middlewares:
-          - auth-github
           - secure-headers
-          - rate-limit 
+          - rate-limit
+          - auth-github 
