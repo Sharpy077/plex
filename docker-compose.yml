@@ -1,5 +1,31 @@
 version: '3.8'
 
+secrets:
+  github_client_id:
+    file: ./docker/secrets/github_client_id.secret
+  github_client_secret:
+    file: ./docker/secrets/github_client_secret.secret
+  auth_secret:
+    file: ./docker/secrets/auth_secret.secret
+  smtp_password:
+    file: ./docker/secrets/smtp_password.secret
+  sonarr_api_key:
+    file: ./docker/secrets/sonarr_api_key.secret
+  radarr_api_key:
+    file: ./docker/secrets/radarr_api_key.secret
+  lidarr_api_key:
+    file: ./docker/secrets/lidarr_api_key.secret
+  readarr_api_key:
+    file: ./docker/secrets/readarr_api_key.secret
+  prowlarr_api_key:
+    file: ./docker/secrets/prowlarr_api_key.secret
+  prometheus_password:
+    file: ./docker/secrets/prometheus_password.secret
+  alertmanager_password:
+    file: ./docker/secrets/alertmanager_password.secret
+  grafana_admin_password:
+    file: ./docker/secrets/grafana_admin_password.secret
+
 services:
   traefik:
     image: traefik:v2.10
@@ -20,12 +46,26 @@ services:
       - ./traefik/traefik.yml:/traefik.yml:ro
       - ./traefik/config:/config
       - ./letsencrypt:/letsencrypt
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.file.directory=/config"
+      - "--providers.file.watch=true"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.email=${ADMIN_EMAIL}"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+      - "--api.dashboard=true"
+      - "--api.debug=true"
+      - "--log.level=DEBUG"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=websecure"
       - "traefik.http.routers.traefik.rule=Host(`traefik.${COOKIE_DOMAIN}`)"
       - "traefik.http.routers.traefik.service=api@internal"
-      - "traefik.http.routers.traefik.middlewares=auth-github@file"
+      - "traefik.http.routers.traefik.middlewares=chain-secure@file"
+      - "traefik.http.routers.traefik.tls=true"
 
   plex:
     image: lscr.io/linuxserver/plex:latest
@@ -62,6 +102,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - API_KEY_FILE=/run/secrets/sonarr_api_key
     volumes:
       - ./docker/sonarr:/config
       - ./media/tv:/tv
@@ -70,8 +111,14 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.sonarr.entrypoints=websecure"
       - "traefik.http.routers.sonarr.rule=Host(`${SONARR_HOST}`)"
-      - "traefik.http.routers.sonarr.middlewares=auth-github@file"
+      - "traefik.http.routers.sonarr.middlewares=chain-secure@file"
+      - "traefik.http.routers.sonarr.tls=true"
       - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
+      - "traefik.http.middlewares.sonarr-headers.headers.customRequestHeaders.X-Forwarded-Proto=https"
+      - "traefik.http.middlewares.sonarr-headers.headers.customRequestHeaders.X-Forwarded-Host=${SONARR_HOST}"
+      - "traefik.http.routers.sonarr.middlewares=chain-secure@file,sonarr-headers"
+    secrets:
+      - sonarr_api_key
 
   radarr:
     image: lscr.io/linuxserver/radarr:latest
@@ -85,6 +132,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - API_KEY_FILE=/run/secrets/radarr_api_key
     volumes:
       - ./docker/radarr:/config
       - ./media/movies:/movies
@@ -93,8 +141,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.radarr.entrypoints=websecure"
       - "traefik.http.routers.radarr.rule=Host(`${RADARR_HOST}`)"
-      - "traefik.http.routers.radarr.middlewares=auth-github@file"
+      - "traefik.http.routers.radarr.middlewares=chain-secure@file"
+      - "traefik.http.routers.radarr.tls=true"
       - "traefik.http.services.radarr.loadbalancer.server.port=7878"
+    secrets:
+      - radarr_api_key
 
   lidarr:
     image: lscr.io/linuxserver/lidarr:latest
@@ -108,6 +159,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - API_KEY_FILE=/run/secrets/lidarr_api_key
     volumes:
       - ./docker/lidarr:/config
       - ./media/music:/music
@@ -116,8 +168,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.lidarr.entrypoints=websecure"
       - "traefik.http.routers.lidarr.rule=Host(`${LIDARR_HOST}`)"
-      - "traefik.http.routers.lidarr.middlewares=auth-github@file"
+      - "traefik.http.routers.lidarr.middlewares=chain-secure@file"
+      - "traefik.http.routers.lidarr.tls=true"
       - "traefik.http.services.lidarr.loadbalancer.server.port=8686"
+    secrets:
+      - lidarr_api_key
 
   readarr:
     image: lscr.io/linuxserver/readarr:develop
@@ -131,6 +186,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - API_KEY_FILE=/run/secrets/readarr_api_key
     volumes:
       - ./docker/readarr:/config
       - ./media/books:/books
@@ -139,8 +195,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.readarr.entrypoints=websecure"
       - "traefik.http.routers.readarr.rule=Host(`${READARR_HOST}`)"
-      - "traefik.http.routers.readarr.middlewares=auth-github@file"
+      - "traefik.http.routers.readarr.middlewares=chain-secure@file"
+      - "traefik.http.routers.readarr.tls=true"
       - "traefik.http.services.readarr.loadbalancer.server.port=8787"
+    secrets:
+      - readarr_api_key
 
   bazarr:
     image: lscr.io/linuxserver/bazarr:latest
@@ -161,7 +220,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.bazarr.entrypoints=websecure"
       - "traefik.http.routers.bazarr.rule=Host(`${BAZARR_HOST}`)"
-      - "traefik.http.routers.bazarr.middlewares=auth-github@file"
+      - "traefik.http.routers.bazarr.middlewares=chain-secure@file"
+      - "traefik.http.routers.bazarr.tls=true"
       - "traefik.http.services.bazarr.loadbalancer.server.port=6767"
 
   prowlarr:
@@ -175,14 +235,18 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - API_KEY_FILE=/run/secrets/prowlarr_api_key
     volumes:
       - ./docker/prowlarr:/config
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.prowlarr.entrypoints=websecure"
       - "traefik.http.routers.prowlarr.rule=Host(`${PROWLARR_HOST}`)"
-      - "traefik.http.routers.prowlarr.middlewares=auth-github@file"
+      - "traefik.http.routers.prowlarr.middlewares=chain-secure@file"
+      - "traefik.http.routers.prowlarr.tls=true"
       - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"
+    secrets:
+      - prowlarr_api_key
 
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
@@ -203,7 +267,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.qbit.entrypoints=websecure"
       - "traefik.http.routers.qbit.rule=Host(`${QBIT_HOST}`)"
-      - "traefik.http.routers.qbit.middlewares=auth-github@file"
+      - "traefik.http.routers.qbit.middlewares=chain-secure@file"
+      - "traefik.http.routers.qbit.tls=true"
       - "traefik.http.services.qbit.loadbalancer.server.port=8080"
 
   prometheus:
@@ -221,11 +286,17 @@ services:
       - '--storage.tsdb.path=/prometheus'
       - '--web.console.libraries=/usr/share/prometheus/console_libraries'
       - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--web.authentication.enabled=true'
+      - '--web.authentication.type=basic'
+      - '--web.authentication.basic.password.file=/run/secrets/prometheus_password'
+    secrets:
+      - prometheus_password
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.prometheus.entrypoints=websecure"
       - "traefik.http.routers.prometheus.rule=Host(`prometheus.${COOKIE_DOMAIN}`)"
-      - "traefik.http.routers.prometheus.middlewares=auth-github@file"
+      - "traefik.http.routers.prometheus.middlewares=chain-secure@file"
+      - "traefik.http.routers.prometheus.tls=true"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
 
   alertmanager:
@@ -237,14 +308,21 @@ services:
       - monitoring
     volumes:
       - ./alertmanager:/etc/alertmanager
+      - alertmanager_data:/alertmanager
     command:
       - '--config.file=/etc/alertmanager/config.yml'
       - '--storage.path=/alertmanager'
+      - '--web.authentication.enabled=true'
+      - '--web.authentication.type=basic'
+      - '--web.authentication.basic.password.file=/run/secrets/alertmanager_password'
+    secrets:
+      - alertmanager_password
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.alerts.entrypoints=websecure"
       - "traefik.http.routers.alerts.rule=Host(`alerts.${COOKIE_DOMAIN}`)"
-      - "traefik.http.routers.alerts.middlewares=auth-github@file"
+      - "traefik.http.routers.alerts.middlewares=chain-secure@file"
+      - "traefik.http.routers.alerts.tls=true"
       - "traefik.http.services.alerts.loadbalancer.server.port=9093"
 
   node-exporter:
@@ -280,28 +358,36 @@ services:
     image: quay.io/oauth2-proxy/oauth2-proxy:latest
     container_name: oauth2-proxy
     restart: unless-stopped
+    depends_on:
+      - traefik
     networks:
       - proxy
     environment:
       - OAUTH2_PROXY_PROVIDER=github
-      - OAUTH2_PROXY_CLIENT_ID=${GITHUB_CLIENT_ID}
-      - OAUTH2_PROXY_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
-      - OAUTH2_PROXY_COOKIE_SECRET=${AUTH_SECRET}
-      - OAUTH2_PROXY_COOKIE_DOMAIN=${COOKIE_DOMAIN}
+      - OAUTH2_PROXY_GITHUB_ORG=
       - OAUTH2_PROXY_EMAIL_DOMAINS=*
-      - OAUTH2_PROXY_GITHUB_USERS=${AUTH_WHITELIST}
-      - OAUTH2_PROXY_HTTP_ADDRESS=:4180
       - OAUTH2_PROXY_COOKIE_SECURE=true
-      - OAUTH2_PROXY_UPSTREAMS=file:///dev/null
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:4180/ping"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
+      - OAUTH2_PROXY_COOKIE_DOMAINS=${COOKIE_DOMAIN}
+      - OAUTH2_PROXY_WHITELIST_DOMAINS=${COOKIE_DOMAIN}
+      - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
+      - OAUTH2_PROXY_REVERSE_PROXY=true
+      - OAUTH2_PROXY_PASS_ACCESS_TOKEN=true
+      - OAUTH2_PROXY_PASS_USER_HEADERS=true
+      - OAUTH2_PROXY_SET_XAUTHREQUEST=true
+      - OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
+      - OAUTH2_PROXY_COOKIE_REFRESH=1h
+      - OAUTH2_PROXY_COOKIE_EXPIRE=168h
+      - OAUTH2_PROXY_CLIENT_ID_FILE=/run/secrets/github_client_id
+      - OAUTH2_PROXY_CLIENT_SECRET_FILE=/run/secrets/github_client_secret
+      - OAUTH2_PROXY_COOKIE_SECRET_FILE=/run/secrets/auth_secret
+    secrets:
+      - github_client_id
+      - github_client_secret
+      - auth_secret
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.oauth.rule=Host(`auth.${COOKIE_DOMAIN}`)"
       - "traefik.http.routers.oauth.entrypoints=websecure"
+      - "traefik.http.routers.oauth.rule=Host(`auth.${COOKIE_DOMAIN}`)"
       - "traefik.http.routers.oauth.tls=true"
       - "traefik.http.services.oauth.loadbalancer.server.port=4180"
 

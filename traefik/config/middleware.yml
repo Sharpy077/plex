@@ -8,19 +8,52 @@ http:
           - "X-Auth-Request-User"
           - "X-Auth-Request-Email"
           - "Authorization"
+          - "X-Forwarded-User"
+          - "X-Forwarded-Email"
+          - "X-Forwarded-Preferred-Username"
+          - "Cookie"
+          - "Set-Cookie"
+          - "X-Forwarded-Proto"
+          - "X-Forwarded-Host"
+          - "X-Forwarded-Uri"
+          - "X-Forwarded-For"
+          - "X-Auth-Request-Access-Token"
+          - "X-Auth-Request-Redirect"
 
     secure-headers:
       headers:
         browserXssFilter: true
         contentTypeNosniff: true
         frameDeny: true
-        sslRedirect: true
         stsIncludeSubdomains: true
         stsPreload: true
         stsSeconds: 31536000
         customFrameOptionsValue: "SAMEORIGIN"
+        forceSTSHeader: true
+        contentSecurityPolicy: "default-src 'self'; frame-ancestors 'self'"
         customRequestHeaders:
           X-Forwarded-Proto: "https"
+          X-Forwarded-Ssl: "on"
+          X-Forwarded-Port: "443"
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Auth-Request-User"
+          - "X-Auth-Request-Email"
+          - "X-Forwarded-User"
+          - "X-Forwarded-Email"
+          - "X-Forwarded-Proto"
+          - "X-Forwarded-Host"
+          - "X-Auth-Request-Access-Token"
+          - "X-Auth-Request-Redirect"
+        accessControlMaxAge: 3600
+        addVaryHeader: true
 
     rate-limit:
       rateLimit:
@@ -28,7 +61,7 @@ http:
         burst: 50
         period: 1s
 
-    chain-auth:
+    chain-secure:
       chain:
         middlewares:
           - auth-github

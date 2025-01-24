@@ -1,0 +1,24 @@
+http:
+  middlewares:
+    chain-secure:
+      chain:
+        middlewares:
+          - secure@file
+          - auth-github@file
+
+    auth-github:
+      forwardAuth:
+        address: "http://oauth2-proxy:4180/oauth2/auth"
+        trustForwardHeader: true
+        authResponseHeaders:
+          - "X-Forwarded-User"
+          - "X-Forwarded-Email"
+          - "X-Forwarded-Preferred-Username"
+
+    secure:
+      headers:
+        contentTypeNosniff: true
+        frameDeny: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000 
