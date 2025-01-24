@@ -1,0 +1,40 @@
+name: Project Validation and Documentation
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validate_project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Validate System
+        run: |
+          ./validate-system.ps1
+        shell: pwsh
+
+      - name: Validate Login
+        run: |
+          ./validate-login.ps1
+        shell: pwsh
+
+      - name: Clean up Unused Files
+        run: |
+          # Add your cleanup script here
+        shell: bash
+
+      - name: Generate Documentation
+        run: |
+          # Add commands to generate documentation with screenshots
+        shell: bash
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git commit -m "Validation, cleanup, and documentation updates"
+          git push
+        shell: bash
