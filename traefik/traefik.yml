@@ -6,6 +6,9 @@ api:
   dashboard: true
   insecure: false
 
+log:
+  level: DEBUG
+
 entryPoints:
   web:
     address: ":80"
@@ -14,6 +17,7 @@ entryPoints:
         entryPoint:
           to: websecure
           scheme: https
+          permanent: true
   websecure:
     address: ":443"
     http:
@@ -23,7 +27,7 @@ entryPoints:
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: your-email@example.com
+      email: admin@sharphorizons.tech
       storage: /letsencrypt/acme.json
       httpChallenge:
         entryPoint: web
@@ -37,11 +41,8 @@ providers:
     directory: /config
     watch: true
 
-log:
-  level: INFO
-
 accessLog: {}
 
 metrics:
   prometheus:
-    entryPoint: metrics 
+    entryPoint: metrics

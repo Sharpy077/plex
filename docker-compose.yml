@@ -1,12 +1,12 @@
 version: "3.8"
 
 secrets:
+  cookie_secret.secret:
+    file: ./docker/secrets/cookie_secret.secret
   github_client_id.secret:
     file: ./docker/secrets/github_client_id.secret
   github_client_secret.secret:
     file: ./docker/secrets/github_client_secret.secret
-  cookie_secret.secret:
-    file: ./docker/secrets/cookie_secret.secret
   auth_secret.secret:
     file: ./docker/secrets/auth_secret.secret
   prowlarr_api_key.secret:
@@ -48,34 +48,44 @@ services:
       - "traefik.http.routers.dashboard.service=api@internal"
       - "traefik.http.routers.dashboard.entrypoints=websecure"
       - "traefik.http.routers.dashboard.tls=true"
-      - "traefik.http.routers.dashboard.middlewares=chain-secure"
+      - "traefik.http.routers.dashboard.middlewares=chain-secure@file"
 
   oauth2-proxy:
     image: quay.io/oauth2-proxy/oauth2-proxy:latest
     container_name: oauth2-proxy
     restart: unless-stopped
     environment:
+      - OAUTH2_PROXY_COOKIE_SECRET=${COOKIE_SECRET:-placeholder_cookie_secret}
+      - OAUTH2_PROXY_CLIENT_ID=${GITHUB_CLIENT_ID:-placeholder_client_id}
+      - OAUTH2_PROXY_CLIENT_SECRET=${GITHUB_CLIENT_SECRET:-placeholder_client_secret}
       - OAUTH2_PROXY_PROVIDER=github
-      - OAUTH2_PROXY_CLIENT_ID_FILE=/run/secrets/github_client_id.secret
-      - OAUTH2_PROXY_CLIENT_SECRET_FILE=/run/secrets/github_client_secret.secret
-      - OAUTH2_PROXY_COOKIE_SECRET_FILE=/run/secrets/cookie_secret.secret
       - OAUTH2_PROXY_EMAIL_DOMAINS=*
       - OAUTH2_PROXY_COOKIE_SECURE=true
-      - OAUTH2_PROXY_UPSTREAMS=http://localhost:8080
       - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
       - OAUTH2_PROXY_REDIRECT_URL=https://auth.sharphorizons.tech/oauth2/callback
-    secrets:
-      - github_client_id.secret
-      - github_client_secret.secret
-      - cookie_secret.secret
+      - OAUTH2_PROXY_UPSTREAMS=http://127.0.0.1:4181
+      - OAUTH2_PROXY_PATH_PREFIX=/oauth2
+      - OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
+      - OAUTH2_PROXY_PASS_BASIC_AUTH=false
+      - OAUTH2_PROXY_PASS_ACCESS_TOKEN=true
+      - OAUTH2_PROXY_SET_AUTHORIZATION_HEADER=true
+      - OAUTH2_PROXY_COOKIE_DOMAINS=.sharphorizons.tech
+      - OAUTH2_PROXY_WHITELIST_DOMAINS=.sharphorizons.tech
+      - OAUTH2_PROXY_COOKIE_NAME=_oauth2_proxy
+      - OAUTH2_PROXY_COOKIE_REFRESH=1h
+      - OAUTH2_PROXY_COOKIE_EXPIRE=168h
+      - OAUTH2_PROXY_SKIP_AUTH_ROUTES=^/favicon.ico$|^/robots.txt$|^/oauth2/static/.*$
+      - OAUTH2_PROXY_SKIP_AUTH_PREFIXES=/favicon.ico,/robots.txt,/oauth2/static/
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.oauth.rule=Host(`auth.sharphorizons.tech`)"
-      - "traefik.http.routers.oauth.entrypoints=websecure"
-      - "traefik.http.routers.oauth.tls=true"
-      - "traefik.http.services.oauth.loadbalancer.server.port=4180"
+      - "traefik.http.routers.oauth2-proxy.rule=Host(`auth.sharphorizons.tech`)"
+      - "traefik.http.routers.oauth2-proxy.entrypoints=websecure"
+      - "traefik.http.routers.oauth2-proxy.tls=true"
+      - "traefik.http.services.oauth2-proxy.loadbalancer.server.port=4180"
+      - "traefik.http.middlewares.oauth2-headers.headers.customResponseHeaders.Cache-Control=no-store,no-cache,must-revalidate"
+      - "traefik.http.routers.oauth2-proxy.middlewares=oauth2-headers"
 
   plex:
     image: lscr.io/linuxserver/plex:latest
@@ -119,7 +129,7 @@ services:
       - "traefik.http.routers.qbit.rule=Host(`qbit.sharphorizons.tech`)"
       - "traefik.http.routers.qbit.entrypoints=websecure"
       - "traefik.http.routers.qbit.tls=true"
-      - "traefik.http.routers.qbit.middlewares=chain-secure"
+      - "traefik.http.routers.qbit.middlewares=chain-secure@file"
       - "traefik.http.services.qbit.loadbalancer.server.port=8080"
 
   prowlarr:
@@ -141,7 +151,7 @@ services:
       - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.sharphorizons.tech`)"
       - "traefik.http.routers.prowlarr.entrypoints=websecure"
       - "traefik.http.routers.prowlarr.tls=true"
-      - "traefik.http.routers.prowlarr.middlewares=chain-secure"
+      - "traefik.http.routers.prowlarr.middlewares=chain-secure@file"
       - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"
 
   radarr:
@@ -165,7 +175,7 @@ services:
       - "traefik.http.routers.radarr.rule=Host(`radarr.sharphorizons.tech`)"
       - "traefik.http.routers.radarr.entrypoints=websecure"
       - "traefik.http.routers.radarr.tls=true"
-      - "traefik.http.routers.radarr.middlewares=chain-secure"
+      - "traefik.http.routers.radarr.middlewares=chain-secure@file"
       - "traefik.http.services.radarr.loadbalancer.server.port=7878"
 
   sonarr:
@@ -189,7 +199,7 @@ services:
       - "traefik.http.routers.sonarr.rule=Host(`sonarr.sharphorizons.tech`)"
       - "traefik.http.routers.sonarr.entrypoints=websecure"
       - "traefik.http.routers.sonarr.tls=true"
-      - "traefik.http.routers.sonarr.middlewares=chain-secure"
+      - "traefik.http.routers.sonarr.middlewares=chain-secure@file"
       - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
 
   lidarr:
@@ -213,11 +223,11 @@ services:
       - "traefik.http.routers.lidarr.rule=Host(`lidarr.sharphorizons.tech`)"
       - "traefik.http.routers.lidarr.entrypoints=websecure"
       - "traefik.http.routers.lidarr.tls=true"
-      - "traefik.http.routers.lidarr.middlewares=chain-secure"
+      - "traefik.http.routers.lidarr.middlewares=chain-secure@file"
       - "traefik.http.services.lidarr.loadbalancer.server.port=8686"
 
   readarr:
-    image: lscr.io/linuxserver/readarr:latest
+    image: lscr.io/linuxserver/readarr:develop
     container_name: readarr
     restart: unless-stopped
     environment:
@@ -237,7 +247,7 @@ services:
       - "traefik.http.routers.readarr.rule=Host(`readarr.sharphorizons.tech`)"
       - "traefik.http.routers.readarr.entrypoints=websecure"
       - "traefik.http.routers.readarr.tls=true"
-      - "traefik.http.routers.readarr.middlewares=chain-secure"
+      - "traefik.http.routers.readarr.middlewares=chain-secure@file"
       - "traefik.http.services.readarr.loadbalancer.server.port=8787"
 
   bazarr:
@@ -259,7 +269,7 @@ services:
       - "traefik.http.routers.bazarr.rule=Host(`bazarr.sharphorizons.tech`)"
       - "traefik.http.routers.bazarr.entrypoints=websecure"
       - "traefik.http.routers.bazarr.tls=true"
-      - "traefik.http.routers.bazarr.middlewares=chain-secure"
+      - "traefik.http.routers.bazarr.middlewares=chain-secure@file"
       - "traefik.http.services.bazarr.loadbalancer.server.port=6767"
 
   prometheus:
@@ -267,13 +277,13 @@ services:
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - ./prometheus:/etc/prometheus
+      - ./prometheus:/etc/prometheus:ro
       - prometheus_data:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention.time=15d'
-      - '--web.enable-lifecycle'
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--storage.tsdb.retention.time=15d"
+      - "--web.enable-lifecycle"
     networks:
       - proxy
     secrets:
@@ -283,7 +293,7 @@ services:
       - "traefik.http.routers.prometheus.rule=Host(`prometheus.sharphorizons.tech`)"
       - "traefik.http.routers.prometheus.entrypoints=websecure"
       - "traefik.http.routers.prometheus.tls=true"
-      - "traefik.http.routers.prometheus.middlewares=chain-secure"
+      - "traefik.http.routers.prometheus.middlewares=chain-secure@file"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
 
   alertmanager:
@@ -291,11 +301,11 @@ services:
     container_name: alertmanager
     restart: unless-stopped
     volumes:
-      - ./alertmanager:/etc/alertmanager
+      - ./alertmanager:/etc/alertmanager:ro
       - alertmanager_data:/alertmanager
     command:
-      - '--config.file=/etc/alertmanager/alertmanager.yml'
-      - '--storage.path=/alertmanager'
+      - "--config.file=/etc/alertmanager/alertmanager.yml"
+      - "--storage.path=/alertmanager"
     networks:
       - proxy
     secrets:
@@ -305,7 +315,7 @@ services:
       - "traefik.http.routers.alertmanager.rule=Host(`alerts.sharphorizons.tech`)"
       - "traefik.http.routers.alertmanager.entrypoints=websecure"
       - "traefik.http.routers.alertmanager.tls=true"
-      - "traefik.http.routers.alertmanager.middlewares=chain-secure"
+      - "traefik.http.routers.alertmanager.middlewares=chain-secure@file"
       - "traefik.http.services.alertmanager.loadbalancer.server.port=9093"
 
   node-exporter:
@@ -317,10 +327,10 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
     networks:
       - proxy
 
@@ -343,5 +353,5 @@ volumes:
 
 networks:
   proxy:
+    name: proxy
     external: true
- 

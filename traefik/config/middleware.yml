@@ -8,12 +8,7 @@ http:
         stsPreload: true
         stsSeconds: 31536000
         customFrameOptionsValue: "SAMEORIGIN"
-        contentTypeNosniff: true
-        browserXssFilter: true
-        customResponseHeaders:
-          X-Robots-Tag: "none,noarchive,nosnippet,notranslate,noimageindex"
-          server: ""
-        contentSecurityPolicy: "default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'none'"
+        contentSecurityPolicy: "default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' https:; frame-ancestors 'self'"
 
     rate-limit:
       rateLimit:
@@ -27,13 +22,13 @@ http:
         trustForwardHeader: true
         authResponseHeaders:
           - "X-Auth-Request-Access-Token"
-          - "Authorization"
           - "X-Auth-Request-User"
           - "X-Auth-Request-Email"
+          - "Authorization"
 
     chain-secure:
       chain:
         middlewares:
           - secure-headers
           - rate-limit
-          - auth-github 
+          - auth-github

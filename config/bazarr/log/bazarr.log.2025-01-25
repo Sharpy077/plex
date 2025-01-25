@@ -1,0 +1,6 @@
+2025-01-25 00:04:02|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6767|
+2025-01-25 00:04:02|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6767|
+2025-01-25 17:39:04|WARNING |apscheduler.executors.default   |Run time of job "Update Release Info (trigger: interval[3:00:00], next run at: 2025-01-25 17:50:36 AEDT)" was missed by 2:48:28.405425|
+2025-01-25 17:39:04|WARNING |apscheduler.executors.default   |Run time of job "Check Health (trigger: interval[6:00:00], next run at: 2025-01-25 22:58:41 AEDT)" was missed by 0:40:23.416599|
+2025-01-25 17:39:04|WARNING |apscheduler.executors.default   |Run time of job "Update Announcements File (trigger: interval[6:00:00], next run at: 2025-01-25 23:32:12 AEDT)" was missed by 0:06:52.421826|
+2025-01-25 20:24:43|WARNING |apscheduler.executors.default   |Run time of job "Cache Maintenance (trigger: interval[1 day, 0:00:00], next run at: 2025-01-26 19:54:20 AEDT)" was missed by 0:30:23.230674|

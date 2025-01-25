@@ -2,21 +2,20 @@ global:
   resolve_timeout: 5m
 
 route:
-  group_by: ['alertname', 'job']
+  group_by: ['alertname']
   group_wait: 30s
   group_interval: 5m
-  repeat_interval: 4h
-  receiver: 'default'
+  repeat_interval: 1h
+  receiver: 'web.hook'
 
 receivers:
-  - name: 'default'
+  - name: 'web.hook'
     webhook_configs:
-      - url: 'http://alertmanager-webhook:9095'
-        send_resolved: true
+      - url: 'http://127.0.0.1:5001/'
 
 inhibit_rules:
   - source_match:
       severity: 'critical'
     target_match:
       severity: 'warning'
-    equal: ['alertname', 'instance']
+    equal: ['alertname', 'dev', 'instance']
