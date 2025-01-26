@@ -1,0 +1,75 @@
+http:
+  middlewares:
+    secure-headers:
+      headers:
+        browserXssFilter: true
+        contentTypeNosniff: true
+        frameDeny: true
+        sslRedirect: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        customFrameOptionsValue: "SAMEORIGIN"
+        forceSTSHeader: true
+        contentSecurityPolicy: "default-src 'self'; frame-ancestors 'self'"
+        referrerPolicy: "same-origin"
+
+    plex-headers:
+      headers:
+        sslRedirect: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        customFrameOptionsValue: "SAMEORIGIN"
+
+    rate-limit:
+      rateLimit:
+        average: 100
+        burst: 50
+        period: 1s
+
+    auth-github:
+      forwardAuth:
+        address: "http://oauth2-proxy:4180/oauth2/auth"
+        trustForwardHeader: true
+        authResponseHeaders:
+          - "X-Auth-Request-Access-Token"
+          - "X-Auth-Request-User"
+          - "X-Auth-Request-Email"
+          - "X-CSRF-Token"
+          - "X-Forwarded-Access-Token"
+          - "X-Forwarded-User"
+          - "X-Forwarded-Email"
+          - "Authorization"
+          - "X-Real-IP"
+        authResponseHeadersRegex: "^X-(.*)"
+
+    oauth2-errors:
+      errors:
+        status:
+          - "401-403"
+        service: oauth2-proxy@docker
+        query: "/oauth2/sign_in"
+
+    oauth2-headers:
+      headers:
+        customRequestHeaders:
+          X-Forwarded-Proto: "https"
+          X-Real-IP: "${REMOTE_ADDR}"
+        customResponseHeaders:
+          Cache-Control: "no-store,no-cache,must-revalidate"
+          Pragma: "no-cache"
+          X-Frame-Options: "SAMEORIGIN"
+        sslRedirect: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        forceSTSHeader: true
+
+    chain-secure:
+      chain:
+        middlewares:
+          - secure-headers
+          - rate-limit
+          - auth-github
+          - oauth2-errors

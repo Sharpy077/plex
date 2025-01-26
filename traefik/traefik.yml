@@ -8,6 +8,7 @@ api:
 
 log:
   level: DEBUG
+  format: common
 
 entryPoints:
   web:
@@ -23,22 +24,26 @@ entryPoints:
     http:
       tls:
         certResolver: letsencrypt
+  metrics:
+    address: ":8082"
 
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: admin@sharphorizons.tech
-      storage: /letsencrypt/acme.json
+      email: "admin@sharphorizons.tech"
+      storage: "/letsencrypt/acme.json"
+      keyType: RSA4096
       httpChallenge:
         entryPoint: web
 
 providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
-    exposedByDefault: false
+    watch: true
     network: proxy
+    defaultRule: "Host(`{{ normalize .Name }}`)"
   file:
-    directory: /config
+    directory: "/config"
     watch: true
 
 accessLog: {}
@@ -46,3 +51,11 @@ accessLog: {}
 metrics:
   prometheus:
     entryPoint: metrics
+    addEntryPointsLabels: true
+    addServicesLabels: true
+    manualRouting: true
+    buckets:
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5

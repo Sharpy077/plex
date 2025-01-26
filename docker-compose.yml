@@ -54,16 +54,18 @@ services:
     image: quay.io/oauth2-proxy/oauth2-proxy:latest
     container_name: oauth2-proxy
     restart: unless-stopped
+    ports:
+      - "127.0.0.1:4180:4180"
     environment:
-      - OAUTH2_PROXY_COOKIE_SECRET=${COOKIE_SECRET:-placeholder_cookie_secret}
-      - OAUTH2_PROXY_CLIENT_ID=${GITHUB_CLIENT_ID:-placeholder_client_id}
-      - OAUTH2_PROXY_CLIENT_SECRET=${GITHUB_CLIENT_SECRET:-placeholder_client_secret}
+      - OAUTH2_PROXY_COOKIE_SECRET=${COOKIE_SECRET}
+      - OAUTH2_PROXY_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - OAUTH2_PROXY_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
       - OAUTH2_PROXY_PROVIDER=github
       - OAUTH2_PROXY_EMAIL_DOMAINS=*
       - OAUTH2_PROXY_COOKIE_SECURE=true
       - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
       - OAUTH2_PROXY_REDIRECT_URL=https://auth.sharphorizons.tech/oauth2/callback
-      - OAUTH2_PROXY_UPSTREAMS=http://127.0.0.1:4181
+      - OAUTH2_PROXY_UPSTREAMS=http://traefik:80
       - OAUTH2_PROXY_PATH_PREFIX=/oauth2
       - OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
       - OAUTH2_PROXY_PASS_BASIC_AUTH=false
@@ -74,10 +76,40 @@ services:
       - OAUTH2_PROXY_COOKIE_NAME=_oauth2_proxy
       - OAUTH2_PROXY_COOKIE_REFRESH=1h
       - OAUTH2_PROXY_COOKIE_EXPIRE=168h
-      - OAUTH2_PROXY_SKIP_AUTH_ROUTES=^/favicon.ico$|^/robots.txt$|^/oauth2/static/.*$
-      - OAUTH2_PROXY_SKIP_AUTH_PREFIXES=/favicon.ico,/robots.txt,/oauth2/static/
+      - OAUTH2_PROXY_SCOPE=read:user,user:email
+      - OAUTH2_PROXY_CSRF_PREVENT_OTP=true
+      - OAUTH2_PROXY_COOKIE_HTTPONLY=true
+      - OAUTH2_PROXY_COOKIE_SAMESITE=lax
+      - OAUTH2_PROXY_SKIP_AUTH_ROUTES=^/favicon.ico$|^/robots.txt$|^/oauth2/static/.*$|^/oauth2/sign_in$|^/oauth2/callback$|^/oauth2/start$|^/oauth2/userinfo$|^/ping$
+      - OAUTH2_PROXY_SKIP_AUTH_PREFIXES=/favicon.ico,/robots.txt,/oauth2/static/,/oauth2/sign_in,/oauth2/callback,/oauth2/start,/oauth2/userinfo,/ping
+      - OAUTH2_PROXY_REVERSE_PROXY=true
+      - OAUTH2_PROXY_REAL_CLIENT_IP_HEADER=X-Real-IP
+      - OAUTH2_PROXY_PROXY_PREFIX=/oauth2
+      - OAUTH2_PROXY_PROVIDER_DISPLAY_NAME=GitHub
+      - OAUTH2_PROXY_SSL_UPSTREAM_INSECURE_SKIP_VERIFY=true
+      - OAUTH2_PROXY_SSL_INSECURE_SKIP_VERIFY=true
+      - OAUTH2_PROXY_SILENCE_PING_LOGGING=true
+      - OAUTH2_PROXY_REQUEST_LOGGING=true
+      - OAUTH2_PROXY_AUTH_LOGGING=true
+      - OAUTH2_PROXY_STANDARD_LOGGING=true
+      - OAUTH2_PROXY_SKIP_JWT_BEARER_TOKENS=true
+      - OAUTH2_PROXY_SET_XAUTHREQUEST=true
     networks:
       - proxy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:4180/ping",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.oauth2-proxy.rule=Host(`auth.sharphorizons.tech`)"
@@ -85,7 +117,11 @@ services:
       - "traefik.http.routers.oauth2-proxy.tls=true"
       - "traefik.http.services.oauth2-proxy.loadbalancer.server.port=4180"
       - "traefik.http.middlewares.oauth2-headers.headers.customResponseHeaders.Cache-Control=no-store,no-cache,must-revalidate"
+      - "traefik.http.middlewares.oauth2-headers.headers.customRequestHeaders.X-Forwarded-Proto=https"
+      - "traefik.http.middlewares.oauth2-headers.headers.customRequestHeaders.X-Real-IP=${REMOTE_ADDR}"
       - "traefik.http.routers.oauth2-proxy.middlewares=oauth2-headers"
+      - "traefik.http.routers.oauth2-proxy.priority=120"
+      - "traefik.http.routers.oauth2-proxy.service=oauth2-proxy"
 
   plex:
     image: lscr.io/linuxserver/plex:latest
@@ -109,6 +145,7 @@ services:
       - "traefik.http.routers.plex.entrypoints=websecure"
       - "traefik.http.routers.plex.tls=true"
       - "traefik.http.services.plex.loadbalancer.server.port=32400"
+      - "traefik.http.routers.plex.middlewares=plex-headers@file"
 
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
@@ -164,12 +201,10 @@ services:
       - TZ=Australia/Sydney
     volumes:
       - ./config/radarr:/config
-      - ./downloads:/downloads
       - ./movies:/movies
+      - ./downloads:/downloads
     networks:
       - proxy
-    secrets:
-      - radarr_api_key.secret
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.radarr.rule=Host(`radarr.sharphorizons.tech`)"
@@ -188,12 +223,10 @@ services:
       - TZ=Australia/Sydney
     volumes:
       - ./config/sonarr:/config
-      - ./downloads:/downloads
       - ./tv:/tv
+      - ./downloads:/downloads
     networks:
       - proxy
-    secrets:
-      - sonarr_api_key.secret
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.sonarr.rule=Host(`sonarr.sharphorizons.tech`)"
@@ -212,12 +245,10 @@ services:
       - TZ=Australia/Sydney
     volumes:
       - ./config/lidarr:/config
-      - ./downloads:/downloads
       - ./music:/music
+      - ./downloads:/downloads
     networks:
       - proxy
-    secrets:
-      - lidarr_api_key.secret
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.lidarr.rule=Host(`lidarr.sharphorizons.tech`)"
@@ -333,6 +364,13 @@ services:
       - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
     networks:
       - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.node-exporter.rule=Host(`metrics.sharphorizons.tech`)"
+      - "traefik.http.routers.node-exporter.entrypoints=websecure"
+      - "traefik.http.routers.node-exporter.tls=true"
+      - "traefik.http.routers.node-exporter.middlewares=chain-secure@file"
+      - "traefik.http.services.node-exporter.loadbalancer.server.port=9100"
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -346,6 +384,13 @@ services:
       - /dev/disk/:/dev/disk:ro
     networks:
       - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cadvisor.rule=Host(`cadvisor.sharphorizons.tech`)"
+      - "traefik.http.routers.cadvisor.entrypoints=websecure"
+      - "traefik.http.routers.cadvisor.tls=true"
+      - "traefik.http.routers.cadvisor.middlewares=chain-secure@file"
+      - "traefik.http.services.cadvisor.loadbalancer.server.port=8080"
 
 volumes:
   prometheus_data:
