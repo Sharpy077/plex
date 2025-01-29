@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+---
+# Project-Specific Instructions
+
+# Core Infrastructure
+- Ensure Traefik (v3.0) configuration includes routing, SSL, and authentication.
+- Verify OAuth2 Proxy settings for GitHub-based authentication.
+- Configure Let's Encrypt for automatic SSL certificate management.
+- Confirm that all services are accessible via subdomains of sharphorizons.tech.
+
+# Media Services
+- Set up Plex as the main media server.
+- Configure and integrate the *arr Suite: Prowlarr (indexers), Radarr (movies), Sonarr (TV), Lidarr (music), Readarr (books).
+- Implement Bazarr for subtitle management.
+- Use qBittorrent as the download client.
+
+# Monitoring Stack
+- Deploy Prometheus for metrics collection.
+- Implement Alertmanager for alert handling.
+- Use Node Exporter for system metrics.
+- Set up cAdvisor for container metrics.
+
+# Security Features
+- Enforce GitHub OAuth authentication for all services.
+- Ensure HTTPS is enforced with automatic certificate management.
+- Apply strict security headers and CSP policies.
+- Implement rate limiting and basic auth for metrics.
+- Utilize Docker secrets for sensitive data management.
+
+# Troubleshooting and Contextual Logging
+- Focus on resolving HTTPS certificate issues by tracing logs from Let's Encrypt.
+- Improve OAuth2 authentication flow debugging by logging context-specific details.
+- Use structured logging formats to enable easier filtering and searching.
+- Create custom exceptions for specific error cases.
+- Use guard clauses to handle preconditions and invalid states early.

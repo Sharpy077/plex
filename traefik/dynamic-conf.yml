@@ -4,39 +4,90 @@ http:
       headers:
         frameDeny: true
         sslRedirect: true
-        browserXssFilter: true
-        contentTypeNosniff: true
         forceSTSHeader: true
         stsIncludeSubdomains: true
         stsPreload: true
         stsSeconds: 31536000
         customFrameOptionsValue: "SAMEORIGIN"
+        contentTypeNosniff: true
+        browserXssFilter: true
         customRequestHeaders:
           X-Forwarded-Proto: "https"
+        customResponseHeaders:
+          Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+          X-Content-Type-Options: "nosniff"
+          X-Frame-Options: "SAMEORIGIN"
+          X-XSS-Protection: "1; mode=block"
+          Referrer-Policy: "no-referrer-when-downgrade"
+          Server: ""
+          X-Powered-By: ""
 
-    rate-limit:
-      rateLimit:
-        average: 100
-        burst: 50
-        period: 1m
-
-    auth-whitelist:
-      ipWhiteList:
-        sourceRange:
-          - "10.0.0.0/8"
-          - "172.16.0.0/12"
-          - "192.168.0.0/16"
-
-    traefik-forward-auth:
+    oauth2-auth:
       forwardAuth:
-        address: "http://traefik-forward-auth:4181"
+        address: "http://oauth2-proxy:4180/oauth2/auth"
+        trustForwardHeader: true
         authResponseHeaders:
-          - "X-Forwarded-User"
+          - "X-Auth-Request-Access-Token"
+          - "Authorization"
+          - "X-Auth-Request-User"
+          - "X-Auth-Request-Email"
+          - "X-Auth-Request-Preferred-Username"
+          - "Referer"
+          - "X-Forwarded-Uri"
+          - "X-Forwarded-Host"
+          - "X-Forwarded-Proto"
+          - "X-Forwarded-For"
+          - "Cookie"
+
+    oauth2-headers:
+      headers:
+        customRequestHeaders:
+          X-Forwarded-Proto: "https"
+          X-Real-IP: "{{ .ClientIP }}"
+          X-Forwarded-Host: "{{ .Host }}"
+          X-Forwarded-Uri: "{{ .Uri }}"
+          X-Forwarded-For: "{{ .ClientIP }}"
+        customResponseHeaders:
+          Cache-Control: "no-store,no-cache,must-revalidate"
+          Pragma: "no-cache"
+          X-Frame-Options: "SAMEORIGIN"
 
     chain-secure:
       chain:
         middlewares:
           - secure-headers
-          - rate-limit
-          - auth-whitelist
-          - traefik-forward-auth 
+          - oauth2-auth
+          - oauth2-headers
+
+  routers:
+    oauth2:
+      rule: "Host(`auth.sharphorizons.tech`)"
+      service: "oauth2"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: letsencrypt
+      middlewares:
+        - oauth2-headers
+
+  services:
+    oauth2:
+      loadBalancer:
+        servers:
+          - url: "http://oauth2-proxy:4180"
+        passHostHeader: true
+        responseForwarding:
+          flushInterval: "100ms"
+
+tls:
+  options:
+    default:
+      minVersion: VersionTLS12
+      sniStrict: true
+      cipherSuites:
+        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305

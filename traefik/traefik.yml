@@ -1,61 +1,125 @@
+# Global Traefik settings
 global:
-  checkNewVersion: true
-  sendAnonymousUsage: false
+  checkNewVersion: true  # Checks for new Traefik versions (recommended for security updates)
+  sendAnonymousUsage: false  # Disables telemetry data collection (good for privacy)
 
+# Metrics configuration for Prometheus integration
+metrics:
+  prometheus:
+    addEntryPointsLabels: true
+    addServicesLabels: true
+    buckets:
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5.0
+    entryPoint: metrics
+
+# API and Dashboard configuration
 api:
   dashboard: true
   insecure: false
 
+# Logging configuration
 log:
-  level: DEBUG
-  format: common
+  level: "DEBUG"
+  format: "json"
 
+# Access log configuration
+accessLog:
+  format: json
+  filters:
+    statusCodes:
+      - "200"
+      - "300-302"
+      - "400-404"
+      - "500-501"
+  fields:
+    defaultMode: keep
+    headers:
+      defaultMode: keep
+      names:
+        Authorization: redact
+        X-Auth-Request-Access-Token: redact
+  bufferingSize: 100
+
+# Entry points configuration
 entryPoints:
   web:
-    address: ":80"
-    http:
-      redirections:
-        entryPoint:
-          to: websecure
-          scheme: https
-          permanent: true
+    address: ":80"  # Changed from 33669 to standard HTTP port for ACME challenges
+    # Temporarily disable HTTPS redirect for ACME challenge
+    # http:
+    #   redirections:
+    #     entryPoint:
+    #       to: websecure
+    #       scheme: https
+    #       permanent: true
   websecure:
     address: ":443"
     http:
       tls:
         certResolver: letsencrypt
+        domains:
+          - main: "sharphorizons.tech"
+            sans:
+              - "*.sharphorizons.tech"
   metrics:
     address: ":8082"
+    http:
+      tls:
+        certResolver: letsencrypt
+        domains:
+          - main: "metrics.sharphorizons.tech"
 
+# Let's Encrypt certificate resolver
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: "admin@sharphorizons.tech"
-      storage: "/letsencrypt/acme.json"
-      keyType: RSA4096
-      httpChallenge:
-        entryPoint: web
+      email: "support@sharphorizons.tech"  # Email for Let's Encrypt notifications
+      storage: "/letsencrypt/acme.json"  # Certificate storage location
+      keyType: RSA4096  # Strong key type
+      caServer: "https://acme-v02.api.letsencrypt.org/directory"
+      httpChallenge:  # HTTP-01 challenge type
+        entryPoint: web  # Make sure this matches our web entrypoint name
 
+# Providers configuration
 providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
     watch: true
     network: proxy
-    defaultRule: "Host(`{{ normalize .Name }}`)"
+    exposedByDefault: true
+    defaultRule: "Host(`{{ normalize .Name }}.sharphorizons.tech`)"
   file:
-    directory: "/config"
+    filename: "/etc/traefik/dynamic-conf.yml"
     watch: true
 
-accessLog: {}
+# HTTP routers configuration
+http:
+  routers:
+    metrics:
+      rule: "Host(`metrics.sharphorizons.tech`) && PathPrefix(`/metrics`)"
+      entryPoints:
+        - metrics
+        - websecure
+      service: prometheus@internal
+      middlewares:
+        - metrics-auth@file
+        - metrics-headers@file
+      tls:
+        certResolver: letsencrypt
 
-metrics:
-  prometheus:
-    entryPoint: metrics
-    addEntryPointsLabels: true
-    addServicesLabels: true
-    manualRouting: true
-    buckets:
-      - 0.1
-      - 0.3
-      - 1.2
-      - 5
+# TLS Options
+tls:
+  options:
+    default:
+      minVersion: "VersionTLS12"
+      maxVersion: "VersionTLS13"
+      sniStrict: true
+      cipherSuites:
+        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
