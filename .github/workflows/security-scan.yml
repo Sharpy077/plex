@@ -35,7 +35,7 @@ jobs:
           only-severities: critical,high
 
       - name: Run OWASP ZAP Scan
-        uses: zaproxy/action-full-scan@v0.9.0
+        uses: zaproxy/action-full-scan@v0.12.0
         with:
           target: 'http://localhost:8080'
           rules_file_name: '.zap/rules.tsv'
