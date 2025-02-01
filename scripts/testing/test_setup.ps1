@@ -137,15 +137,18 @@ function Test-DockerNetwork {
         Write-Log "Docker network 'proxy' not found" -Level 'ERROR'
         if ($AutoFix) {
             try {
-                # Create network with specific configuration
-                $networkCreate = docker network create `
-                    --driver bridge `
-                    --subnet 172.20.0.0/16 `
-                    --gateway 172.20.0.1 `
-                    proxy 2>&1
+                # Create Docker network if it doesn't exist
+                if (-not (docker network ls --format '{{.Name}}' | Select-String -Pattern '^proxy$')) {
+                    Write-Log "Creating Docker network..."
+                    docker network create proxy `
+                        --driver bridge `
+                        --subnet 10.10.20.0/24 `
+                        --gateway 10.10.20.1 `
+                        --opt "com.docker.network.bridge.name=docker_proxy" `
+                        --opt "com.docker.network.bridge.enable_icc=true" `
+                        --opt "com.docker.network.bridge.enable_ip_masquerade=true"
+                }
 
-                Write-Log "Created Docker network 'proxy' with custom configuration" -Level 'FIX'
-                Write-Log "Network ID: $networkCreate" -Level 'INFO'
                 return $true
             }
             catch {
@@ -163,7 +166,7 @@ function Test-RequiredDirectories {
     Write-Log "Checking required directories..."
     $results = @{
         Success = 0
-        Failed = 0
+        Failed  = 0
         Missing = @()
     }
 
@@ -218,7 +221,7 @@ function Test-ConfigurationFiles {
     Write-Log "Checking configuration files..."
     $results = @{
         Success = 0
-        Failed = 0
+        Failed  = 0
         Missing = @()
     }
 
@@ -246,7 +249,7 @@ function Test-EnvironmentVariables {
     Write-Log "Checking environment variables..."
     $results = @{
         Success = 0
-        Failed = 0
+        Failed  = 0
         Missing = @()
     }
 
@@ -371,7 +374,8 @@ function Test-DockerCompose {
                 Write-Log "  - $serviceName" -Level 'INFO'
 
                 # Check service configuration
-                $serviceConfig = $config | Select-String -Pattern "^${serviceName}:" -Context 0,10
+                $servicePattern = '^' + [regex]::Escape($serviceName) + ':'
+                $serviceConfig = $config | Select-String -Pattern $servicePattern -Context 0, 10
                 if ($serviceConfig) {
                     # Validate image specification
                     if (-not ($serviceConfig -match 'image:')) {

@@ -1,0 +1,55 @@
+name: Branch Protection Rules
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'  # Weekly on Mondays
+
+jobs:
+  enforce-protection:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install GitHub CLI
+        run: |
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+          && sudo apt update \
+          && sudo apt install gh -y
+
+      - name: Configure branch protection
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          # Enable branch protection on main
+          gh api --method PUT /repos/$REPO/branches/main/protection \
+            -f required_status_checks[].context[]="test (3.9)" \
+            -f required_status_checks[].context[]="test (3.10)" \
+            -f required_status_checks[].context[]="test (3.11)" \
+            -f required_status_checks[].context[]="security-scan" \
+            -f required_status_checks[].context[]="Trivy filesystem scan" \
+            -f required_status_checks[].context[]="Docker Scout scan" \
+            -f required_status_checks[].context[]="OWASP ZAP Scan" \
+            -f required_status_checks[].context[]="Snyk security scan" \
+            -f required_status_checks[].context[]="TFSec scan" \
+            -f required_status_checks[].context[]="Checkov scan" \
+            -f required_status_checks.strict=true \
+            -f enforce_admins=true \
+            -f required_pull_request_reviews.required_approving_review_count=1 \
+            -f required_pull_request_reviews.dismiss_stale_reviews=true \
+            -f required_pull_request_reviews.require_code_owner_reviews=true \
+            -f restrictions=null \
+            -f required_linear_history=true \
+            -f allow_force_pushes=false \
+            -f allow_deletions=false \
+            -f required_conversation_resolution=true \
+            -f required_signatures=true

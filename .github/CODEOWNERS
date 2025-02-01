@@ -1,0 +1,31 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# they will be requested for review when someone opens a pull request.
+*       @sharpy077
+
+# Docker and infrastructure files
+Dockerfile*      @sharpy077
+docker-compose*.yml  @sharpy077
+traefik/         @sharpy077
+.env.example     @sharpy077
+
+# GitHub Actions workflows
+.github/workflows/    @sharpy077
+
+# Security-related files
+.github/workflows/security-scan.yml    @sharpy077
+scripts/security/    @sharpy077
+
+# Testing files
+tests/           @sharpy077
+pytest.ini       @sharpy077
+.coveragerc      @sharpy077
+
+# Documentation
+*.md             @sharpy077
+docs/            @sharpy077
+
+# Dependencies
+requirements.txt  @sharpy077
+package.json     @sharpy077
+package-lock.json @sharpy077

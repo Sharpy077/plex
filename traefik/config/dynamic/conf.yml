@@ -1,0 +1,70 @@
+http:
+  routers:
+    acme:
+      rule: "PathPrefix(`/.well-known/acme-challenge/`)"
+      service: acme-service
+      priority: 100
+      entryPoints:
+        - web
+      middlewares: []
+
+  middlewares:
+    chain-secure:
+      chain:
+        middlewares:
+          - security-headers
+          - rate-limit
+          - compression
+          - ipwhitelist
+
+    security-headers:
+      headers:
+        sslRedirect: true
+        stsSeconds: 31536000
+        stsIncludeSubdomains: true
+        stsPreload: true
+        forceSTSHeader: true
+        frameDeny: true
+        customFrameOptionsValue: "SAMEORIGIN"
+        contentTypeNosniff: true
+        browserXssFilter: true
+        referrerPolicy: "same-origin"
+        permissionsPolicy: "camera=(), microphone=(), geolocation=(), payment=()"
+        customResponseHeaders:
+          X-Robots-Tag: "none,noarchive,nosnippet,notranslate,noimageindex"
+          server: ""
+
+    rate-limit:
+      rateLimit:
+        average: 100
+        burst: 50
+        period: 1s
+
+    compression:
+      compress:
+        excludedContentTypes:
+          - "audio/mpeg"
+          - "video/mp4"
+          - "application/zip"
+
+    ipwhitelist:
+      ipWhiteList:
+        sourceRange:
+          - "10.10.10.0/24" # Main VLAN
+          - "10.10.20.0/24" # Docker VLAN
+          - "202.128.124.242" # Public IP
+          - "0.0.0.0/0" # Allow ACME challenge from anywhere
+
+tls:
+  options:
+    default:
+      minVersion: "VersionTLS13"
+      cipherSuites:
+        - "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        - "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+        - "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305"
+        - "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305"
+      curvePreferences:
+        - "CurveP521"
+        - "CurveP384"
+      sniStrict: true

@@ -2,17 +2,57 @@ global:
   checkNewVersion: true
   sendAnonymousUsage: false
 
+log:
+  level: "DEBUG"
+  filePath: "/var/log/traefik/traefik.log"
+  format: "json"
+
+accessLog:
+  filePath: "/var/log/traefik/access.log"
+  format: "json"
+  bufferingSize: 100
+  filters:
+    statusCodes:
+      - "100-599"
+    retryAttempts: true
+    minDuration: "10ms"
+  fields:
+    defaultMode: keep
+    names:
+      StartUTC: keep
+      Duration: keep
+      RequestMethod: keep
+      RequestPath: keep
+      RequestProtocol: keep
+      DownstreamStatus: keep
+      RouterName: keep
+      ClientIP: keep
+      ClientHost: keep
+      ClientPort: keep
+      ClientUsername: keep
+      TLSVersion: keep
+      TLSCipher: keep
+    headers:
+      defaultMode: drop
+      names:
+        Authorization: redact
+        X-Auth-Request-Access-Token: redact
+        X-Auth-Request-User: keep
+        X-Auth-Request-Email: keep
+        X-Forwarded-For: keep
+        User-Agent: keep
+        Referer: keep
+
 api:
   dashboard: true
-  debug: true
   insecure: false
+  debug: true
 
 providers:
   docker:
-    endpoint: "unix:///var/run/docker.sock"
-    watch: true
+    endpoint: "tcp://localhost:2375"
     exposedByDefault: false
-    network: proxy
+    watch: true
   file:
     directory: "/etc/traefik/dynamic"
     watch: true
@@ -25,29 +65,22 @@ entryPoints:
         entryPoint:
           to: websecure
           scheme: https
-
   websecure:
     address: ":443"
     http:
       tls:
         certResolver: letsencrypt
-        domains:
-          - main: "sharphorizons.tech"
-            sans:
-              - "*.sharphorizons.tech"
-
   metrics:
     address: ":8082"
 
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: "matheusfernal@gmail.com"
+      email: "admin@sharphorizons.tech"
       storage: "/letsencrypt/acme.json"
-      caServer: "https://acme-v02.api.letsencrypt.org/directory"
-      keyType: EC384
+      keyType: "EC384"
       httpChallenge:
-        entryPoint: web
+        entryPoint: "web"
 
 metrics:
   prometheus:
@@ -57,26 +90,15 @@ metrics:
     buckets:
       - 0.1
       - 0.3
+      - 0.5
+      - 0.8
       - 1.2
+      - 2.0
+      - 3.0
       - 5.0
 
-log:
-  level: DEBUG
-  format: json
-  filePath: "/var/log/traefik/traefik.log"
+ping:
+  entryPoint: web
 
-accessLog:
-  filePath: "/var/log/traefik/access.log"
-  format: json
-  filters:
-    statusCodes:
-      - "400-499"
-      - "500-599"
-  fields:
-    defaultMode: keep
-    headers:
-      defaultMode: drop
-      names:
-        Authorization: redact
-        X-Auth-Request-Access-Token: redact
-  bufferingSize: 100
+experimental:
+  kubernetesGateway: false

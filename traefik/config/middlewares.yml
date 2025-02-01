@@ -32,82 +32,8 @@ http:
     auth-whitelist:
       ipWhiteList:
         sourceRange:
-          - "10.0.0.0/8"
-          - "172.16.0.0/12"
-          - "192.168.0.0/16"
-
-    metrics-headers:
-      headers:
-        sslRedirect: true
-        stsSeconds: 31536000
-        stsIncludeSubdomains: true
-        stsPreload: true
-        forceSTSHeader: true
-        customFrameOptionsValue: "SAMEORIGIN"
-        contentSecurityPolicy: "default-src 'self'"
-        customResponseHeaders:
-          X-Content-Type-Options: "nosniff"
-          X-Frame-Options: "SAMEORIGIN"
-          X-XSS-Protection: "1; mode=block"
-
-    plex-headers:
-      headers:
-        sslRedirect: true
-        stsIncludeSubdomains: true
-        stsPreload: true
-        stsSeconds: 31536000
-        customFrameOptionsValue: "SAMEORIGIN"
-        contentSecurityPolicy: "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;"
-
-    chain-secure:
-      chain:
-        middlewares:
-          - secure-headers
-          - rate-limit
-          - auth-whitelist
-
-    auth-github:
-      forwardAuth:
-        address: "http://oauth2-proxy:4180/oauth2/auth"
-        trustForwardHeader: true
-        authResponseHeaders:
-          - "X-Auth-Request-Access-Token"
-          - "X-Auth-Request-User"
-          - "X-Auth-Request-Email"
-          - "Authorization"
-        authResponseHeadersRegex: "^X-(.*)"
-
-    oauth2-errors:
-      errors:
-        status:
-          - "401-403"
-        service: "oauth2-proxy-service@docker"
-        query: "/oauth2/sign_in"
-
-    oauth2-headers:
-      headers:
-        customRequestHeaders:
-          X-Forwarded-Proto: "https"
-          X-Real-IP: "${REMOTE_ADDR}"
-          X-OAuth-Debug: "true"
-        customResponseHeaders:
-          Cache-Control: "no-store,no-cache,must-revalidate"
-          Pragma: "no-cache"
-          X-Frame-Options: "SAMEORIGIN"
-          X-OAuth-Flow: "github"
-        sslRedirect: true
-        stsIncludeSubdomains: true
-        stsPreload: true
-        stsSeconds: 31536000
-        forceSTSHeader: true
-
-    oauth2-logging:
-      headers:
-        customRequestHeaders:
-          X-OAuth-Trace: "true"
-        accessLog:
-          filters:
-            statusCodes: ["200", "302", "401", "403", "500"]
+          - "10.10.0.0/16"  # All internal VLANs
+          - "202.128.124.242/32"          # Public IP
           fields:
             headers:
               names:
@@ -127,7 +53,7 @@ http:
     metrics-auth:
       basicAuth:
         users:
-          - "admin:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/"  # admin:admin
+          - "admin:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/" # admin:admin
 
     acme-middleware:
       chain:
@@ -138,42 +64,8 @@ http:
     acme-allow:
       ipWhiteList:
         sourceRange:
-          - "0.0.0.0/0"
-
-    redirect-https:
-      redirectScheme:
-        scheme: https
-        permanent: true
-        port: "443"
-        priority: 1
-      stripPrefix:
-        prefixes:
-          - "/.well-known/acme-challenge/"
-        forceSlash: false
-
-    saml-headers:
-      headers:
-        customRequestHeaders:
-          X-Forwarded-Proto: "https"
-          X-Real-IP: "${REMOTE_ADDR}"
-        customResponseHeaders:
-          X-SAML-Response-Valid: "true"
-          Cache-Control: "no-store,no-cache,must-revalidate"
-          Pragma: "no-cache"
-        sslRedirect: true
-        stsIncludeSubdomains: true
-        stsPreload: true
-        stsSeconds: 31536000
-        forceSTSHeader: true
-        contentSecurityPolicy: "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'"
-
-    saml-logging:
-      headers:
-        customRequestHeaders:
-          X-SAML-Trace: "true"
-        accessLog:
-          filters:
-            statusCodes: ["200", "302", "401", "403", "500"]
+          - "10.10.0.0/16"  # All internal VLANs
+          - "202.128.124.242/32"          # Public IP
           fields:
             headers:
               names:
@@ -188,3 +80,4 @@ http:
           - saml-headers
           - saml-logging
           - rate-limit
+

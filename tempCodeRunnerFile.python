@@ -1,0 +1,127 @@
+def analyze_code_flow(code_path):
+    """
+    Systematically analyzes code execution flow and identifies potential issues.
+    
+    Args:
+        code_path: Path to the code being analyzed
+        
+    Returns:
+        dict: Analysis results containing execution flow and identified issues
+    """
+    try:
+        # Initialize analysis results
+        analysis = {
+            'execution_flow': [],
+            'issues': [],
+            'recommendations': []
+        }
+        
+        # Track execution flow
+        logger.info("Starting code flow analysis for: %s", code_path)
+        
+        # Analyze code structure and flow
+        with open(code_path, 'r') as f:
+            code_lines = f.readlines()
+            
+        for line_num, line in enumerate(code_lines, 1):
+            # Track execution path
+            if line.strip().startswith(('def ', 'class ')):
+                analysis['execution_flow'].append({
+                    'line': line_num,
+                    'type': 'definition',
+                    'content': line.strip()
+                })
+            
+            # Identify potential issues
+            if 'except:' in line:  # Bare except
+                analysis['issues'].append({
+                    'line': line_num,
+                    'severity': 'warning',
+                    'message': 'Bare except clause found - specify exception types'
+                })
+                
+        # Generate recommendations
+        if analysis['issues']:
+            for issue in analysis['issues']:
+                analysis['recommendations'].append(
+                    f"Line {issue['line']}: {issue['message']}"
+                )
+                
+        return analysis
+        
+    except Exception as e:
+        logger.error("Error during code analysis: %s", str(e))
+        raise
+
+def identify_root_cause(analysis_results):
+    """
+    Performs root cause analysis based on code analysis results.
+    
+    Args:
+        analysis_results: Results from code flow analysis
+        
+    Returns:
+        dict: Root cause findings and suggested fixes
+    """
+    root_cause = {
+        'primary_issues': [],
+        'contributing_factors': [],
+        'suggested_fixes': []
+    }
+    
+    # Analyze patterns in issues
+    issue_patterns = {}
+    for issue in analysis_results['issues']:
+        issue_type = issue['severity']
+        issue_patterns[issue_type] = issue_patterns.get(issue_type, 0) + 1
+    
+    # Identify primary issues
+    for severity, count in issue_patterns.items():
+        if count > 1:
+            root_cause['primary_issues'].append({
+                'type': severity,
+                'frequency': count,
+                'impact': 'high' if severity == 'error' else 'medium'
+            })
+    
+    return root_cause
+
+def propose_fixes(root_cause_analysis):
+    """
+    Generates specific fix proposals based on root cause analysis.
+    
+    Args:
+        root_cause_analysis: Results from root cause analysis
+        
+    Returns:
+        list: Proposed fixes with implementation details
+    """
+    fixes = []
+    
+    for issue in root_cause_analysis['primary_issues']:
+        fix = {
+            'issue_type': issue['type'],
+            'priority': 'high' if issue['impact'] == 'high' else 'medium',
+            'implementation_steps': [],
+            'validation_steps': []
+        }
+        
+        # Generate implementation steps
+        fix['implementation_steps'].append(
+            f"1. Address {issue['type']} issues occurring {issue['frequency']} times"
+        )
+        fix['implementation_steps'].append(
+            "2. Implement proper error handling and logging"
+        )
+        
+        # Add validation steps
+        fix['validation_steps'].append(
+            "1. Run automated tests to verify fixes"
+        )
+        fix['validation_steps'].append(
+            "2. Perform code review of implemented changes"
+        )
+        
+        fixes.append(fix)
+    
+    return fixes

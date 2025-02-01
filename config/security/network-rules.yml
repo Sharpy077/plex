@@ -1,0 +1,30 @@
+# Network Security Configuration
+trusted_networks:
+  internal:
+    - 10.10.10.0/24      # Main VLAN
+    - 10.10.20.0/24    # Docker VLAN
+    - 10.10.0.0/16  # All potential internal VLANs
+  external:
+    - 202.128.124.242/32      # Public IP
+
+# Access Rules
+rules:
+  default:
+    allow:
+      - 10.10.0.0/16
+    deny:
+      - "0.0.0.0/0"
+
+  services:
+    traefik:
+      allow:
+        - 10.10.0.0/16
+        - 202.128.124.242/32
+    plex:
+      allow:
+        - 10.10.0.0/16
+        - 202.128.124.242/32
+    monitoring:
+      allow:
+        - 10.10.10.0/24
+        - 10.10.20.0/24

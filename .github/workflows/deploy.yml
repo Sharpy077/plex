@@ -1,0 +1,10 @@
+name: Docker Deployment
+on:
+  push:
+    branches: [main]
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Docker Scout
+        uses: docker/scout-action@v1 
